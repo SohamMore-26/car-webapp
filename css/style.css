@@ -13049,7 +13049,7 @@ h5,
   right: 0;
   bottom: 0;
   content: '';
-  background: #000000;
+  background: white;
   z-index: -2;
   opacity: .3;
 }
