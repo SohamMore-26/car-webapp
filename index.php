@@ -32,7 +32,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Car<span>Book</span></a>
+            <a class="navbar-brand" href="index.php">Car<span>Book</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -40,7 +40,7 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
                     <li class="nav-item"><a href="car.html" class="nav-link">Cars</a></li>
@@ -69,39 +69,38 @@
             </div>
         </div>
     </div>
-
     <section class="ftco-section ftco-no-pt bg-light">
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-12	featured-top">
                     <div class="row no-gutters">
                         <div class="col-md-4 d-flex align-items-center">
-                            <form action="#" class="request-form ftco-animate bg-primary">
+                            <form action="#" class="request-form ftco-animate bg-primary" method="post">
                                 <h2>Make your trip</h2>
                                 <div class="form-group">
                                     <label for="" class="label">Pick-up location</label>
-                                    <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
+                                    <input type="text" class="form-control" placeholder="City, Airport, Station, etc" name="pickuploc">
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="label">Drop-off location</label>
-                                    <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
+                                    <input type="text" class="form-control" placeholder="City, Airport, Station, etc" name="dropoffloc">
                                 </div>
                                 <div class="d-flex">
                                     <div class="form-group mr-2">
                                         <label for="" class="label">Pick-up date</label>
-                                        <input type="text" class="form-control" id="book_pick_date" placeholder="Date">
+                                        <input type="text" class="form-control" id="book_pick_date" placeholder="Date" name="pickupdate">
                                     </div>
                                     <div class="form-group ml-2">
                                         <label for="" class="label">Drop-off date</label>
-                                        <input type="text" class="form-control" id="book_off_date" placeholder="Date">
+                                        <input type="text" class="form-control" id="book_off_date" placeholder="Date" name="dropoffdate">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="label">Pick-up time</label>
-                                    <input type="text" class="form-control" id="time_pick" placeholder="Time">
+                                    <input type="text" class="form-control" id="time_pick" placeholder="Time" name="pickuptime"> 
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" value="Rent A Car Now" class="btn btn-secondary py-3 px-4">
+                                    <input type="submit" value="Rent A Car Now" class="btn btn-secondary py-3 px-4" name="rentnow">
                                 </div>
                             </form>
                         </div>
@@ -144,7 +143,6 @@
                 </div>
             </div>
     </section>
-
 
     <section class="ftco-section ftco-no-pt bg-light">
         <div class="container">
@@ -457,3 +455,26 @@
 
 </body>
 </html>
+<?php
+    include "config.php"; 
+
+    if(isset($_POST['rentnow']))
+    {
+        extract($_POST);
+
+        $add = mysqli_query($con,"insert into book(pickup , dropoff , pickup-date , dropoff-date , pickup-time)values('$pickuploc','$dropoffloc','$pickupdate','$dropoffdate','$pickuptime')") or die(mysqli_error($con));
+        if($add)
+        {
+            echo "<script>";
+            echo "alert('Data insert successfully.....!')";
+            echo "</script>";
+        }
+        else
+        {
+            echo "<script>";
+            echo "alert('Data Error...!')";
+            echo "</script>";
+        }
+    }
+
+?>
