@@ -3,15 +3,10 @@ var google;
 
 function init() {
     
-    var myLatlng = new google.maps.LatLng(20.920749606827297, 74.78150883788017);
+    var myLatlng = new google.maps.LatLng(20.92111038182285, 74.78163758390751);
     var mapOptions = {
-        // How zoomed in you want the map to start at (always required)
-        zoom: 7,
-
-        // The latitude and longitude to center the map (always required)
+        // zoom: 7,
         center: myLatlng,
-
-        // How you would like to style the map. 
         scrollwheel: false,
         styles: [
             {
@@ -27,15 +22,8 @@ function init() {
                 ]
             }
         ]
-    };
-
-    
-
-    // Get the HTML DOM element that will contain your map 
-    // We are using a div with id="map" seen below in the <body>
+    };   
     var mapElement = document.getElementById('map');
-
-    // Create the Google Map using out element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
     
     var addresses = ['India'];
