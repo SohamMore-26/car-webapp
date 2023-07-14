@@ -27,6 +27,85 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+    function validateForm()
+    {
+        var x=document.forms["Register"]["name"].value;
+        if(x=="")
+        {
+            alert("Please Enter your name !");
+            return false;
+        }
+        for(int i = 0 ; i < x.length() ; i++)
+                    {
+                        if(Character.isDigit(x.charAt(i)) || (!Character.isLetter(x.charAt(i)) && !Character.isWhitespace(x.charAt(i))))
+                        {
+                            alert("Please enter a Valid Name");
+                            return false;
+                        }
+                    }
+        var x=document.forms["Register"]["phone"].value;
+        if(x=="")
+        {
+            alert("Please Enter your Contact Number !");
+            return false;
+        }
+        if(x.length==10 )
+        {
+            alert("Phone no. must be 10 Digit !");
+            return false;
+        }
+        var x=document.forms["Register"]["city"].value;
+        if(x=="")
+        {
+            alert("Please Enter your City name !");
+            return false;
+        }
+        for(int i = 0 ; i < x.length() ; i++)
+                    {
+                        if(Character.isDigit(x.charAt(i)) || (!Character.isLetter(x.charAt(i)) && !Character.isWhitespace(x.charAt(i))))
+                        {
+                            alert("Please enter a Valid  City Name");
+                            return false;
+                        }
+                    }
+        var x=document.forms["Register"]["address"].value;
+        if(x=="")
+        {
+            alert("Please Enter your Address !");
+            return false;
+        }
+        var x=document.forms["Register"]["email"].value;
+        if(x=="")
+        {
+            alert("Please Enter your Email !");
+            return false;
+        }
+        var x=document.forms["Register"]["password"].value;
+        if(x=="")
+        {
+            alert("Please Enter your Password !");
+            return false;
+        }
+        if(x.length<8)
+        {
+            alert("Password must be 8 Digit !");
+            return false;
+        }
+        var x=document.forms["Register"]["cpassword"].value;
+        if(x=="")
+        {
+            alert("Please Confirm your Password Once Again !");
+            return false;
+        }
+        if(x!=document.forms["Register"]["password"].value;)
+        {
+            alert("Please confirm your Password Once Again !")
+        }
+
+
+    }
+</script>
 </head>
 
 <body>
@@ -71,7 +150,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="col-md-8 block-9 mb-md-5">
-                <form action="#" class="bg-light p-5 contact-form" method="post">
+                <form  name="Register" onsubmit="return ValidateForm()" action="#" class="bg-light p-5 contact-form" method="post">
                     <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
             font-weight: 600; margin-bottom: 0.5rem !important;">Register Now</h2>
                     <p>Already have an account? </p>
@@ -95,7 +174,7 @@
                         <input type="text" class="form-control" placeholder="Enter Password" name="password">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder=" Confirm Password">
+                        <input type="text" class="form-control" placeholder=" Confirm Password" name="cpassword">
                     </div>
                     <div class="form-group">
                         <input type="submit" name="register" value="Register Now" class="btn btn-primary py-3 px-5">
