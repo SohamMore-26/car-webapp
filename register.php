@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
     <script>
-    function validateForm()
+   function validateForm()
     {
         var x=document.forms["Register"]["name"].value;
         if(x=="")
@@ -36,39 +36,21 @@
             alert("Please Enter your name !");
             return false;
         }
-        for(int i = 0 ; i < x.length() ; i++)
-                    {
-                        if(Character.isDigit(x.charAt(i)) || (!Character.isLetter(x.charAt(i)) && !Character.isWhitespace(x.charAt(i))))
-                        {
-                            alert("Please enter a Valid Name");
-                            return false;
-                        }
-                    }
+       
         var x=document.forms["Register"]["phone"].value;
         if(x=="")
         {
             alert("Please Enter your Contact Number !");
             return false;
         }
-        if(x.length==10 )
-        {
-            alert("Phone no. must be 10 Digit !");
-            return false;
-        }
+       
         var x=document.forms["Register"]["city"].value;
         if(x=="")
         {
             alert("Please Enter your City name !");
             return false;
         }
-        for(int i = 0 ; i < x.length() ; i++)
-                    {
-                        if(Character.isDigit(x.charAt(i)) || (!Character.isLetter(x.charAt(i)) && !Character.isWhitespace(x.charAt(i))))
-                        {
-                            alert("Please enter a Valid  City Name");
-                            return false;
-                        }
-                    }
+       
         var x=document.forms["Register"]["address"].value;
         if(x=="")
         {
@@ -87,25 +69,18 @@
             alert("Please Enter your Password !");
             return false;
         }
-        if(x.length<8)
-        {
-            alert("Password must be 8 Digit !");
-            return false;
-        }
+      
         var x=document.forms["Register"]["cpassword"].value;
         if(x=="")
         {
             alert("Please Confirm your Password Once Again !");
             return false;
         }
-        if(x!=document.forms["Register"]["password"].value;)
-        {
-            alert("Please confirm your Password Once Again !")
-        }
+        
 
 
     }
-</script>
+    </script>
 </head>
 
 <body>
