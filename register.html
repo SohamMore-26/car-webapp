@@ -38,9 +38,9 @@
         }
 
         var x=document.forms["Register"]["phone"].value;
-        if(x=="")
+        if(x.length != 10 )
         {
-            alert("Please Enter your Contact Number !");
+            alert("Please enter valid phone number!");
             return false;
         }
 
