@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
     <script>
-<<<<<<< HEAD
     function validateForm()
     {
         var x=document.forms["Register"]["name"].value;
@@ -37,21 +36,21 @@
             alert("Please Enter your name !");
             return false;
         }
-       
+
         var x=document.forms["Register"]["phone"].value;
         if(x=="")
         {
             alert("Please Enter your Contact Number !");
             return false;
         }
-       
+
         var x=document.forms["Register"]["city"].value;
         if(x=="")
         {
             alert("Please Enter your City name !");
             return false;
         }
-       
+
         var x=document.forms["Register"]["address"].value;
         if(x=="")
         {
@@ -70,65 +69,15 @@
             alert("Please Enter your Password !");
             return false;
         }
-      
+
         var x=document.forms["Register"]["cpassword"].value;
         if(x=="")
         {
             alert("Please Confirm your Password Once Again !");
             return false;
         }
-        
-
-
     }
 </script>
-=======
-        function validateForm() {
-            var x = document.forms["Register"]["name"].value;
-            if (x == "") {
-                alert("Please Enter your name !");
-                return false;
-            }
-
-            var x = document.forms["Register"]["phone"].value;
-            if (x == "") {
-                alert("Please Enter your Contact Number !");
-                return false;
-            }
-
-            var x = document.forms["Register"]["city"].value;
-            if (x == "") {
-                alert("Please Enter your City name !");
-                return false;
-            }
-
-            var x = document.forms["Register"]["address"].value;
-            if (x == "") {
-                alert("Please Enter your Address !");
-                return false;
-            }
-            var x = document.forms["Register"]["email"].value;
-            if (x == "") {
-                alert("Please Enter your Email !");
-                return false;
-            }
-            var x = document.forms["Register"]["password"].value;
-            if (x == "") {
-                alert("Please Enter your Password !");
-                return false;
-            }
-
-            var x = document.forms["Register"]["cpassword"].value;
-            if (x == "") {
-                alert("Please Confirm your Password Once Again !");
-                return false;
-            }
-
-
-
-        }
-    </script>
->>>>>>> c690091d25a6a09b21b707e9efaafa9526b2865d
 </head>
 
 <body>
@@ -143,19 +92,10 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-<<<<<<< HEAD
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-                    <li class="nav-item"><a href="car.html" class="nav-link">Cars</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li class="nav-item"><a href="login.html" class="nav-link">Sign in</a></li>
-                    <li class="nav-item active"><a href="register.html" class="nav-link">Sign up ?</a></li>
-=======
                     <li class="nav-item"><a href="carbook.html" class="nav-link">Booking</a></li>
                     <li class="nav-item"><a href="car.html" class="nav-link">Cars</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                     <li class="nav-item active"><a href="login.html" class="nav-link">Login</a></li>
->>>>>>> c690091d25a6a09b21b707e9efaafa9526b2865d
                 </ul>
             </div>
         </div>
@@ -180,39 +120,34 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="col-md-8 block-9 mb-md-5">
-                <form action="#" class="bg-light p-5 contact-form" method="post" name="Register"
-                    onsubmit="return validateForm()">
+                <form action="#" class="bg-light p-5 contact-form" method="post" name="Register" onsubmit="return validateForm()">
                     <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
             font-weight: 600; margin-bottom: 0.5rem !important;">Register Now</h2>
-<<<<<<< HEAD
-                    <p>Already have an account? </p>
-                    <div class="login1"><a href="login.html">Login</a></div>
-=======
->>>>>>> c690091d25a6a09b21b707e9efaafa9526b2865d
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Name" required="">
+                        <input type="text" class="form-control" placeholder="Your Name"  name="name">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Phone No." required="">
+                        <input type="text" class="form-control" placeholder="Your Phone No."  name="phone">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your City" required="">
+                        <input type="text" class="form-control" placeholder="Your City"  name="city">
                     </div>
                     <div class="form-group">
-                        <textarea type="text" class="form-control" placeholder="Your Address" required=""></textarea>
+                        <textarea type="text" class="form-control" placeholder="Your Address" name="address"></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email" required="">
+                        <input type="text" class="form-control" placeholder="Your Email" name="email">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Enter Password" required="">
+                        <input type="text" class="form-control" placeholder="Enter Password" name="password">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder=" Confirm Password" required="">
+                        <input type="text" class="form-control" placeholder=" Confirm Password" name="cpassword">
                     </div>
                     <div class="form-group">
                         <input type="submit" name="register" value="Register" class="btn btn-primary py-3 px-5">
                     </div>
+                    <p>Already have an account ?</p><a href="login.html">Login</a>
                 </form>
             </div>
         </div>
