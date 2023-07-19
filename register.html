@@ -34,6 +34,17 @@
                 alert("Please Enter your name !");
                 return false;
             }
+                
+            for(var i = 0; i <x.length ; i++)
+                    {
+                        if(Character.isDigit(x.charAt(i)) || (!Character.isLetter(x.charAt(i)) && !Character.isWhitespace(x.charAt(i))))
+                        {
+                            System.out.println("\n\n The name cannot contain a number or a special symbol....");
+                             return false;
+                             break;
+                            
+                        }
+                    }
 
             var x = document.forms["Register"]["phone"].value;
             if (x.length != 10) {
