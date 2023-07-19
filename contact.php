@@ -44,8 +44,8 @@
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="carbook.html" class="nav-link"> Booking</a></li>
           <li class="nav-item"><a href="car.html" class="nav-link">Cars</a></li>
-          <li class="nav-item active"><a href="contact.html" class="nav-link">Contact</a></li>
-          <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+          <li class="nav-item active"><a href="contact.php" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>
       </ul>
       </div>
     </div>

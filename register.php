@@ -32,41 +32,40 @@
             var x = document.forms["Register"]["name"].value;
             if (x == "") {
                 alert("Enter your Name !");
-                return false;
+                return false ;
             }
 
             var x = document.forms["Register"]["phone"].value;
             if (isNaN(x)) {
                 alert("Enter Numeric Value Only !");
-                return false;
+                return false ;
             }
             if (x.length != 10) {
                 alert("Enter 10 Digits Phone Number!");
-                return false;
+                return false ; 
             }
-
 
             var x = document.forms["Register"]["address"].value;
             if (x == "") {
                 alert("Enter your Address !");
-                return false;
+                return false ; 
             }
             var x = document.forms["Register"]["email"].value;
             if (x == "") {
                 alert("Enter your Email !");
-                return false;
+                return false ; 
             }
             var p = document.forms["Register"]["password"].value;
             if (x == "") {
                 alert("Enter your Password !");
-                return false;
+                return false ; 
             }
 
             var y = document.forms["Register"]["cpassword"].value;
             if (y == "" && y != p) {
                 alert("Your Password Does Not Match !");
-                return false;
-            }
+                return false ; 
+            } 
         }
     </script>
 </head>
@@ -85,8 +84,8 @@
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="carbook.html" class="nav-link">Booking</a></li>
                     <li class="nav-item"><a href="car.html" class="nav-link">Cars</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li class="nav-item active"><a href="login.html" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+                    <li class="nav-item active"><a href="login.php" class="nav-link">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -103,7 +102,7 @@
                         <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
                                         class="ion-ios-arrow-forward"></i></a></span> <span>Register <i
                                     class="ion-ios-arrow-forward"></i></span></p>
-                        <h1 class="mb-3 bread">Register Now</h1>
+                        <h1 class="mb-3 bread">Register Here</h1>
                     </div>
                 </div>
             </div>
@@ -117,7 +116,7 @@
                     <form action="#" class="bg-light p-5 contact-form" method="post" name="Register"
                         onsubmit="return validateForm()">
                         <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
-            font-weight: 600; margin-bottom: 0.5rem !important;">Register Now</h2>
+            font-weight: 600; margin-bottom: 0.5rem !important;">Register Here</h2>
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Your Name" name="name">
                         </div>
@@ -132,16 +131,16 @@
                             <input type="text" class="form-control" placeholder="Your Email" name="email">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Enter Password" name="password">
+                            <input type="password" class="form-control" placeholder="Enter Password" name="password">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder=" Confirm Password" name="cpassword">
+                            <input type="password" class="form-control" placeholder=" Confirm Password" name="cpassword">
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="register" value="Register" class="btn btn-primary py-3 px-5">
+                            <input type="submit" name="register" value="Register Now" class="btn btn-primary py-3 px-5">
 
                         </div>
-                        <a href="login.html">Already have an account ? Login</a>
+                        <a href="login.php">Already have an account ? Login</a>
                     </form>
                 </div>
             </div>
@@ -171,3 +170,27 @@
 </body>
 
 </html>
+<?php
+
+    include "config.php"; 
+    if(isset($_POST['register']))
+	{
+		extract($_POST); 
+
+		$add = mysqli_query($con,"insert into register(r_name , r_phone	 , r_address , r_email , r_pass	)values('$name','$phone','$address','$email','$password')") or die(mysqli_error($con));	
+		
+		if($add)
+		{
+			echo "<script>"; 
+			echo "alert('Data Entered Sucessfully..!')"; 
+			echo "</script>"; 
+		}
+		else
+		{
+			echo "<script>"; 
+			echo "alert('Data Entered Error..!')"; 
+			echo "</script>"; 
+		}
+	}
+
+?>

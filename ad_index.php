@@ -39,8 +39,8 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="ad_index.html" class="nav-link">Admin</a></li>
-                <li class="nav-item"><a href="ad_record.html" class="nav-link">View Record</a></li>
+                <li class="nav-item active"><a href="ad_index.php" class="nav-link">Admin</a></li>
+                <li class="nav-item"><a href="ad_record.php" class="nav-link">View Record</a></li>
                 <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
             </ul>
         </div>

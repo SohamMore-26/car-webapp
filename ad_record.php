@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Carbook - About Us</title>
+  <title>Carbook - Admin Login</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -30,7 +30,6 @@
 </head>
 
 <body>
-
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
       <a class="navbar-brand" href="index.html">Car<span>Book</span></a>
@@ -41,102 +40,74 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="carbook.html" class="nav-link">Booking</a></li>
-          <li class="nav-item"><a href="car.html" class="nav-link">Cars</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          <li class="nav-item active"><a href="login.html" class="nav-link">Login</a></li>
-      </ul>
+          <li class="nav-item"><a href="ad_index.php" class="nav-link">Admin</a></li>
+          <li class="nav-item active"><a href="ad_record.php" class="nav-link">View Record</a></li>
+          <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
+        </ul>
       </div>
     </div>
   </nav>
   <!-- END nav -->
-
-  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');"
-    data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
+  <section class="hero-wrap hero-wrap-3 js-fullheight"
+    style="background-image: url('images/scott-graham-5fNmWej4tAA-unsplash.jpg');" data-stellar-background-ratio="0.5">
+    <!-- <div class="overlay"></div> -->
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
         <div class="col-md-9 ftco-animate pb-5">
-          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-                  class="ion-ios-arrow-forward"></i></a></span> <span>About us <i
-                class="ion-ios-arrow-forward"></i></span></p>
-          <h1 class="mb-3 bread">About Us</h1>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="ftco-section ftco-about">
-    <div class="container">
-      <div class="row no-gutters">
-        <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center"
-          style="background-image: url(images/about.jpg);">
-        </div>
-        <div class="col-md-6 wrap-about ftco-animate">
-          <div class="heading-section heading-section-white pl-md-5">
-            <span class="subheading">About us</span>
-            <h2 class="mb-4">Welcome to Carbook</h2>
-
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
-              paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have
-              been rewritten a thousand times and everything that was left from its origin would be the word "and" and
-              the Little Blind Text should turn around and return to its own, safe country. A small river named Duden
-              flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in
-              which roasted parts of sentences fly into your mouth.</p>
-            <p><a href="car.html" class="btn btn-primary py-3 px-4">Search Vehicle</a></p>
+          <div class="breadup">
+            <p class="breadcrumbs"><span class="mr-2"><a href="ad_index.html">Admin<i
+                    class="ion-ios-arrow-forward"></i></a></span> <span>View Records<i
+                  class="ion-ios-arrow-forward"></i></span></p>
+            <h1 class="mb-3 bread">User Record</h1>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="ftco-section ftco-intro" style="background-image: url(images/bg_3.jpg);">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row justify-content-end">
-        <div class="col-md-6 heading-section heading-section-white ftco-animate">
-          <h2 class="mb-3">Do You Want To Earn With Us? So Don't Be Late.</h2>
-          <a href="#" class="btn btn-primary btn-lg">Become A Driver</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="ftco-counter ftco-section img" id="section-counter">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-          <div class="block-18">
-            <div class="text text-border d-flex align-items-center">
-              <strong class="number" data-number="60">0</strong>
-              <span>Year <br>Experienced</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-          <div class="block-18">
-            <div class="text text-border d-flex align-items-center">
-              <strong class="number" data-number="1090">0</strong>
-              <span>Total <br>Cars</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-          <div class="block-18">
-            <div class="text text-border d-flex align-items-center">
-              <strong class="number" data-number="2590">0</strong>
-              <span>Happy <br>Customers</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-          <div class="block-18">
-            <div class="text d-flex align-items-center">
-              <strong class="number" data-number="67">0</strong>
-              <span>Total <br>Branches</span>
+  <section class="intro">
+  <?php
+      include "config.php";
+      $view = mysqli_query($con,"select * from register") or die (mysqli_error($con));
+    ?>
+    <div class="bg-image h-100" style="background-color: #f5f7fa; margin: 50px;">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true"
+                    style="position: relative; height: 700px">
+                    <table class="table table-striped mb-0">
+                      <thead style="background-color: #80f08e; ">
+                        <tr data-expanded="true">
+                          <th scope="col">Id</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Phone no.</th>
+                          <th scope="col">Address</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Password</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <?php 
+                        while($row = mysqli_fetch_array($view)){
+                            extract($row);?>
+                        <tr>
+                          <td><?php echo $row['r_id'];?></td>
+                          <td><?php echo $row['r_name'];?></td>
+                          <td><?php echo $row['r_phone'];?></td>
+                          <td><?php echo $row['r_address'];?></td>
+                          <td><?php echo $row['r_email'];?></td>
+                          <td><?php echo $row['r_pass'];?></td>
+                        </tr>
+                        <?php } ?>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -183,9 +154,10 @@
             <h2 class="ftco-heading-2">Have a Questions?</h2>
             <div class="block-23 mb-3">
               <ul>
-                <li><a href="#"><span class="icon icon-map-marker"></span><span class="text">SSVPS Polytechnic Dhule,
-                      424001</span></li></a>
-                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 9876543210</span></a></li>
+                <li><a href="#"><span class="icon icon-map-marker"></span><span class="text">SSVPS
+                      Polytechnic Dhule, 424001</span></li></a>
+                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91
+                      9876543210</span></a></li>
                 <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@carbook.com</span></a>
                 </li>
               </ul>

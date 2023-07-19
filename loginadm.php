@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Carbook - Admin Login</title>
+    <title>Carbook - Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
 
+
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
@@ -42,26 +43,24 @@
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="carbook.html" class="nav-link">Booking</a></li>
                     <li class="nav-item"><a href="car.html" class="nav-link">Cars</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li class="nav-item active"><a href="login.html" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+                    <li class="nav-item active"><a href="login.php" class="nav-link">Login</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- END nav -->
-    <section class="hero-wrap hero-wrap-3 js-fullheight"
+    <section class="hero-wrap hero-wrap-2 js-fullheight"
         style="background-image: url('images/scott-graham-5fNmWej4tAA-unsplash.jpg');"
         data-stellar-background-ratio="0.5">
-        <!-- <div class="overlay"></div> -->
+        <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
                 <div class="col-md-9 ftco-animate pb-5">
-                    <div class="breadup">
-                        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-                                        class="ion-ios-arrow-forward"></i></a></span> <span>Login <i
-                                    class="ion-ios-arrow-forward"></i></span></p>
-                        <h1 class="mb-3 bread">Login</h1>
-                    </div>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                                    class="ion-ios-arrow-forward"></i></a></span> <span>Admin Login <i
+                                class="ion-ios-arrow-forward"></i></span></p>
+                    <h1 class="mb-3 bread">Admin Login</h1>
                 </div>
             </div>
         </div>
@@ -69,19 +68,18 @@
     <section class="ftco-section ftco-about">
         <div class="container">
             <div class="col-md-8 block-9 mb-md-5">
-                <form action="#" class="bg-light p-5 contact-form" method="post">
+                <form action="#" class="bg-light p-5 contact-form" method="post" name="ad-form">
                     <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
-                    font-weight: 600; margin-bottom: 0.5rem !important;">Login</h2>
+                    font-weight: 600; margin-bottom: 0.5rem !important;">Admin Login</h2>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email">
+                        <input type="text" class="form-control" placeholder="Admin ID" id="ad-name">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Password">
+                        <input type="password" class="form-control" placeholder="Admin Password" id="ad-pass">
                     </div>
                     <div class="form-group">
-                        <input type="submit" name="login" value="Login" class="btn btn-primary py-3 px-5">
-                        <div class="login1"> Don't have an Account? <a href="register.html">Join CarBook</a></div>
-                        <div class="login1"> Are you an Admin? <a href="loginadm.html">Click here</a></div>
+                        <input type="button" name="login" value="Login" class="btn btn-primary py-3 px-5"
+                            onclick="admincheck()">
                     </div>
 
                 </form>
@@ -221,6 +219,20 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
+    <script>
+
+        function admincheck() {
+            var ad_name = document.getElementById("ad-name").value;
+            var ad_pass = document.getElementById("ad-pass").value;
+            if (ad_name == "admin@gmail.com" && ad_pass == "admin") {
+                window.location.href="ad_index.html"; 
+            }
+            else {
+                    alert("Login Fail !"); 
+            }
+
+        }
+    </script>
 
 </body>
 
