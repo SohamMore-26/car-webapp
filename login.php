@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,10 +74,10 @@
                     <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
                     font-weight: 600; margin-bottom: 0.5rem !important;">Login</h2>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email">
+                        <input type="text" class="form-control" placeholder="Your Email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Password">
+                        <input type="password" class="form-control" placeholder="Your Password" name="password" required>
                     </div>
                     <div class="form-group">
                         <input type="submit" name="login" value="Login" class="btn btn-primary py-3 px-5">
@@ -225,3 +226,35 @@
 </body>
 
 </html>
+<?php
+
+include "config.php";
+
+if (isset($_POST['login'])) {
+
+	extract($_POST);
+
+	$email = mysqli_real_escape_string($con, $_POST['email']);
+	$password = mysqli_real_escape_string($con, $_POST['password']);
+
+	$log = mysqli_query($con, "select * from register where r_email='$email' and r_pass='$password'") or die(mysqli_error($con));
+
+	if (mysqli_num_rows($log) > 0) {
+
+		$fetch = mysqli_fetch_array($log);
+
+		$_SESSION['id'] = $fetch['id'];
+		$_SESSION['email'] = $fetch['email'];
+
+		echo "<script>";
+		echo "alert('Successfully Login...');";
+		echo 'window.location.href="carbook.html";';
+		echo "</script>";
+	} else {
+		echo "<script>";
+		echo "alert('Login Failed');";
+		echo "</script>";
+	}
+}
+
+?>
