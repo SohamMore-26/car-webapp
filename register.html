@@ -41,11 +41,6 @@
                 return false;
             }
 
-            var x = document.forms["Register"]["city"].value;
-            if (x == "") {
-                alert("Please Enter your City name !");
-                return false;
-            }
 
             var x = document.forms["Register"]["address"].value;
             if (x == "") {
@@ -57,14 +52,14 @@
                 alert("Please Enter your Email !");
                 return false;
             }
-            var x = document.forms["Register"]["password"].value;
+            var p = document.forms["Register"]["password"].value;
             if (x == "") {
                 alert("Please Enter your Password !");
                 return false;
             }
 
-            var x = document.forms["Register"]["cpassword"].value;
-            if (x == "") {
+            var y = document.forms["Register"]["cpassword"].value;
+            if (y == "" && y!=p) {
                 alert("Please Confirm your Password Once Again !");
                 return false;
             }
