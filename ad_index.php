@@ -23,30 +23,29 @@
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Car<span>Book</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
-            </button>
+   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+     <div class="container">
+        <a class="navbar-brand" href="index.html">Car<span>Book</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
 
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="ad_index.html" class="nav-link">Admin</a></li>
-                    <li class="nav-item active"><a href="ad_record.html" class="nav-link">View Record</a></li>
-                    <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
-                </ul>
-            </div>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a href="ad_index.html" class="nav-link">Admin</a></li>
+                <li class="nav-item"><a href="ad_record.html" class="nav-link">View Record</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
+            </ul>
         </div>
-    </nav>
+     </div>
+   </nav>
     <!-- END nav -->
     <section class="hero-wrap hero-wrap-3 js-fullheight"
         style="background-image: url('images/scott-graham-5fNmWej4tAA-unsplash.jpg');"
@@ -56,89 +55,63 @@
             <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
                 <div class="col-md-9 ftco-animate pb-5">
                     <div class="breadup">
-                        <p class="breadcrumbs"><span class="mr-2"><a href="ad_index.html">Admin<i
-                                        class="ion-ios-arrow-forward"></i></a></span> <span>View Records<i
+                        <p class="breadcrumbs"><span class="mr-2"><a href="ad_index.html">Admin <i
+                                        class="ion-ios-arrow-forward"></i></a></span> <span>Contact Queries<i
                                     class="ion-ios-arrow-forward"></i></span></p>
-                        <h1 class="mb-3 bread">User Record</h1>
+                        <h1 class="mb-3 bread">Contact Queries</h1>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="intro">
-        <div class="bg-image h-100" style="background-color: #f5f7fa; margin: 50px;">
-          <div class="mask d-flex align-items-center h-100">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-12">
-                  <div class="card">
-                    <div class="card-body p-0">
-                      <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">
-                        <table class="table table-striped mb-0">
-                          <thead style="background-color: #80f08e; ">
-                            <tr>
-                              <th scope="col">User name</th>
-                              <th scope="col">Email</th>
-                              <th scope="col">Phone no.</th>
-                              <th scope="col">extra</th>
-                              <th scope="col">extra</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>Name</td>
-                              <td>Email</td>
-                              <td>9:00 AM - 11:00 AM</td>
-                              <td>Aaron Chapman</td>
-                              <td>10</td>
-                            </tr>
-                            <tr>
-                              <td>Name</td>
-                              <td>Email</td>
-                              <td>8:00 AM - 9:00 AM</td>
-                              <td>Adam Stewart</td>
-                              <td>15</td>
-                            </tr>
-                            <tr>
-                              <td>Name</td>
-                              <td>Email</td>
-                              <td>9:00 AM - 10:00 AM</td>
-                              <td>Aaron Chapman</td>
-                              <td>10</td>
-                            </tr>
-                            <tr>
-                              <td>Name</td>
-                              <td>Email</td>
-                              <td>7:00 AM - 8:30 AM</td>
-                              <td>Donna Wilson</td>
-                              <td>15</td>
-                            </tr>
-                            <tr>
-                              <td>Name</td>
-                              <td>Email</td>
-                              <td>8:00 AM - 9:00 AM</td>
-                              <td>Donna Wilson</td>
-                              <td>10</td>
-                            </tr>
-                            <tr>
-                              <td>Name</td>
-                              <td>Email</td>
-                              <td>5:00 PM - 7:00 PM</td>
-                              <td>Donna Wilson</td>
-                              <td>20</td>
-                            </tr>
-                          </tbody>
-                        </table>
+        <section class="pb-4">
+        <div class="bg-white border rounded-5">
+        <?php
+      include "config.php";
+      $view = mysqli_query($con,"select * from contact") or die (mysqli_error($con));
+    ?>
+          <section class="w-100 p-4 table-responsive">
+            <table class="table align-middle mb-0 bg-white">
+              <thead class="bg-light">
+                <tr>
+                  <th>Sr.</th>
+                  <th>Name</th>
+                  <th>Subject</th>
+                  <th>Message</th>
+                </tr>
+              </thead>
+              <tbody>
+              <?php 
+           while($row = mysqli_fetch_array($view))
+           {
+            extract($row);
+          ?>
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                          <p class="fw-bold mb-1"><?php echo $row['c_id'];?></p>
+                        </div>
+                      </div>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <div class="ms-3">
+                        <p class="fw-bold mb-1"><?php echo $row['c_name'];?></p>
+                        <p class="text-muted mb-0"><?php echo $row['c_email'];?></p>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </td>
+                  <td><?php echo $row['subject'];?></td>
+                  <td><?php echo $row['message'];?></td>
+                </tr>
+                <?php }?>
+              </tbody>
+            </table>
+          </section>
         </div>
-      </section>
+    </section>
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
@@ -235,3 +208,4 @@
 </body>
 
 </html>
+
