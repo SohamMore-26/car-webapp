@@ -30,37 +30,41 @@
     <script>
         function validateForm() {
             var x = document.forms["Register"]["name"].value;
-            if (x == "" ) {
-                alert("Please Enter your Name !");
+            if (x == "") {
+                alert("Enter your Name !");
                 return false;
             }
 
             var x = document.forms["Register"]["phone"].value;
+            if (isNaN(x)) {
+                alert("Enter Numeric Value Only !");
+                return false;
+            }
             if (x.length != 10) {
-                alert("Please enter valid phone number!");
+                alert("Enter 10 Digits Phone Number!");
                 return false;
             }
 
 
             var x = document.forms["Register"]["address"].value;
             if (x == "") {
-                alert("Please Enter your Address !");
+                alert("Enter your Address !");
                 return false;
             }
             var x = document.forms["Register"]["email"].value;
             if (x == "") {
-                alert("Please Enter your Email !");
+                alert("Enter your Email !");
                 return false;
             }
             var p = document.forms["Register"]["password"].value;
             if (x == "") {
-                alert("Please Enter your Password !");
+                alert("Enter your Password !");
                 return false;
             }
 
             var y = document.forms["Register"]["cpassword"].value;
-            if (y == "" && y!=p) {
-                alert("Please Confirm your Password Once Again !");
+            if (y == "" && y != p) {
+                alert("Your Password Does Not Match !");
                 return false;
             }
         }
