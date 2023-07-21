@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Carbook - Login</title>
+    <title>Carbook - Admin Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -40,90 +40,73 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="carbook.html" class="nav-link">Booking</a></li>
-                    <li class="nav-item"><a href="car.html" class="nav-link">Cars</a></li>
-                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-                    <li class="nav-item active"><a href="login.php" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="ad_index.php" class="nav-link">Admin</a></li>
+                    <li class="nav-item"><a href="ad_record.php" class="nav-link">User Record</a></li>
+                    <li class="nav-item active"><a href="bookrec.html" class="nav-link">Booking Record</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- END nav -->
-    <section class="hero-wrap hero-wrap-2 js-fullheight"
+    <section class="hero-wrap hero-wrap-3 js-fullheight"
         style="background-image: url('images/scott-graham-5fNmWej4tAA-unsplash.jpg');"
         data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
+        <!-- <div class="overlay"></div> -->
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
                 <div class="col-md-9 ftco-animate pb-5">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-                                    class="ion-ios-arrow-forward"></i></a></span> <span>Admin Login <i
-                                class="ion-ios-arrow-forward"></i></span></p>
-                    <h1 class="mb-3 bread">Admin Login</h1>
+                    <div class="breadup">
+                        <p class="breadcrumbs"><span class="mr-2"><a href="ad_index.html">Admin<i
+                                        class="ion-ios-arrow-forward"></i></a></span> <span>View Records<i
+                                    class="ion-ios-arrow-forward"></i></span></p>
+                        <h1 class="mb-3 bread">Booking Records</h1>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="ftco-section ftco-about">
-        <div class="container">
-            <div class="col-md-8 block-9 mb-md-5">
-                <form action="#" class="bg-light p-5 contact-form" method="post" name="ad-form">
-                    <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
-                    font-weight: 600; margin-bottom: 0.5rem !important;">Admin Login</h2>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Admin ID" id="ad-name">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Admin Password" id="ad-pass">
-                    </div>
-                    <div class="form-group">
-                        <input type="button" name="login" value="Login" class="btn btn-primary py-3 px-5"
-                            onclick="admincheck()">
-                    </div>
 
-                </form>
-            </div>
-        </div>
-        </div>
-    </section>
-
-    <section class="ftco-counter ftco-section img bg-light" id="section-counter">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18">
-                        <div class="text text-border d-flex align-items-center">
-                            <strong class="number" data-number="60">0</strong>
-                            <span>Year <br>Experienced</span>
+    <section class="intro">
+        <?php
+      include "config.php";
+      $view = mysqli_query($con,"select * from register") or die (mysqli_error($con));
+    ?>
+        <div class="bg-image h-100" style="background-color: #f5f7fa" ;>
+            <div class="mask d-flex align-items-center h-100">
+                <!-- <div class="container"> -->
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true"
+                                    style="position: relative; height: 700px">
+                                    <table class="table table-striped mb-0">
+                                        <thead style="background-color: #80f08e; ">
+                                            <tr class="text-center" data-expanded="true">
+                                                <th scope="col">Customer Name</th>
+                                                <th scope="col">pickup loc.</th>
+                                                <th scope="col">drop loc.</th>
+                                                <th scope="col">pickup time</th>
+                                                <th scope="col">drop time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="text-center">
+                                                <td>one</td>
+                                                <td>two</td>
+                                                <td>three</td>
+                                                <td>four</td>
+                                                <td>five</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18">
-                        <div class="text text-border d-flex align-items-center">
-                            <strong class="number" data-number="1090">0</strong>
-                            <span>Total <br>Cars</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18">
-                        <div class="text text-border d-flex align-items-center">
-                            <strong class="number" data-number="2590">0</strong>
-                            <span>Happy <br>Customers</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18">
-                        <div class="text d-flex align-items-center">
-                            <strong class="number" data-number="67">0</strong>
-                            <span>Total <br>Branches</span>
-                        </div>
-                    </div>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </section>
@@ -172,7 +155,8 @@
                                 <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91
                                             9876543210</span></a></li>
                                 <li><a href="#"><span class="icon icon-envelope"></span><span
-                                            class="text">info@carbook.com</span></a></li>
+                                            class="text">info@carbook.com</span></a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -219,20 +203,6 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
-    <script>
-
-        function admincheck() {
-            var ad_name = document.getElementById("ad-name").value;
-            var ad_pass = document.getElementById("ad-pass").value;
-            if (ad_name == "admin@gmail.com" && ad_pass == "admin") {
-                window.location.href="ad_index.php";
-            }
-            else {
-                    alert("Login Fail !");
-            }
-
-        }
-    </script>
 
 </body>
 

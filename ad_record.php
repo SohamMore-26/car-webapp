@@ -41,7 +41,8 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a href="ad_index.php" class="nav-link">Admin</a></li>
-          <li class="nav-item active"><a href="ad_record.php" class="nav-link">View Record</a></li>
+          <li class="nav-item active"><a href="ad_record.php" class="nav-link">User Record</a></li>
+          <li class="nav-item"><a href="bookrec.html" class="nav-link">Booking Record</a></li>
           <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
         </ul>
       </div>
@@ -70,9 +71,9 @@
       include "config.php";
       $view = mysqli_query($con,"select * from register") or die (mysqli_error($con));
     ?>
-    <div class="bg-image h-100" style="background-color: #f5f7fa; margin: 50px;">
+    <div class="bg-image h-100" style="background-color: #f5f7fa";>
       <div class="mask d-flex align-items-center h-100">
-        <div class="container">
+        <!-- <div class="container"> -->
           <div class="row justify-content-center">
             <div class="col-12">
               <div class="card">
@@ -81,7 +82,7 @@
                     style="position: relative; height: 700px">
                     <table class="table table-striped mb-0">
                       <thead style="background-color: #80f08e; ">
-                        <tr data-expanded="true">
+                        <tr class="text-center" data-expanded="true">
                           <th scope="col">Id</th>
                           <th scope="col">Name</th>
                           <th scope="col">Phone no.</th>
@@ -91,10 +92,10 @@
                         </tr>
                       </thead>
                       <tbody>
-                      <?php 
+                      <?php
                         while($row = mysqli_fetch_array($view)){
                             extract($row);?>
-                        <tr>
+                        <tr class="text-center">
                           <td><?php echo $row['r_id'];?></td>
                           <td><?php echo $row['r_name'];?></td>
                           <td><?php echo $row['r_phone'];?></td>
@@ -110,7 +111,7 @@
               </div>
             </div>
           </div>
-        </div>
+        <!-- </div> -->
       </div>
     </div>
   </section>
