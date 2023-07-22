@@ -80,6 +80,7 @@
                 <div class="card-body p-0">
                   <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true"
                     style="position: relative; height: 700px">
+                    <center>
                     <table class="table table-striped mb-0">
                       <thead style="background-color: #80f08e; ">
                         <tr class="text-center" data-expanded="true">
@@ -106,6 +107,7 @@
                         <?php } ?>
                       </tbody>
                     </table>
+                    </center>
                   </div>
                 </div>
               </div>
