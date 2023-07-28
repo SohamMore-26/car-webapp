@@ -56,14 +56,14 @@
                 return false ; 
             }
             var p = document.forms["Register"]["password"].value;
-            if (x == "") {
+            if (p == "") {
                 alert("Enter your Password !");
                 return false ; 
             }
 
             var y = document.forms["Register"]["cpassword"].value;
             if (y == "" && y != p) {
-                alert("Your Password Does Not Match !");
+                alert("Confirm your Password once again !");
                 return false ; 
             } 
         }

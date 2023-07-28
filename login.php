@@ -27,6 +27,21 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        function validateForm() {
+            var x = document.forms["Register"]["email"].value;
+            if (x == "") {
+                alert("Enter your Email !");
+                return false ;
+            }
+            var x = document.forms["Register"]["password"].value;
+            if (x == "") {
+                alert("Enter your Password !");
+                return false ;
+            }
+        }
+        }
+        </script>
 </head>
 
 <body>
