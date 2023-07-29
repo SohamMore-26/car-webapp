@@ -27,41 +27,42 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         function validateForm() {
             var x = document.forms["Register"]["name"].value;
             if (!isNaN(x) || x == "") {
-                window.alert("Enter a Valid Name !");
+                swal ( "ERROR !" ,  "Please Enter A Valid Name !" );
                 return false ;
             }
             
             var x = document.forms["Register"]["phone"].value;
             if (isNaN(x) || x.length != 10) {
-                window.alert("Enter a valid 10 Digit Phone Number !");
+                swal ( "ERROR !" ,  "Please Enter A Valid Phone No. !" );
                 return false ;
             }
 
             var x = document.forms["Register"]["address"].value;
             if (x == "") {
-                window.alert("Enter your Address !");
+                swal ( "ERROR !" ,  "Please Enter A Valid Address !" );
                 return false ; 
             }
 
             var x = document.forms["Register"]["email"].value;
             if (x == "") {
-                window.alert("Enter your Email !");
+                swal ( "ERROR !" ,  "Please Enter A Valid Email !" );
                 return false ; 
             }
 
             var p = document.forms["Register"]["password"].value;
             if (p == "" || p.length<5  ) {
-                window.alert("Enter minimum 5 digit strong Password !");
+                swal ( "ERROR !" ,  "Please Enter Minimum 5 Digit Strong Password !" );
                 return false ; 
             }
            
             var y = document.forms["Register"]["cpassword"].value;
             if (y == "" || y!=p) {
-                window.alert("Confirm your Password once again !");
+                swal ( "ERROR !" ,  "Please Confirm Your Password Once Again !" );
                 return false ; 
             } 
         
