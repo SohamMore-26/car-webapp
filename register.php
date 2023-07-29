@@ -60,12 +60,20 @@
                 return false ; 
             }
             var p = document.forms["Register"]["password"].value;
-            if (p == "" && p.length<5) {
+            if (p == "" ) {
+                window.alert("Enter minimum 5 digit strong Password !");
+                return false ; 
+            }
+            if (p.length<5 ) {
                 window.alert("Enter minimum 5 digit strong Password !");
                 return false ; 
             }
             var y = document.forms["Register"]["cpassword"].value;
-            if (y == "" && y != p) {
+            if (y == "" ) {
+                window.alert("Confirm your Password once again !");
+                return false ; 
+            } 
+            if (y != p) {
                 window.alert("Confirm your Password once again !");
                 return false ; 
             } 
