@@ -30,23 +30,15 @@
     <script>
         function validateForm() {
             var x = document.forms["Register"]["name"].value;
-            if (!isNaN(x)) {
+            if (!isNaN(x) || x == "") {
                 window.alert("Enter a Valid Name !");
                 return false ;
             }
-            if (x == "") {
-                window.alert("Enter your Name !");
-                return false ;
-            }
-
+            
             var x = document.forms["Register"]["phone"].value;
-            if (isNaN(x)) {
-                window.alert("Enter a valid Phone Number !");
+            if (isNaN(x) || x.length != 10) {
+                window.alert("Enter a valid 10 Digit Phone Number !");
                 return false ;
-            }
-            if (x.length != 10) {
-                window.alert("Enter 10 Digits Phone Number!");
-                return false ; 
             }
 
             var x = document.forms["Register"]["address"].value;
@@ -54,29 +46,25 @@
                 window.alert("Enter your Address !");
                 return false ; 
             }
+
             var x = document.forms["Register"]["email"].value;
             if (x == "") {
                 window.alert("Enter your Email !");
                 return false ; 
             }
+
             var p = document.forms["Register"]["password"].value;
-            if (p == "" ) {
+            if (p == "" || p.length<5  ) {
                 window.alert("Enter minimum 5 digit strong Password !");
                 return false ; 
             }
-            if (p.length<5 ) {
-                window.alert("Enter minimum 5 digit strong Password !");
-                return false ; 
-            }
+           
             var y = document.forms["Register"]["cpassword"].value;
-            if (y == "" ) {
+            if (y == "" || y!=p) {
                 window.alert("Confirm your Password once again !");
                 return false ; 
             } 
-            if (y != p) {
-                window.alert("Confirm your Password once again !");
-                return false ; 
-            } 
+        
         }
     </script>
 </head>
