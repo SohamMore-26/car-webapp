@@ -31,39 +31,39 @@
         function validateForm() {
             var x = document.forms["Register"]["name"].value;
             if (x == "") {
-                alert("Enter your Name !");
+                window.alert("Enter your Name !");
                 return false ;
             }
 
             var x = document.forms["Register"]["phone"].value;
             if (isNaN(x)) {
-                alert("Enter Numeric Value Only !");
+                window.alert("Enter Numeric Value Only !");
                 return false ;
             }
             if (x.length != 10) {
-                alert("Enter 10 Digits Phone Number!");
+                window.alert("Enter 10 Digits Phone Number!");
                 return false ; 
             }
 
             var x = document.forms["Register"]["address"].value;
             if (x == "") {
-                alert("Enter your Address !");
+                window.alert("Enter your Address !");
                 return false ; 
             }
             var x = document.forms["Register"]["email"].value;
             if (x == "") {
-                alert("Enter your Email !");
+                window.alert("Enter your Email !");
                 return false ; 
             }
             var p = document.forms["Register"]["password"].value;
             if (p == "") {
-                alert("Enter your Password !");
+                window.alert("Enter your Password !");
                 return false ; 
             }
 
             var y = document.forms["Register"]["cpassword"].value;
             if (y == "" && y != p) {
-                alert("Confirm your Password once again !");
+                window.alert("Confirm your Password once again !");
                 return false ; 
             } 
         }
