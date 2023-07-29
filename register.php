@@ -32,37 +32,37 @@
         function validateForm() {
             var x = document.forms["Register"]["name"].value;
             if (!isNaN(x) || x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Valid Name !" );
+                swal ( "ERROR !" ,  "Please Enter A Valid Name !" , "warning");
                 return false ;
             }
             
             var x = document.forms["Register"]["phone"].value;
             if (isNaN(x) || x.length != 10) {
-                swal ( "ERROR !" ,  "Please Enter A Valid Phone No. !" );
+                swal ( "ERROR !" ,  "Please Enter A Valid Phone No. !" , "warning" );
                 return false ;
             }
 
             var x = document.forms["Register"]["address"].value;
             if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Valid Address !" );
+                swal ( "ERROR !" ,  "Please Enter A Valid Address !" , "warning");
                 return false ; 
             }
 
             var x = document.forms["Register"]["email"].value;
             if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Valid Email !" );
+                swal ( "ERROR !" ,  "Please Enter A Valid Email !" , "warning");
                 return false ; 
             }
 
             var p = document.forms["Register"]["password"].value;
             if (p == "" || p.length<5  ) {
-                swal ( "ERROR !" ,  "Please Enter Minimum 5 Digit Strong Password !" );
+                swal ( "ERROR !" ,  "Please Enter Minimum 5 Digit Strong Password !" , "warning");
                 return false ; 
             }
            
             var y = document.forms["Register"]["cpassword"].value;
             if (y == "" || y!=p) {
-                swal ( "ERROR !" ,  "Please Confirm Your Password Once Again !" );
+                swal ( "ERROR !" ,  "Please Confirm Your Password Once Again !" , "warning");
                 return false ; 
             } 
         
