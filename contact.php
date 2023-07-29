@@ -27,6 +27,15 @@
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+        function validate() {
+            var x = document.forms["Contact"]["name"].value;
+            if (!isNaN(x)) {
+                window.alert("Enter a Valid Name !");
+                return false ;
+            }
+          }
+          </script>
 </head>
 
 <body>
@@ -99,12 +108,13 @@
           </div>
         </div>
         <div class="col-md-8 block-9 mb-md-5">
-          <form class="bg-light p-5 contact-form" method="post">
+        <form action="#" class="bg-light p-5 contact-form" method="post" name="Contact"
+                        onsubmit="return validate()">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Your Name" name="name" required> 
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Email" name="email" required>
+              <input type="email" class="form-control" placeholder="Your Email" name="email" required>
             </div>
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Subject" name="subject" required>

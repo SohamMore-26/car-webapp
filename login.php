@@ -89,7 +89,7 @@
                     <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
                     font-weight: 600; margin-bottom: 0.5rem !important;">Login</h2>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email" name="email" required>
+                        <input type="email" class="form-control" placeholder="Your Email" name="email" required>
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control" placeholder="Your Password" name="password" required>
