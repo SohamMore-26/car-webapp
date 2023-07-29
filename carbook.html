@@ -27,6 +27,43 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function validate() {
+            var x = document.forms["Booking"]["pick_loc"].value;
+            if (x == "") {
+                swal ( "ERROR !" ,  "Please Enter A Pickup Location!" , "warning");
+                return false ;
+            }
+            
+            var x = document.forms["Booking"]["drop_loc"].value;
+            if (x=="") {
+                swal ( "ERROR !" ,  "Please Enter A Drop Location !" , "warning" );
+                return false ;
+            }
+
+            var x = document.forms["Booking"]["pick_date"].value;
+            if (x == "") {
+                swal ( "ERROR !" ,  "Please Enter A Pickup Date!" , "warning");
+                return false ; 
+            }
+
+            var x = document.forms["Booking"]["drop_date"].value;
+            if (x == "") {
+                swal ( "ERROR !" ,  "Please Enter A Drop Date !" , "warning");
+                return false ; 
+            }
+
+            var x = document.forms["Booking"]["pick_time"].value;
+            if (x == ""  ) {
+                swal ( "ERROR !" ,  "Please Enter A Pickup Time !" , "warning");
+                return false ; 
+            }
+           
+        
+        }
+    </script>
 </head>
 
 <body>
@@ -73,7 +110,8 @@
                 <div class="col-md-12	featured-top">
                     <div class="row no-gutters">
                         <div class="col-md-4 d-flex align-items-center">
-                            <form action="#" class="request-form ftco-animate bg-primary">
+                            <form action="#" class="request-form ftco-animate bg-primary" method="POST" name="Booking"
+                            onsubmit="return validate()">
                                 <h2>Make your trip</h2>
                                 <div class="form-group">
                                     <label for="" class="label">Pick-up location</label>

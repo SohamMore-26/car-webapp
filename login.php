@@ -27,20 +27,21 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
-        function validateForm() {
-            var x = document.forms["Register"]["email"].value;
+        function validateForm2() {
+            var x = document.forms["Login"]["email"].value;
             if (x == "") {
-                alert("Enter your Email !");
+                swal ( "ERROR !" ,  "Please Enter A Valid Email !" , "warning");
                 return false ;
             }
-            var x = document.forms["Register"]["password"].value;
+            var x = document.forms["Login"]["password"].value;
             if (x == "") {
-                alert("Enter your Password !");
+                swal ( "ERROR !" ,  "Please Enter Your Password !" , "warning");
                 return false ;
             }
         }
-        }
+        
         </script>
 </head>
 
@@ -85,7 +86,7 @@
     <section class="ftco-section ftco-about">
         <div class="container">
             <div class="col-md-8 block-9 mb-md-5">
-                <form action="#" class="bg-light p-5 contact-form" method="post">
+                <form action="#" class="bg-light p-5 contact-form" method="post" name="Login"  onsubmit="return validateForm2()">
                     <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
                     font-weight: 600; margin-bottom: 0.5rem !important;">Login</h2>
                     <div class="form-group">

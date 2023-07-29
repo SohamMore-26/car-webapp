@@ -27,11 +27,12 @@
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
         function validate() {
             var x = document.forms["Contact"]["name"].value;
-            if (!isNaN(x)) {
-                window.alert("Enter a Valid Name !");
+            if (!isNaN(x) || x=="") {
+              swal ( "ERROR !" ,  "Please Enter A Valid Name !" , "warning");
                 return false ;
             }
           }
