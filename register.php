@@ -182,13 +182,13 @@
 		if($add)
 		{
 			echo "<script>"; 
-			echo "alert('Data Entered Sucessfully..!')"; 
+			echo "alert('Registered Sucessfully..!')"; 
 			echo "</script>"; 
 		}
 		else
 		{
 			echo "<script>"; 
-			echo "alert('Data Entered Error..!')"; 
+			echo "alert('ERROR ! Registration Fail..!')"; 
 			echo "</script>"; 
 		}
 	}
