@@ -30,6 +30,10 @@
     <script>
         function validateForm() {
             var x = document.forms["Register"]["name"].value;
+            if (!isNaN(x)) {
+                window.alert("Enter a Valid Name !");
+                return false ;
+            }
             if (x == "") {
                 window.alert("Enter your Name !");
                 return false ;
@@ -37,7 +41,7 @@
 
             var x = document.forms["Register"]["phone"].value;
             if (isNaN(x)) {
-                window.alert("Enter Numeric Value Only !");
+                window.alert("Enter a valid Phone Number !");
                 return false ;
             }
             if (x.length != 10) {
@@ -56,11 +60,10 @@
                 return false ; 
             }
             var p = document.forms["Register"]["password"].value;
-            if (p == "") {
-                window.alert("Enter your Password !");
+            if (p == "" && p.length<5) {
+                window.alert("Enter minimum 5 digit strong Password !");
                 return false ; 
             }
-
             var y = document.forms["Register"]["cpassword"].value;
             if (y == "" && y != p) {
                 window.alert("Confirm your Password once again !");
@@ -118,10 +121,10 @@
                         <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
             font-weight: 600; margin-bottom: 0.5rem !important;">Register Here</h2>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" name="name">
+                            <input type="varchar" class="form-control" placeholder="Your Name" name="name">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Phone No." name="phone">
+                            <input type="integer" class="form-control" placeholder="Your Phone No." name="phone">
                         </div>
                         <div class="form-group">
                             <textarea type="text" class="form-control" placeholder="Your Address"
