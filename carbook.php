@@ -123,6 +123,17 @@
                                     <label for="" class="label">Drop-off location</label>
                                     <input type="text" class="form-control" placeholder="City, Airport, Station, etc" name="drop_loc" required>
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="" class="label">Select your Car</label><br>
+                                    <select class="form-control" id="cars" name="cars">
+                                        <option style="background-color:#007bff !important;" value="select">Select Your Car</option>
+                                        <option style="background-color:#007bff !important;" value="omni">Omni</option>
+                                        <option style="background-color:#007bff !important;" value="fortuner">Fortuner</option>
+                                        <option style="background-color:#007bff !important;" value="fiat">Fiat</option>
+                                        <option style="background-color:#007bff !important;" value="audi">Audi</option>
+                                      </select>
+                                </div>
                                 <div class="d-flex">
                                     <div class="form-group mr-2">
                                         <label for="" class="label">Pick-up date</label>

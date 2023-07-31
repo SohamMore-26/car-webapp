@@ -90,10 +90,10 @@
                     <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
                     font-weight: 600; margin-bottom: 0.5rem !important;">Login</h2>
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Your Email" name="email" required>
+                        <input type="email" class="form-control" placeholder="Your Email" name="email" >
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Your Password" name="password" required>
+                        <input type="password" class="form-control" placeholder="Your Password" name="password" >
                     </div>
                     <div class="form-group">
                         <input type="submit" name="login" value="Login" class="btn btn-primary py-3 px-5">
@@ -264,12 +264,13 @@ if (isset($_POST['login'])) {
 
 		echo "<script>";
 		echo "alert('Successfully Login...');";
-		echo 'window.location.href="carbook.html";';
+		echo 'window.location.href="carbook.php";';
 		echo "</script>";
 	} else {
-		echo "<script>";
-		echo "alert('Login Failed');";
-		echo "</script>";
+        echo "<script>";
+        echo "swal ( 'ERROR !' ,  'Login Failed !' , 'warning')";
+        echo "</script>";
+
 	}
 }
 
