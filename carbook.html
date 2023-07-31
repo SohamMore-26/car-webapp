@@ -33,32 +33,32 @@
         function validate() {
             var x = document.forms["Booking"]["pick_loc"].value;
             if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Pickup Location!" , "warning");
-                return false ;
+                swal("ERROR !", "Please Enter A Pickup Location!", "warning");
+                return false;
             }
 
             var x = document.forms["Booking"]["drop_loc"].value;
-            if (x=="") {
-                swal ( "ERROR !" ,  "Please Enter A Drop Location !" , "warning" );
-                return false ;
+            if (x == "") {
+                swal("ERROR !", "Please Enter A Drop Location !", "warning");
+                return false;
             }
 
             var x = document.forms["Booking"]["pick_date"].value;
             if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Pickup Date!" , "warning");
-                return false ;
+                swal("ERROR !", "Please Enter A Pickup Date!", "warning");
+                return false;
             }
 
             var x = document.forms["Booking"]["drop_date"].value;
             if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Drop Date !" , "warning");
-                return false ;
+                swal("ERROR !", "Please Enter A Drop Date !", "warning");
+                return false;
             }
 
             var x = document.forms["Booking"]["pick_time"].value;
-            if (x == ""  ) {
-                swal ( "ERROR !" ,  "Please Enter A Pickup Time !" , "warning");
-                return false ;
+            if (x == "") {
+                swal("ERROR !", "Please Enter A Pickup Time !", "warning");
+                return false;
             }
 
 
@@ -109,7 +109,7 @@
                     <div class="row no-gutters">
                         <div class="col-md-4 d-flex align-items-center">
                             <form action="#" class="request-form ftco-animate bg-primary" method="POST" name="Booking"
-                            onsubmit="return validate()">
+                                onsubmit="return validate()">
                                 <h2>Make your trip</h2>
                                 <div class="form-group">
                                     <label for="" class="label">Pick-up location</label>
@@ -122,12 +122,14 @@
                                 <div class="form-group">
                                     <label for="" class="label">Select your Car</label><br>
                                     <select class="form-control" id="cars" name="cars">
-                                        <option style="background-color:#007bff !important;" value="select">Select Your Car</option>
+                                        <option style="background-color:#007bff !important;" value="select">Select Your
+                                            Car</option>
                                         <option style="background-color:#007bff !important;" value="omni">Omni</option>
-                                        <option style="background-color:#007bff !important;" value="fortuner">Fortuner</option>
+                                        <option style="background-color:#007bff !important;" value="fortuner">Fortuner
+                                        </option>
                                         <option style="background-color:#007bff !important;" value="fiat">Fiat</option>
                                         <option style="background-color:#007bff !important;" value="audi">Audi</option>
-                                      </select>
+                                    </select>
                                 </div>
                                 <div class="d-flex">
                                     <div class="form-group mr-2">
@@ -144,7 +146,8 @@
                                     <input type="text" class="form-control" id="time_pick" placeholder="Time">
                                 </div>
                                 <div class="form-group">
-                                    <input type="button" value="Rent A Car Now" class="btn btn-secondary py-3 px-4" onclick="goto()">
+                                    <input type="button" value="Rent A Car Now" class="btn btn-secondary py-3 px-4"
+                                        onclick="goto()">
                                 </div>
                             </form>
                         </div>
@@ -212,10 +215,9 @@
 </html>
 <script>
 
-    function goto()
-    {
+    function goto() {
         alert("Login First...!!");
-        window.location.href="login.php";
+        window.location.href = "login.php";
     }
 
 </script>
