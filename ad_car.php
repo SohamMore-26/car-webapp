@@ -85,7 +85,7 @@
 								<span>Seats : 6+1</span>
 								<p class="ml-auto">A/C : yes</p>
 							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Book now</a>
+							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
 						</div>
 					</div>
 				</div>
@@ -104,7 +104,7 @@
 								<span>Seats : 7+1</span>
 								<p class="ml-auto">A/C : no</p>
 							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Book now</a>
+							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
 						</div>
 					</div>
 				</div>
@@ -123,7 +123,7 @@
 								<span>Seats : 6+1</span>
 								<p class="ml-auto">A/C : yes</p>
 							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Book now</a>
+							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
 						</div>
 					</div>
 				</div>
@@ -143,7 +143,7 @@
 								<span>Seats : 4+1</span>
 								<p class="ml-auto">A/C : yes</p>
 							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Book now</a>
+							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
 						</div>
 					</div>
 				</div>
@@ -162,7 +162,7 @@
 								<span>Seats : 4+1</span>
 								<p class="ml-auto">A/C : yes</p>
 							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Book now</a>
+							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
 						</div>
 					</div>
 				</div>
@@ -182,7 +182,7 @@
 								<span>Seats : 4+1</span>
 								<p class="ml-auto">A/C : yes</p>
 							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Book now</a>
+							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
 						</div>
 					</div>
 				</div>
@@ -201,7 +201,7 @@
 								<span>Seats : 3+1</span>
 								<p class="ml-auto">A/C : no</p>
 							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Book now</a>
+							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
 						</div>
 					</div>
 				</div>
@@ -220,7 +220,7 @@
 								<span>Seats : 6+1</span>
 								<p class="ml-auto">A/C : no</p>
 							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Book now</a>
+							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
 						</div>
 					</div>
 				</div>
@@ -239,7 +239,7 @@
 								<span>Seats : 6+1</span>
 								<p class="ml-auto">A/C : yes</p>
 							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Book now</a>
+							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
 						</div>
 					</div>
 				</div>
