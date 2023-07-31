@@ -43,7 +43,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Car<span>Book</span></a>
+      <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
@@ -112,7 +112,7 @@
         <form action="#" class="bg-light p-5 contact-form" method="post" name="Contact"
                         onsubmit="return validate()">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name" name="name" required> 
+              <input type="text" class="form-control" placeholder="Your Name" name="name" required>
             </div>
             <div class="form-group">
               <input type="email" class="form-control" placeholder="Your Email" name="email" required>
@@ -144,7 +144,7 @@
       <div class="row mb-5">
         <div class="col-md">
           <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2"><a href="#" class="logo">Car<span>book</span></a></h2>
+            <h2 class="ftco-heading-2"><a href="#" class="logo">Drive<span>Ease</span></a></h2>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
               there live the blind texts.</p>
             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
@@ -235,24 +235,24 @@
 </html>
 <?php
 
-    include "config.php"; 
+    include "config.php";
     if(isset($_POST['submit']))
 	{
-		extract($_POST); 
+		extract($_POST);
 
-		$add = mysqli_query($con,"insert into contact(c_name , c_email , subject , message)values('$name','$email','$subject' , '$Message ')") or die(mysqli_error($con));	
-		
+		$add = mysqli_query($con,"insert into contact(c_name , c_email , subject , message)values('$name','$email','$subject' , '$Message ')") or die(mysqli_error($con));
+
 		if($add)
 		{
-			echo "<script>"; 
-			echo "alert('Data Entered Sucessfully..!')"; 
-			echo "</script>"; 
+			echo "<script>";
+			echo "alert('Data Entered Sucessfully..!')";
+			echo "</script>";
 		}
 		else
 		{
-			echo "<script>"; 
-			echo "alert('Data Entered Error..!')"; 
-			echo "</script>"; 
+			echo "<script>";
+			echo "alert('Data Entered Error..!')";
+			echo "</script>";
 		}
 	}
 

@@ -36,7 +36,7 @@
                 swal ( "ERROR !" ,  "Please Enter A Pickup Location!" , "warning");
                 return false ;
             }
-            
+
             var x = document.forms["Booking"]["drop_loc"].value;
             if (x=="") {
                 swal ( "ERROR !" ,  "Please Enter A Drop Location !" , "warning" );
@@ -46,22 +46,22 @@
             var x = document.forms["Booking"]["pick_date"].value;
             if (x == "") {
                 swal ( "ERROR !" ,  "Please Enter A Pickup Date!" , "warning");
-                return false ; 
+                return false ;
             }
 
             var x = document.forms["Booking"]["drop_date"].value;
             if (x == "") {
                 swal ( "ERROR !" ,  "Please Enter A Drop Date !" , "warning");
-                return false ; 
+                return false ;
             }
 
             var x = document.forms["Booking"]["pick_time"].value;
             if (x == ""  ) {
                 swal ( "ERROR !" ,  "Please Enter A Pickup Time !" , "warning");
-                return false ; 
+                return false ;
             }
-           
-        
+
+
         }
     </script>
 
@@ -71,7 +71,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Car<span>Book</span></a>
+            <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -206,24 +206,24 @@
 </html>
 <?php
 
-    include "config.php"; 
+    include "config.php";
     if(isset($_POST['book']))
 	{
-		extract($_POST); 
+		extract($_POST);
 
-		$add = mysqli_query($con,"insert into book(pick_loc	, drop_loc , pick_date , drop_date , pick_time)values('$pick_loc','$drop_loc','$pick_date','$drop_date','$pick_time')") or die(mysqli_error($con));	
-		
+		$add = mysqli_query($con,"insert into book(pick_loc	, drop_loc , pick_date , drop_date , pick_time)values('$pick_loc','$drop_loc','$pick_date','$drop_date','$pick_time')") or die(mysqli_error($con));
+
 		if($add)
 		{
-			echo "<script>"; 
-			echo "alert('Car Booked..!')"; 
-			echo "</script>"; 
+			echo "<script>";
+			echo "alert('Car Booked..!')";
+			echo "</script>";
 		}
 		else
 		{
-			echo "<script>"; 
-			echo "alert('Error..!')"; 
-			echo "</script>"; 
+			echo "<script>";
+			echo "alert('Error..!')";
+			echo "</script>";
 		}
 	}
 

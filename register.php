@@ -35,7 +35,7 @@
                 swal ( "ERROR !" ,  "Please Enter A Valid Name !" , "warning");
                 return false ;
             }
-            
+
             var x = document.forms["Register"]["phone"].value;
             if (isNaN(x) || x.length != 10) {
                 swal ( "ERROR !" ,  "Please Enter A Valid Phone No. !" , "warning" );
@@ -45,27 +45,31 @@
             var x = document.forms["Register"]["address"].value;
             if (x == "") {
                 swal ( "ERROR !" ,  "Please Enter A Valid Address !" , "warning");
-                return false ; 
+                return false ;
             }
 
             var x = document.forms["Register"]["email"].value;
             if (x == "") {
                 swal ( "ERROR !" ,  "Please Enter A Valid Email !" , "warning");
-                return false ; 
+                return false ;
             }
 
             var p = document.forms["Register"]["password"].value;
             if (p == "" || p.length<5  ) {
                 swal ( "ERROR !" ,  "Please Enter Minimum 5 Digit Strong Password !" , "warning");
-                return false ; 
+                return false ;
             }
-           
+
             var y = document.forms["Register"]["cpassword"].value;
-            if (y == "" || y!=p) {
+            if (y == "") {
                 swal ( "ERROR !" ,  "Please Confirm Your Password Once Again !" , "warning");
-                return false ; 
-            } 
-        
+                return false ;
+            }
+            if (y!=p) {
+                swal ( "ERROR !" ,  "Passwords doesnt Match" , "warning");
+                return false ;
+            }
+
         }
     </script>
 </head>
@@ -73,7 +77,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Car<span>Book</span></a>
+            <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -172,24 +176,24 @@
 </html>
 <?php
 
-    include "config.php"; 
+    include "config.php";
     if(isset($_POST['register']))
 	{
-		extract($_POST); 
+		extract($_POST);
 
-		$add = mysqli_query($con,"insert into register(r_name , r_phone	 , r_address , r_email , r_pass	)values('$name','$phone','$address','$email','$password')") or die(mysqli_error($con));	
-		
+		$add = mysqli_query($con,"insert into register(r_name , r_phone	 , r_address , r_email , r_pass	)values('$name','$phone','$address','$email','$password')") or die(mysqli_error($con));
+
 		if($add)
 		{
-			echo "<script>"; 
-			echo "alert('Registered Sucessfully..!')"; 
-			echo "</script>"; 
+			echo "<script>";
+			echo "swal('Registered Sucessfully..!')";
+			echo "</script>";
 		}
 		else
 		{
-			echo "<script>"; 
-			echo "alert('ERROR ! Registration Fail..!')"; 
-			echo "</script>"; 
+			echo "<script>";
+			echo "swal('ERROR ! Registration Fail..!')";
+			echo "</script>";
 		}
 	}
 
