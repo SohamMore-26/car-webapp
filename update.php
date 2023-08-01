@@ -90,12 +90,18 @@
         <div class="container">
             <div class="formup">
                 <div class="col-md-8 block-9 mb-md-5">
-                    <form action="#" class="bg-light p-5 contact-form" method="post" name="Register"
-                        onsubmit="return validateForm()">
-                        <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
-            font-weight: 600; margin-bottom: 0.5rem !important;">Update Here</h2>
+                    <form  class="bg-light p-5 contact-form" method="post" name="Register" onsubmit="return validateForm()">
+                                <?php
+                                    include "config.php";
+                                    if(isset($_GET['id']))
+                                    {
+                                        $view = mysqli_query($con,"select * from car where id = '".$_GET['id']."'") or die(mysqli_error($con));
+                                        $row = mysqli_fetch_array($view);
+                                    }
+                                ?>
+                        <h2 class="bg-light p-5 contact-form" style="font-size: 40px; font-weight: 600; margin-bottom: 0.5rem !important;">Update Here</h2>
                         <div class="form-group">
-                            <input type="varchar" class="form-control" placeholder="Enter Car Name" name="car_name">
+                            <input type="varchar" class="form-control"  name="car_name" value = "<?php echo $row['car_name'];?>">
                         </div>
                         <div class="form-group">
                             <input type="varchar" class="form-control" placeholder="Enter Car Company" name="car_comp">
