@@ -229,7 +229,9 @@
                 window.location.href="ad_index.php";
             }
             else {
-                swal ( "ERROR !" ,  "Login Fail.....!" , "warning" );
+
+                swal ( "ERROR !" ,  "Login Fail.....!(Enter Correct Admin id and Password)" , "warning" );
+              
             }
 
         }
