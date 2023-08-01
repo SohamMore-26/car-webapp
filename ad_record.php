@@ -40,12 +40,12 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a href="ad_index.php" class="nav-link">Admin</a></li>
-                    <li class="nav-item active"><a href="ad_record.php" class="nav-link">User Record</a></li>
-                    <li class="nav-item"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
-                    <li class="nav-item"><a href="ad_car.php" class="nav-link">Update cars</a></li>
-                    <li class="nav-item"><a href="add.php" class="nav-link">Add cars</a></li>
-                    <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
+          <li class="nav-item"><a href="ad_index.php" class="nav-link">Admin</a></li>
+          <li class="nav-item active"><a href="ad_record.php" class="nav-link">User Record</a></li>
+          <li class="nav-item"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
+          <li class="nav-item"><a href="ad_car.php" class="nav-link">Update cars</a></li>
+          <li class="nav-item"><a href="add.php" class="nav-link">Add cars</a></li>
+          <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
         </ul>
       </div>
     </div>
@@ -69,20 +69,20 @@
   </section>
 
   <section class="intro">
-  <?php
-      include "config.php";
-      $view = mysqli_query($con,"select * from register") or die (mysqli_error($con));
+    <?php
+    include "config.php";
+    $view = mysqli_query($con, "select * from register") or die(mysqli_error($con));
     ?>
-    <div class="bg-image h-100" style="background-color: #f5f7fa";>
+    <div class="bg-image h-100" style="background-color: #f5f7fa" ;>
       <div class="mask d-flex align-items-center h-100">
         <!-- <div class="container"> -->
-          <div class="row justify-content-center">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-body p-0">
-                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true"
-                    style="position: relative; height: 700px">
-                    <center>
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body p-0">
+                <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true"
+                  style="position: relative; height: 700px">
+                  <center>
                     <table class="table table-striped mb-0">
                       <thead style="background-color: #80f08e; ">
                         <tr class="text-center" data-expanded="true">
@@ -95,26 +95,38 @@
                         </tr>
                       </thead>
                       <tbody>
-                      <?php
-                        while($row = mysqli_fetch_array($view)){
-                            extract($row);?>
-                        <tr class="text-center">
-                          <td><?php echo $row['r_id'];?></td>
-                          <td><?php echo $row['r_name'];?></td>
-                          <td><?php echo $row['r_phone'];?></td>
-                          <td><?php echo $row['r_address'];?></td>
-                          <td><?php echo $row['r_email'];?></td>
-                          <td><?php echo $row['r_pass'];?></td>
-                        </tr>
+                        <?php
+                        while ($row = mysqli_fetch_array($view)) {
+                          extract($row); ?>
+                          <tr class="text-center">
+                            <td>
+                              <?php echo $row['r_id']; ?>
+                            </td>
+                            <td>
+                              <?php echo $row['r_name']; ?>
+                            </td>
+                            <td>
+                              <?php echo $row['r_phone']; ?>
+                            </td>
+                            <td>
+                              <?php echo $row['r_address']; ?>
+                            </td>
+                            <td>
+                              <?php echo $row['r_email']; ?>
+                            </td>
+                            <td>
+                              <?php echo $row['r_pass']; ?>
+                            </td>
+                          </tr>
                         <?php } ?>
                       </tbody>
                     </table>
-                    </center>
-                  </div>
+                  </center>
                 </div>
               </div>
             </div>
           </div>
+        </div>
         <!-- </div> -->
       </div>
     </div>

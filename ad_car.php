@@ -41,7 +41,8 @@
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-				<li class="nav-item"><a href="ad_record.php" class="nav-link">User Record</a></li>
+					<li class="nav-item active"><a href="ad_index.php" class="nav-link">Admin</a></li>
+					<li class="nav-item"><a href="ad_record.php" class="nav-link">User Record</a></li>
                     <li class="nav-item"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
                     <li class="nav-item active"><a href="ad_car.php" class="nav-link">Update cars</a></li>
                     <li class="nav-item"><a href="add.php" class="nav-link">Add cars</a></li>
@@ -72,15 +73,15 @@
    	   $view = mysqli_query($con,"select * from car") or die (mysqli_error($con));
    	 ?>
 		<div class="container">
-		
+
 			<div class="row">
-				<?php 
+				<?php
            		while($row = mysqli_fetch_array($view))
            		{
             		extract($row);
          			?>
 				<div class="col-md-4">
-				
+
 					<div class="car-wrap rounded ftco-animate">
 						<div class="img rounded d-flex align-items-end"
 							style="background-image: url(images/<?php echo $row['photo'];?>);">
@@ -95,16 +96,16 @@
 								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
-							
+
 							<p class="d-flex mb-0 d-block"><a href="update.php" class="btn btn-primary py-2 mr-1">Update</a>
 						</div>
-						
+
 					</div>
-					
+
 				</div>
 				<?php }?>
 			</div>
-			
+
 		</div>
 		</div>
 	</section>

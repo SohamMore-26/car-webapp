@@ -68,6 +68,7 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="ad_index.php" class="nav-link">Admin</a></li>
                     <li class="nav-item"><a href="ad_record.php" class="nav-link">User Record</a></li>
                     <li class="nav-item"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
                     <li class="nav-item"><a href="ad_car.php" class="nav-link">Update cars</a></li>
@@ -77,7 +78,7 @@
             </div>
         </div>
     </nav>
-    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');"
+    <section class="hero-wrap hero-wrap-3 js-fullheight" style="background-image: url('images/bg_2.jpg');"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
