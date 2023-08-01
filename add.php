@@ -32,26 +32,26 @@
         function validateForm() {
             var x = document.forms["Register"]["car_name"].value;
             if (!isNaN(x) || x == "") {
-                swal ( "ERROR !" ,  "Please Enter Car Name !" , "warning");
-                return false ;
+                swal("ERROR !", "Please Enter Car Name !", "warning");
+                return false;
             }
 
             var x = document.forms["Register"]["car_comp"].value;
             if (!isNaN(x) || x == "") {
-                swal ( "ERROR !" ,  "Please Enter Car Company Name !" , "warning" );
-                return false ;
+                swal("ERROR !", "Please Enter Car Company Name !", "warning");
+                return false;
             }
 
             var x = document.forms["Register"]["car_price"].value;
             if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter Price !" , "warning");
-                return false ;
+                swal("ERROR !", "Please Enter Price !", "warning");
+                return false;
             }
 
             var x = document.forms["Register"]["car_seat"].value;
             if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter Seat  !" , "warning");
-                return false ;
+                swal("ERROR !", "Please Enter Seat  !", "warning");
+                return false;
             }
         }
     </script>
@@ -60,13 +60,37 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Drive<span style = "color : white ; ">Ease</span></a>
+            <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="ad_record.php" class="nav-link">User Record</a></li>
+                    <li class="nav-item"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
+                    <li class="nav-item"><a href="ad_car.php" class="nav-link">Update cars</a></li>
+                    <li class="nav-item active"><a href="add.php" class="nav-link">Add cars</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+				<div class="col-md-9 ftco-animate pb-5">
+					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+									class="ion-ios-arrow-forward"></i></a></span> <span>Cars <i
+								class="ion-ios-arrow-forward"></i></span></p>
+					<h1 class="mb-3 bread">Add New Car</h1>
+				</div>
+			</div>
+		</div>
+	</section>
     <!-- END nav -->
     <section class="ftco-section ftco-intro">
         <div class="overlay"></div>
@@ -89,12 +113,12 @@
                         <div class="form-group">
                             <input type="varchar" class="form-control" placeholder="Enter No. Of Seats" name="car_seat">
                         </div>
-                        <div class="form-group"> 
+                        <div class="form-group">
                             <input type="radio" name="car_ac" value="Yes" class="btn btn-primary py-3 px-5"> Yes
                             <input type="radio" name="car_ac" value="No" class="btn btn-primary py-3 px-5"> No
                         </div>
                         <div class="form-group">
-                        Select Car Photo <input type="file" class="form-control" name="photo">
+                            Select Car Photo <input type="file" class="form-control" name="photo">
                         </div>
                         <div class="form-group">
                             <input type="submit" name="add" value="Add Now" class="btn btn-primary py-3 px-5">
@@ -128,33 +152,29 @@
 </body>
 
 </html>
-<?php 
-	include "config.php";
+<?php
+include "config.php";
 
-	if(isset($_POST['add']))
-	{
-		extract($_POST);
-        // if ($name) {
+if (isset($_POST['add'])) {
+    extract($_POST);
+    // if ($name) {
 
-        //     $upload = "images/";
-        //     $imgExt = strtolower(pathinfo($name, PATHINFO_EXTENSION));
-        //     $valid_ext = array('jpg', 'png', 'jpeg');
-        //     $photo = rand(1000, 1000000) . "." . $imgExt;
-        //     move_uploaded_file($temp, $upload . $photo);
-        // }
+    //     $upload = "images/";
+    //     $imgExt = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+    //     $valid_ext = array('jpg', 'png', 'jpeg');
+    //     $photo = rand(1000, 1000000) . "." . $imgExt;
+    //     move_uploaded_file($temp, $upload . $photo);
+    // }
 
-		$add = mysqli_query($con,"insert into car(car_name, car_comp, car_price, car_seat, car_ac, photo) values('$car_name','$car_comp','$car_price','$car_seat','$car_ac','$photo')") or die(mysqli_error($con));
-		if($add)
-		{
-            echo "<script>";
-            echo "window.alert('Data insert successfully.....!')";
-            echo "</script>";
-        }
-        else
-        {
-            echo "<script>";
-            echo "window.alert('Data Error...!')";
-            echo "</script>";
-        }
-	}
+    $add = mysqli_query($con, "insert into car(car_name, car_comp, car_price, car_seat, car_ac, photo) values('$car_name','$car_comp','$car_price','$car_seat','$car_ac','$photo')") or die(mysqli_error($con));
+    if ($add) {
+        echo "<script>";
+        echo "window.alert('Data insert successfully.....!')";
+        echo "</script>";
+    } else {
+        echo "<script>";
+        echo "window.alert('Data Error...!')";
+        echo "</script>";
+    }
+}
 ?>
