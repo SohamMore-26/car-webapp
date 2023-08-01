@@ -41,7 +41,7 @@
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="ad_index.php" class="nav-link">Admin</a></li>
+					<li class="nav-item"><a href="ad_index.php" class="nav-link">Admin</a></li>
 					<li class="nav-item"><a href="ad_record.php" class="nav-link">User Record</a></li>
                     <li class="nav-item"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
                     <li class="nav-item active"><a href="ad_car.php" class="nav-link">Update cars</a></li>
