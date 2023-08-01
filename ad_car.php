@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Carbook - View Cars</title>
+	<title>Carbook - Update Cars</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -41,10 +41,10 @@
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-				<li class="nav-item"><a href="ad_index.php" class="nav-link">Admin</a></li>
-                    <li class="nav-item"><a href="ad_record.php" class="nav-link">User Record</a></li>
+				<li class="nav-item"><a href="ad_record.php" class="nav-link">User Record</a></li>
                     <li class="nav-item"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
                     <li class="nav-item active"><a href="ad_car.php" class="nav-link">Update cars</a></li>
+                    <li class="nav-item"><a href="add.php" class="nav-link">Add cars</a></li>
                     <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
                 </ul>
 			</div>
@@ -67,187 +67,47 @@
 	</section>
 
 	<section class="ftco-section bg-light">
+	<?php
+      include "config.php";
+      $view = mysqli_query($con,"select * from car") or die (mysqli_error($con));
+    ?>
 		<div class="container">
+		
 			<div class="row">
+				<?php 
+           		while($row = mysqli_fetch_array($view))
+           		{
+            		extract($row);
+         			?>
 				<div class="col-md-4">
+				
 					<div class="car-wrap rounded ftco-animate">
 						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/cr-1.jpg);">
+							style="background-image: url(images/<?php echo $row['photo'];?>);">
 						</div>
 						<div class="text">
-							<h2 class="mb-0"><a href="car-single.html">Scorpio</a></h2>
+							<h2 class="mb-0"><?php echo $row['car_name'];?></h2>
 							<div class="d-flex mb-3">
-								<span class="cat">Mahindra</span>
-								<p class="price ml-auto">Rs.950 <span>/day</span></p>
+								<span class="cat"><?php echo $row['car_comp'];?></span>
+								<p class="price ml-auto">Rs.<?php echo $row['car_price'];?><span>/day</span></p>
 							</div>
 							<div class="d-flex mb-3">
-								<span>Seats : 6+1</span>
-								<p class="ml-auto">A/C : yes</p>
+								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
+								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
+							
+							<p class="d-flex mb-0 d-block"><a href="update.php" class="btn btn-primary py-2 mr-1">Update</a>
 						</div>
+						
 					</div>
+					
 				</div>
-				<div class="col-md-4">
-					<div class="car-wrap rounded ftco-animate">
-						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/omni.jpeg);">
-						</div>
-						<div class="text">
-							<h2 class="mb-0"><a href="car-single.html">Omni</a></h2>
-							<div class="d-flex mb-3">
-								<span class="cat">Maruti Suzuki</span>
-								<p class="price ml-auto">Rs.500 <span>/day</span></p>
-							</div>
-							<div class="d-flex mb-3">
-								<span>Seats : 7+1</span>
-								<p class="ml-auto">A/C : no</p>
-							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="car-wrap rounded ftco-animate">
-						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/inova.jpg);">
-						</div>
-						<div class="text">
-							<h2 class="mb-0"><a href="car-single.html">Innova</a></h2>
-							<div class="d-flex mb-3">
-								<span class="cat">Toyota</span>
-								<p class="price ml-auto">Rs.1050 <span>/day</span></p>
-							</div>
-							<div class="d-flex mb-3">
-								<span>Seats : 6+1</span>
-								<p class="ml-auto">A/C : yes</p>
-							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="car-wrap rounded ftco-animate">
-						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/i10.png);">
-						</div>
-						<div class="text">
-							<h2 class="mb-0"><a href="car-single.html">Grand i10</a></h2>
-							<div class="d-flex mb-3">
-								<span class="cat">Hyundai</span>
-								<p class="price ml-auto">Rs.1050 <span>/day</span></p>
-							</div>
-							<div class="d-flex mb-3">
-								<span>Seats : 4+1</span>
-								<p class="ml-auto">A/C : yes</p>
-							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="car-wrap rounded ftco-animate">
-						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/dzire.jpg);">
-						</div>
-						<div class="text">
-							<h2 class="mb-0"><a href="car-single.html">Swift Dzire</a></h2>
-							<div class="d-flex mb-3">
-								<span class="cat">Maruti</span>
-								<p class="price ml-auto">Rs.950 <span>/day</span></p>
-							</div>
-							<div class="d-flex mb-3">
-								<span>Seats : 4+1</span>
-								<p class="ml-auto">A/C : yes</p>
-							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="car-wrap rounded ftco-animate">
-						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/hondacity.jpg);">
-						</div>
-						<div class="text">
-							<h2 class="mb-0"><a href="car-single.html">Honda City</a></h2>
-							<div class="d-flex mb-3">
-								<span class="cat">Honda</span>
-								<p class="price ml-auto">Rs.800 <span>/day</span></p>
-							</div>
-							<div class="d-flex mb-3">
-								<span>Seats : 4+1</span>
-								<p class="ml-auto">A/C : yes</p>
-							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="car-wrap rounded ftco-animate">
-						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/nano.JPG);">
-						</div>
-						<div class="text">
-							<h2 class="mb-0"><a href="car-single.html">Nano</a></h2>
-							<div class="d-flex mb-3">
-								<span class="cat">Cheverolet</span>
-								<p class="price ml-auto">Rs.450 <span>/day</span></p>
-							</div>
-							<div class="d-flex mb-3">
-								<span>Seats : 3+1</span>
-								<p class="ml-auto">A/C : no</p>
-							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="car-wrap rounded ftco-animate">
-						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/bolero.jpg);">
-						</div>
-						<div class="text">
-							<h2 class="mb-0"><a href="car-single.html">Bolero</a></h2>
-							<div class="d-flex mb-3">
-								<span class="cat">Tata</span>
-								<p class="price ml-auto">Rs.850 <span>/day</span></p>
-							</div>
-							<div class="d-flex mb-3">
-								<span>Seats : 6+1</span>
-								<p class="ml-auto">A/C : no</p>
-							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="car-wrap rounded ftco-animate">
-						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/fortuner.jpg);">
-						</div>
-						<div class="text">
-							<h2 class="mb-0"><a href="car-single.html">Fortuner</a></h2>
-							<div class="d-flex mb-3">
-								<span class="cat">Mahindra</span>
-								<p class="price ml-auto">Rs.4500 <span>/day</span></p>
-							</div>
-							<div class="d-flex mb-3">
-								<span>Seats : 6+1</span>
-								<p class="ml-auto">A/C : yes</p>
-							</div>
-							<p class="d-flex mb-0 d-block"><a href="carbook.html" class="btn btn-primary py-2 mr-1">Update</a>
-						</div>
-					</div>
-				</div>
+				<?php }?>
 			</div>
+			
 		</div>
 		</div>
 	</section>
-
-
 
 	<footer class="ftco-footer ftco-bg-dark ftco-section">
 		<div class="container">

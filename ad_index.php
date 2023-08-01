@@ -44,6 +44,7 @@
                     <li class="nav-item"><a href="ad_record.php" class="nav-link">User Record</a></li>
                     <li class="nav-item"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
                     <li class="nav-item"><a href="ad_car.php" class="nav-link">Update cars</a></li>
+                    <li class="nav-item"><a href="add.php" class="nav-link">Add cars</a></li>
                     <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
                 </ul>
             </div>
