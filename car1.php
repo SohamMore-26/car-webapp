@@ -32,7 +32,7 @@
     {
         swal("Login First..!");
         window.location.href="login.php";
-    }    
+    }
 
 </script>
 
@@ -82,15 +82,15 @@
    	   $view = mysqli_query($con,"select * from car") or die (mysqli_error($con));
    	 ?>
 		<div class="container">
-		
+
 			<div class="row">
-				<?php 
+				<?php
            		while($row = mysqli_fetch_array($view))
            		{
             		extract($row);
          			?>
 				<div class="col-md-4">
-				
+
 					<div class="car-wrap rounded ftco-animate">
 						<div class="img rounded d-flex align-items-end"
 							style="background-image: url(images/<?php echo $row['photo'];?>);">
@@ -102,20 +102,20 @@
 								<p class="price ml-auto">Rs.<?php echo $row['car_price'];?><span>/day</span></p>
 							</div>
 							<div class="d-flex mb-3">
-								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
+								<span>Seats : <?php echo $row['car_seat'];?></span>
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
-							
+
 							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1"
                                         onclick="login()">
 						</div>
-						
+
 					</div>
-					
+
 				</div>
 				<?php }?>
 			</div>
-			
+
 		</div>
 		</div>
 	</section>
