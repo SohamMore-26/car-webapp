@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Carbook - Update Cars</title>
+	<title>Carbook - View Cars</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -27,6 +27,15 @@
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
+    <script>
+    function login()
+    {
+        swal("Login First..!");
+        window.location.href="login.php";
+    }    
+
+</script>
+
 </head>
 
 <body>
@@ -41,11 +50,11 @@
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-				<li class="nav-item"><a href="ad_record.php" class="nav-link">User Record</a></li>
-                    <li class="nav-item"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
-                    <li class="nav-item active"><a href="ad_car.php" class="nav-link">Update cars</a></li>
-                    <li class="nav-item"><a href="add.php" class="nav-link">Add cars</a></li>
-                    <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="carbook.html" class="nav-link">Booking</a></li>
+                    <li class="nav-item active"><a href="car.html" class="nav-link">Cars</a></li>
+                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>
                 </ul>
 			</div>
 		</div>
@@ -65,6 +74,7 @@
 			</div>
 		</div>
 	</section>
+
 
 	<section class="ftco-section bg-light">
 		<?php
@@ -96,7 +106,8 @@
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 							
-							<p class="d-flex mb-0 d-block"><a href="update.php" class="btn btn-primary py-2 mr-1">Update</a>
+							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1"
+                                        onclick="login()">
 						</div>
 						
 					</div>
@@ -108,6 +119,8 @@
 		</div>
 		</div>
 	</section>
+
+
 
 	<footer class="ftco-footer ftco-bg-dark ftco-section">
 		<div class="container">
