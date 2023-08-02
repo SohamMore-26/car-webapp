@@ -79,14 +79,18 @@
 	<section class="ftco-section bg-light">
 		<?php
     	  include "config.php";
-   	   $view = mysqli_query($con,"select * from car") or die (mysqli_error($con));
+   	   $view = mysqli_query($con,"select * from car where car_category = 'Suv'") or die (mysqli_error($con));
+   	   $view1 = mysqli_query($con,"select * from car where car_category = 'Sedan'") or die (mysqli_error($con));
+   	   $view2 = mysqli_query($con,"select * from car where car_category = 'Hatchback'") or die (mysqli_error($con));
+   	   $view3 = mysqli_query($con,"select * from car where car_category = 'Compact'") or die (mysqli_error($con));
    	 ?>
 		<div class="container">
-
+			<h1 class=" p-5 ">Suv</h1>
 			<div class="row">
 				<?php
            		while($row = mysqli_fetch_array($view))
-           		{
+           		{	
+					
             		extract($row);
          			?>
 				<div class="col-md-4">
@@ -102,7 +106,109 @@
 								<p class="price ml-auto">Rs.<?php echo $row['car_price'];?><span>/day</span></p>
 							</div>
 							<div class="d-flex mb-3">
-								<span>Seats : <?php echo $row['car_seat'];?></span>
+								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
+								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
+							</div>
+
+							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1"
+                                        onclick="login()">
+						</div>
+
+					</div>
+
+				</div>
+				<?php }?>
+			</div>
+			<h1 class=" p-5 ">Sedan</h1>
+			<div class="row">
+				<?php
+           		while($row = mysqli_fetch_array($view1))
+           		{	
+					
+            		extract($row);
+         			?>
+				<div class="col-md-4">
+
+					<div class="car-wrap rounded ftco-animate">
+						<div class="img rounded d-flex align-items-end"
+							style="background-image: url(images/<?php echo $row['photo'];?>);">
+						</div>
+						<div class="text">
+							<h2 class="mb-0"><?php echo $row['car_name'];?></h2>
+							<div class="d-flex mb-3">
+								<span class="cat"><?php echo $row['car_comp'];?></span>
+								<p class="price ml-auto">Rs.<?php echo $row['car_price'];?><span>/day</span></p>
+							</div>
+							<div class="d-flex mb-3">
+								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
+								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
+							</div>
+
+							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1"
+                                        onclick="login()">
+						</div>
+
+					</div>
+
+				</div>
+				<?php }?>
+			</div>
+			<h1 class=" p-5 ">Hatchback</h1>
+			<div class="row">
+				<?php
+           		while($row = mysqli_fetch_array($view2))
+           		{	
+					
+            		extract($row);
+         			?>
+				<div class="col-md-4">
+
+					<div class="car-wrap rounded ftco-animate">
+						<div class="img rounded d-flex align-items-end"
+							style="background-image: url(images/<?php echo $row['photo'];?>);">
+						</div>
+						<div class="text">
+							<h2 class="mb-0"><?php echo $row['car_name'];?></h2>
+							<div class="d-flex mb-3">
+								<span class="cat"><?php echo $row['car_comp'];?></span>
+								<p class="price ml-auto">Rs.<?php echo $row['car_price'];?><span>/day</span></p>
+							</div>
+							<div class="d-flex mb-3">
+								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
+								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
+							</div>
+
+							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1"
+                                        onclick="login()">
+						</div>
+
+					</div>
+
+				</div>
+				<?php }?>
+			</div>
+			<h1 class=" p-5 ">Compact</h1>
+			<div class="row">
+				<?php
+           		while($row = mysqli_fetch_array($view3))
+           		{	
+					
+            		extract($row);
+         			?>
+				<div class="col-md-4">
+
+					<div class="car-wrap rounded ftco-animate">
+						<div class="img rounded d-flex align-items-end"
+							style="background-image: url(images/<?php echo $row['photo'];?>);">
+						</div>
+						<div class="text">
+							<h2 class="mb-0"><?php echo $row['car_name'];?></h2>
+							<div class="d-flex mb-3">
+								<span class="cat"><?php echo $row['car_comp'];?></span>
+								<p class="price ml-auto">Rs.<?php echo $row['car_price'];?><span>/day</span></p>
+							</div>
+							<div class="d-flex mb-3">
+								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 
