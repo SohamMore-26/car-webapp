@@ -86,7 +86,7 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="carbook.html" class="nav-link">Booking</a></li>
+                    <li class="nav-item"><a href="carbook.php" class="nav-link">Booking</a></li>
                     <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                     <li class="nav-item active"><a href="login.php" class="nav-link">Login</a></li>
@@ -132,7 +132,7 @@
                                 name="address"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email" name="email">
+                            <input type="email" class="form-control" placeholder="Your Email" name="email">
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" placeholder="Enter Password" name="password">

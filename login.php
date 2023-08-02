@@ -1,4 +1,3 @@
-<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,7 +56,7 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="carbook.html" class="nav-link">Booking</a></li>
+                    <li class="nav-item"><a href="carbook.php" class="nav-link">Booking</a></li>
                     <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                     <li class="nav-item active"><a href="login.php" class="nav-link">Login</a></li>
@@ -251,24 +250,26 @@ if (isset($_POST['login'])) {
 	extract($_POST);
 
 	$email = mysqli_real_escape_string($con, $_POST['email']);
+	$name = mysqli_real_escape_string($con, $_POST['r_name']);
 	$password = mysqli_real_escape_string($con, $_POST['password']);
 
 	$log = mysqli_query($con, "select * from register where r_email='$email' and r_pass='$password'") or die(mysqli_error($con));
 
-	if (mysqli_num_rows($log) > 0) {
+	if (mysqli_num_rows($log) > 0 ) {
 
-		$fetch = mysqli_fetch_array($log);
-
-		$_SESSION['id'] = $fetch['id'];
-		$_SESSION['email'] = $fetch['email'];
+        $fetch = mysqli_fetch_array($log);
+        session_start(); 
+		$_SESSION['login'] = true;
+        $_SESSION['email'] = $fetch['email']; 
+		$_SESSION['$name'] = $fetch['r_name'];
 
 		echo "<script>";
-		echo "alert('Successfully Login...');";
+		echo "swal('Successfully Login...');";
 		echo 'window.location.href="carbook.php";';
 		echo "</script>";
 	} else {
         echo "<script>";
-        echo "swal ( 'ERROR !' ,  'Login Failed !' , 'warning')";
+        echo "swal ( 'ERROR !' ,  'Login Failed !' , 'error')";
         echo "</script>";
 
 	}

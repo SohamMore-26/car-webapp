@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Carbook - Register Now</title>
+    <title>Welcome -  </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -33,31 +33,31 @@
         function validate() {
             var x = document.forms["Booking"]["pick_loc"].value;
             if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Pickup Location!" , "warning");
+                swal ( "ERROR !" ,  "Please Enter A Pickup Location!" , "error");
                 return false ;
             }
 
             var x = document.forms["Booking"]["drop_loc"].value;
             if (x=="") {
-                swal ( "ERROR !" ,  "Please Enter A Drop Location !" , "warning" );
+                swal ( "ERROR !" ,  "Please Enter A Drop Location !" , "error" );
                 return false ;
             }
 
             var x = document.forms["Booking"]["pick_date"].value;
             if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Pickup Date!" , "warning");
+                swal ( "ERROR !" ,  "Please Enter A Pickup Date!" , "error");
                 return false ;
             }
 
             var x = document.forms["Booking"]["drop_date"].value;
             if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Drop Date !" , "warning");
+                swal ( "ERROR !" ,  "Please Enter A Drop Date !" , "error");
                 return false ;
             }
 
             var x = document.forms["Booking"]["pick_time"].value;
             if (x == ""  ) {
-                swal ( "ERROR !" ,  "Please Enter A Pickup Time !" , "warning");
+                swal ( "ERROR !" ,  "Please Enter A Pickup Time !" , "error");
                 return false ;
             }
 
@@ -80,10 +80,11 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item active"><a href="carbook.html" class="nav-link">Booking</a></li>
+                    <li class="nav-item active"><a href="carbook.php" class="nav-link">Booking</a></li>
                     <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                     <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -232,13 +233,13 @@
 		if($add)
 		{
 			echo "<script>";
-			echo "alert('Car Booked..!')";
+			echo "swal('Car Booked..!')";
 			echo "</script>";
 		}
 		else
 		{
 			echo "<script>";
-			echo "alert('Error..!')";
+			echo "swal('Error..!' , Car not Booked ! , 'errors')";
 			echo "</script>";
 		}
 	}

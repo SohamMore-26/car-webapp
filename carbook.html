@@ -33,31 +33,31 @@
         function validate() {
             var x = document.forms["Booking"]["pick_loc"].value;
             if (x == "") {
-                swal("ERROR !", "Please Enter A Pickup Location!", "warning");
+                swal("ERROR !", "Please Enter A Pickup Location!", "error");
                 return false;
             }
 
             var x = document.forms["Booking"]["drop_loc"].value;
             if (x == "") {
-                swal("ERROR !", "Please Enter A Drop Location !", "warning");
+                swal("ERROR !", "Please Enter A Drop Location !", "error");
                 return false;
             }
 
             var x = document.forms["Booking"]["pick_date"].value;
             if (x == "") {
-                swal("ERROR !", "Please Enter A Pickup Date!", "warning");
+                swal("ERROR !", "Please Enter A Pickup Date!", "error");
                 return false;
             }
 
             var x = document.forms["Booking"]["drop_date"].value;
             if (x == "") {
-                swal("ERROR !", "Please Enter A Drop Date !", "warning");
+                swal("ERROR !", "Please Enter A Drop Date !", "error");
                 return false;
             }
 
             var x = document.forms["Booking"]["pick_time"].value;
             if (x == "") {
-                swal("ERROR !", "Please Enter A Pickup Time !", "warning");
+                swal("ERROR !", "Please Enter A Pickup Time !", "error");
                 return false;
             }
 
