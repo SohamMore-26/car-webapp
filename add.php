@@ -104,7 +104,7 @@
                             font-weight: 600; margin-bottom: 0.5rem !important;">Add New Car</h2>
                         <div class="form-group">
                         <label for="" class="label">Select Car Category</label><br>
-                         <select class="form-control" id="cars" name="cars">
+                         <select class="form-control" id="cars" name="car_category">
                             <option class="form-control" value="">Select Car Category</option>
                             <option class="form-control" value="Suv">Suv</option>
                             <option class="form-control" value="Sedan">Sedan</option>
@@ -182,11 +182,11 @@ if (isset($_POST['add'])) {
     $add = mysqli_query($con, "insert into car(car_category,car_name, car_comp, car_price, car_seat, car_ac, photo) values('$car_category','$car_name','$car_comp','$car_price','$car_seat','$car_ac','$photo')") or die(mysqli_error($con));
     if ($add) {
         echo "<script>";
-        echo "window.alert('Data insert successfully.....!')";
+        echo "window.alert('Car Added successfully.....!')";
         echo "</script>";
     } else {
         echo "<script>";
-        echo "window.alert('Data Error...!')";
+        echo "window.alert('Error To Add...!')";
         echo "</script>";
     }
 }
