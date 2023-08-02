@@ -107,6 +107,10 @@
     </div>
 
     <section class="ftco-section ftco-no-pt bg-light">
+    <?php
+    include "config.php";
+    $view = mysqli_query($con, "select * from car") or die(mysqli_error($con));
+    ?>
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-12	featured-top">
@@ -123,16 +127,17 @@
                                     <label for="" class="label">Drop-off location</label>
                                     <input type="text" class="form-control" placeholder="City, Airport, Station, etc" name="drop_loc" required>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="" class="label">Select your Car</label><br>
                                     <select class="form-control" id="cars" name="cars">
                                         <option style="background-color:#007bff !important;" value="select">Select Your Car</option>
-                                        <option style="background-color:#007bff !important;" value="omni">Omni</option>
-                                        <option style="background-color:#007bff !important;" value="fortuner">Fortuner</option>
-                                        <option style="background-color:#007bff !important;" value="fiat">Fiat</option>
-                                        <option style="background-color:#007bff !important;" value="audi">Audi</option>
-                                      </select>
+                                    <?php
+                        while ($row = mysqli_fetch_array($view)) {
+                          extract($row); ?>
+                                        <option style="background-color:#007bff !important;" value=""><?php echo $row['car_name']; ?></option>
+                                        <?php } ?>  
+                                    </select>
+                                      
                                 </div>
                                 <div class="d-flex">
                                     <div class="form-group mr-2">
@@ -185,7 +190,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p><a href="car.html" class="btn btn-primary py-3 px-4">Reserve Your Perfect Car</a></p>
+                                <!-- <p><a href="car.html" class="btn btn-primary py-3 px-4">Reserve Your Perfect Car</a></p> -->
                             </div>
                         </div>
                     </div>
