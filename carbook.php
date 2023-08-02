@@ -146,12 +146,12 @@
                                     </div>
                                     <div class="form-group ml-2">
                                         <label for="" class="label">Drop-off date</label>
-                                        <input type="text" class="form-control" id="book_off_date" placeholder="Date" name="drop_date" required>
+                                        <input type="text" class="form-control" id="book_pick_date" placeholder="Date" name="drop_date" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="label">Pick-up time</label>
-                                    <input type="text" class="form-control" id="time_pick" placeholder="Time" name="pick_time" required>
+                                    <input type="time" class="form-control" id="" placeholder="Time" name="pick_time" required>
                                 </div>
                                 <div class="form-group">
                                     <input name="book" type="submit" value="Rent A Car Now" class="btn btn-secondary py-3 px-4">

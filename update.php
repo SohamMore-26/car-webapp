@@ -28,50 +28,6 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script>
-        function validateForm() {
-            var x = document.forms["Register"]["name"].value;
-            if (!isNaN(x) || x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Valid Name !" , "warning");
-                return false ;
-            }
-
-            var x = document.forms["Register"]["phone"].value;
-            if (isNaN(x) || x.length != 10) {
-                swal ( "ERROR !" ,  "Please Enter A Valid Phone No. !" , "warning" );
-                return false ;
-            }
-
-            var x = document.forms["Register"]["address"].value;
-            if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Valid Address !" , "warning");
-                return false ;
-            }
-
-            var x = document.forms["Register"]["email"].value;
-            if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Valid Email !" , "warning");
-                return false ;
-            }
-
-            var p = document.forms["Register"]["password"].value;
-            if (p == "" || p.length<5  ) {
-                swal ( "ERROR !" ,  "Please Enter Minimum 5 Digit Strong Password !" , "warning");
-                return false ;
-            }
-
-            var y = document.forms["Register"]["cpassword"].value;
-            if (y == "") {
-                swal ( "ERROR !" ,  "Please Confirm Your Password Once Again !" , "warning");
-                return false ;
-            }
-            if (y!=p) {
-                swal ( "ERROR !" ,  "Passwords doesnt Match" , "warning");
-                return false ;
-            }
-
-        }
-    </script>
 </head>
 
 <body>
@@ -91,7 +47,8 @@
             <div class="formup">
                 <div class="col-md-8 block-9 mb-md-5">
                     <form  class="bg-light p-5 contact-form" method="post" name="Register" onsubmit="return validateForm()">
-                                <?php
+                        <h2 class="bg-light p-5 contact-form" style="font-size: 40px; font-weight: 600; margin-bottom: 0.5rem !important;">Update Here</h2>
+                        <?php
                                     include "config.php";
                                     if(isset($_GET['id']))
                                     {
@@ -99,7 +56,6 @@
                                         $row = mysqli_fetch_array($view);
                                     }
                                 ?>
-                        <h2 class="bg-light p-5 contact-form" style="font-size: 40px; font-weight: 600; margin-bottom: 0.5rem !important;">Update Here</h2>
                         <div class="form-group">
                             <input type="varchar" class="form-control"  name="car_name" value = "<?php echo $row['car_name'];?>">
                         </div>
@@ -113,8 +69,9 @@
                             <input type="varchar" class="form-control" placeholder="Enter No. Of Seats" name="car_seat">
                         </div>
                         <div class="form-group">
-                            <input type="radio" name="register" value="Ac" class="btn btn-primary py-3 px-5"> Ac
-                            <input type="radio" name="register" value="Non Ac" class="btn btn-primary py-3 px-5"> Non Ac 
+                            A/C
+                            <input type="radio" name="register" value="Yes" class="btn btn-primary py-3 px-5"> Yes
+                            <input type="radio" name="register" value="No" class="btn btn-primary py-3 px-5"> No  
                         </div>
                         <div class="form-group">
                         Select Car Photo <input type="file" class="form-control" name="photo"> 
