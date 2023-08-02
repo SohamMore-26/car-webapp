@@ -101,7 +101,18 @@
                     <form class="bg-light p-5 contact-form" method="post" name="Register"
                         onsubmit="return validateForm()">
                         <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
-            font-weight: 600; margin-bottom: 0.5rem !important;">Add New Car</h2>
+                            font-weight: 600; margin-bottom: 0.5rem !important;">Add New Car</h2>
+                        <div class="form-group">
+                        <label for="" class="label">Select Car Category</label><br>
+                         <select class="form-control" id="cars" name="cars">
+                            <option class="form-control" value="">Select Car Category</option>
+                            <option class="form-control" value="Suv">Suv</option>
+                            <option class="form-control" value="Sedan">Sedan</option>
+                            <option class="form-control" value="Hatchback">Hatchback</option>
+                            <option class="form-control" value="Compact">Compact </option>
+                            <option class="form-control" value="Crossover">Crossover</option>
+                            </select>        
+                        </div>
                         <div class="form-group">
                             <input type="varchar" class="form-control" placeholder="Enter Car Name" name="car_name">
                         </div>
@@ -116,7 +127,7 @@
                         </div>
                         <div class="form-group">
                             A/C
-                            <input type="radio" name="car_ac" value="Yes" class="btn btn-primary py-3 px-5"> Yes
+                            <br><input type="radio" name="car_ac" value="Yes" class="btn btn-primary py-3 px-5"> Yes
                             <input type="radio" name="car_ac" value="No" class="btn btn-primary py-3 px-5"> No
                         </div>
                         <div class="form-group">
@@ -168,7 +179,7 @@ if (isset($_POST['add'])) {
     //     move_uploaded_file($temp, $upload . $photo);
     // }
 
-    $add = mysqli_query($con, "insert into car(car_name, car_comp, car_price, car_seat, car_ac, photo) values('$car_name','$car_comp','$car_price','$car_seat','$car_ac','$photo')") or die(mysqli_error($con));
+    $add = mysqli_query($con, "insert into car(car_category,car_name, car_comp, car_price, car_seat, car_ac, photo) values('$car_category','$car_name','$car_comp','$car_price','$car_seat','$car_ac','$photo')") or die(mysqli_error($con));
     if ($add) {
         echo "<script>";
         echo "window.alert('Data insert successfully.....!')";
