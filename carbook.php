@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
-
+    
+    
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/ionicons.min.css">
@@ -60,15 +61,27 @@
                 swal ( "ERROR !" ,  "Please Enter A Pickup Time !" , "error");
                 return false ;
             }
-
-
         }
     </script>
-
-
 </head>
 
 <body>
+<script>
+    var todayDate = new Date();
+    var month = todayDate.getMonth();
+    var year = todayDate.getUTCFullYear() - 0;
+    var tdate = todayDate.getDate();
+    if (month < 10) {
+        month = "0" + month
+    }
+    if (tdate < 10) {
+        tdate = "0" + tdate;
+    }
+    var minDate = tdate + "-" + month + "-" + year;
+    document.getElementByName("pick_date").setAttribute("min", minDate);
+    console.log(minDate);
+    </script>
+
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
@@ -117,12 +130,12 @@
                 <div class="col-md-12	featured-top">
                     <div class="row no-gutters">
                         <div class="col-md-4 d-flex align-items-center">
-                            <form action="#" class="request-form ftco-animate bg-primary" method="post" name="Booking"
-                        onsubmit="return validate()">
+                            <form class="request-form ftco-animate bg-primary" method="post" name="Booking"
+                        onsubmit="return validate() || return validateDate()">
                                 <h2>Make your trip</h2>
                                 <div class="form-group">
                                     <label for="" class="label">Pick-up location</label>
-                                    <input type="text" class="form-control" placeholder="City, Airport, Station, etc" name="pick_loc" required>
+                                    <input type="text" class="form-control" placeholder="City, Airport, Station, etc" name="pick_loc"  required min="">
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="label">Drop-off location</label>
@@ -143,11 +156,11 @@
                                 <div class="d-flex">
                                     <div class="form-group mr-2">
                                         <label for="" class="label">Pick-up date</label>
-                                        <input type="text" class="form-control" id="book_pick_date" placeholder="Date" name="pick_date" required>
+                                        <input  type="date" class="form-control"  id="pick_date" placeholder="Date" name="pick_date" required min="">
                                     </div>
                                     <div class="form-group ml-2">
                                         <label for="" class="label">Drop-off date</label>
-                                        <input type="text" class="form-control" id="book_pick_date" placeholder="Date" name="drop_date" required>
+                                        <input id="drop_date" type="text" class="form-control"  placeholder="Date" name="drop_date" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -198,7 +211,6 @@
                 </div>
             </div>
     </section>
-
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
     <script src="js/popper.min.js"></script>

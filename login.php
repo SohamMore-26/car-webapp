@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Carbook - Admin Login</title>
+    <title>Carbook - Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -86,7 +86,7 @@
     <section class="ftco-section ftco-about">
         <div class="container">
             <div class="col-md-8 block-9 mb-md-5">
-                <form action="#" class="bg-light p-5 contact-form" method="post" name="Login"  onsubmit="return validateForm2()">
+                <form  class="bg-light p-5 contact-form" method="post" name="Login"  onsubmit="return validateForm2()">
                     <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
                     font-weight: 600; margin-bottom: 0.5rem !important;">Login</h2>
                     <div class="form-group">
@@ -98,7 +98,6 @@
                     <div class="form-group">
                         <input type="submit" name="login" value="Login" class="btn btn-primary py-3 px-5">
                         <div class="login1"> Don't have an Account? <a href="register.php">Join CarBook</a></div>
-                        <div class="login1"> Are you an Admin? <a href="loginadm.php">Click here</a></div>
                     </div>
 
                 </form>
@@ -106,47 +105,6 @@
         </div>
         </div>
     </section>
-
-    <section class="ftco-counter ftco-section img bg-light" id="section-counter">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18">
-                        <div class="text text-border d-flex align-items-center">
-                            <strong class="number" data-number="60">0</strong>
-                            <span>Year <br>Experienced</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18">
-                        <div class="text text-border d-flex align-items-center">
-                            <strong class="number" data-number="1090">0</strong>
-                            <span>Total <br>Cars</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18">
-                        <div class="text text-border d-flex align-items-center">
-                            <strong class="number" data-number="2590">0</strong>
-                            <span>Happy <br>Customers</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18">
-                        <div class="text d-flex align-items-center">
-                            <strong class="number" data-number="67">0</strong>
-                            <span>Total <br>Branches</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
             <div class="row mb-5">
@@ -250,13 +208,13 @@ if (isset($_POST['login'])) {
 
 	extract($_POST);
 
-	$email = mysqli_real_escape_string($con, $_POST['email']);
-	$name = mysqli_real_escape_string($con, $_POST['r_name']);
-	$password = mysqli_real_escape_string($con, $_POST['password']);
+	// $email = mysqli_real_escape_string($con, $_POST['email']);
+	// $name = mysqli_real_escape_string($con, $_POST['r_name']);
+	// $password = mysqli_real_escape_string($con, $_POST['password']);
 
-	$log = mysqli_query($con, "select * from register where r_email='$email' and r_pass='$password'") or die(mysqli_error($con));
-
-	if (mysqli_num_rows($log) > 1 ) {
+    $log = mysqli_query($con, "select * from register where r_email='".$_POST['email']."' and r_pass='".$_POST['password']."'") or die(mysqli_error($con));
+   // echo $log; die();
+	if (mysqli_num_rows($log) > 0 ) {
 
         $fetch = mysqli_fetch_array($log);
 		$_SESSION['r_id'] = $fetch['r_id'];
