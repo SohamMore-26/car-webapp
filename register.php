@@ -5,7 +5,7 @@
     <title>Carbook - Register Now</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
         rel="stylesheet">
@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         function validateForm() {
             var x = document.form["Register"]["name"].value;
@@ -117,8 +119,7 @@
         <div class="container">
             <div class="formup">
                 <div class="col-md-8 block-9 mb-md-5">
-                    <form class="bg-light p-5 contact-form" method="post" name="Register"
-                        onsubmit="return validateForm()">
+                    <form class="bg-light p-5 contact-form" method="post" name="Register" onsubmit="return validateForm()">
                         <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
             font-weight: 600; margin-bottom: 0.5rem !important;">Register Here</h2>
                         <div class="form-group">
