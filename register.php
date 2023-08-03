@@ -119,7 +119,7 @@
         <div class="container">
             <div class="formup">
                 <div class="col-md-8 block-9 mb-md-5">
-                    <form class="bg-light p-5 contact-form" method="post" name="Register" onsubmit="return validateForm()">
+                <form action="#" class="bg-light p-5 contact-form" method="post" name="Register"  onsubmit="return validateForm2()">
                         <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
             font-weight: 600; margin-bottom: 0.5rem !important;">Register Here</h2>
                         <div class="form-group">
