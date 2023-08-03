@@ -5,6 +5,7 @@
     <title>Carbook - Register Now</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
         rel="stylesheet">
@@ -27,40 +28,39 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         function validateForm() {
-            var x = document.forms["Register"]["name"].value;
+            var x = document.form["Register"]["name"].value;
             if (!isNaN(x) || x == "") {
                 swal ( "ERROR !" ,  "Please Enter A Valid Name !" , "warning");
                 return false ;
             }
 
-            var x = document.forms["Register"]["phone"].value;
+            var x = document.form["Register"]["phone"].value;
             if (isNaN(x) || x.length != 10) {
                 swal ( "ERROR !" ,  "Please Enter A Valid Phone No. !" , "warning" );
                 return false ;
             }
 
-            var x = document.forms["Register"]["address"].value;
+            var x = document.form["Register"]["address"].value;
             if (x == "") {
                 swal ( "ERROR !" ,  "Please Enter A Valid Address !" , "warning");
                 return false ;
             }
 
-            var x = document.forms["Register"]["email"].value;
+            var x = document.form["Register"]["email"].value;
             if (x == "") {
                 swal ( "ERROR !" ,  "Please Enter A Valid Email !" , "warning");
                 return false ;
             }
 
-            var p = document.forms["Register"]["password"].value;
-            if (p == "" || p.length<5  ) {
-                swal ( "ERROR !" ,  "Please Enter Minimum 5 Digit Strong Password !" , "warning");
+            var p = document.form["Register"]["password"].value;
+            if (p == "" || p.length<8 && p.length > 16 ) {
+                swal ( "ERROR !" ,  "Please Enter Minimum 8 Digit or Maximun 16 Digit Strong Password !" , "warning");
                 return false ;
             }
 
-            var y = document.forms["Register"]["cpassword"].value;
+            var y = document.form["Register"]["cpassword"].value;
             if (y == "") {
                 swal ( "ERROR !" ,  "Please Confirm Your Password Once Again !" , "warning");
                 return false ;
@@ -117,28 +117,28 @@
         <div class="container">
             <div class="formup">
                 <div class="col-md-8 block-9 mb-md-5">
-                    <form action="#" class="bg-light p-5 contact-form" method="post" name="Register"
+                    <form class="bg-light p-5 contact-form" method="post" name="Register"
                         onsubmit="return validateForm()">
                         <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
             font-weight: 600; margin-bottom: 0.5rem !important;">Register Here</h2>
                         <div class="form-group">
-                            <input type="varchar" class="form-control" placeholder="Your Name" name="name">
+                            <input type="varchar" class="form-control" placeholder="Your Name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <input type="integer" class="form-control" placeholder="Your Phone No." name="phone">
+                            <input type="integer" class="form-control" placeholder="Your Phone No." name="phone" required>
                         </div>
                         <div class="form-group">
                             <textarea type="text" class="form-control" placeholder="Your Address"
-                                name="address"></textarea>
+                                name="address" required></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" name="email">
+                            <input type="email" class="form-control" placeholder="Your Email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Enter Password" name="password">
+                            <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder=" Confirm Password" name="cpassword">
+                            <input type="password" class="form-control" placeholder=" Confirm Password" name="cpassword" required>
                         </div>
                         <div class="form-group">
                             <input type="submit" name="register" value="Register Now" class="btn btn-primary py-3 px-5">
@@ -186,13 +186,13 @@
 		if($add)
 		{
 			echo "<script>";
-			echo "swal('Registered Sucessfully..!')";
+			echo "alert('Registered Sucessfully..!')";
 			echo "</script>";
 		}
 		else
 		{
 			echo "<script>";
-			echo "swal('ERROR ! Registration Fail..!')";
+			echo "alert('ERROR ! Registration Fail..!')";
 			echo "</script>";
 		}
 	}

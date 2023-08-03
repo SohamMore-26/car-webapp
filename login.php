@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -255,13 +256,11 @@ if (isset($_POST['login'])) {
 
 	$log = mysqli_query($con, "select * from register where r_email='$email' and r_pass='$password'") or die(mysqli_error($con));
 
-	if (mysqli_num_rows($log) > 0 ) {
+	if (mysqli_num_rows($log) > 1 ) {
 
         $fetch = mysqli_fetch_array($log);
-        session_start(); 
-		$_SESSION['login'] = true;
-        $_SESSION['email'] = $fetch['email']; 
-		$_SESSION['$name'] = $fetch['r_name'];
+		$_SESSION['r_id'] = $fetch['r_id'];
+		$_SESSION['r_email'] = $fetch['r_email'];
 
 		echo "<script>";
 		echo "swal('Successfully Login...');";
