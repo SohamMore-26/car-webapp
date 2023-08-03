@@ -32,7 +32,7 @@
         function validateForm() {
             var x = document.form["Register"]["name"].value;
             if (!isNaN(x) || x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Valid Name !" , "warning");
+                swal ( "ERROR !" ,  "Please Enter A Valid Name !", "warning" );
                 return false ;
             }
 
