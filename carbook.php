@@ -68,7 +68,7 @@
 <body>
 <script>
     var todayDate = new Date();
-    var month = todayDate.getMonth();
+    var month = todayDate.getMonth() + 1;
     var year = todayDate.getUTCFullYear() - 0;
     var tdate = todayDate.getDate();
     if (month < 10) {
@@ -77,7 +77,7 @@
     if (tdate < 10) {
         tdate = "0" + tdate;
     }
-    var minDate = tdate + "-" + month + "-" + year;
+    var minDate = year + "-" + month + "-" + tdate;
     document.getElementByName("pick_date").setAttribute("min", minDate);
     console.log(minDate);
     </script>
@@ -231,7 +231,21 @@
     <script src="js/main.js"></script>
 
 </body>
+<script>
 
+    var todayDate = new Date();
+    var tdate = todayDate.getDate();
+    var month = todayDate.getMonth() + 1;
+    var year = todayDate.getUTCFullYear() - 0;
+    if (month < 10) {
+        month = "0" + month
+    }
+    if (tdate < 10) {
+        tdate = "0" + tdate;
+    }
+    var mindate = year + "-" + month + "-" + tdate;
+    document.getElementById("pick_date").setAttribute("min", mindate);
+</script>
 </html>
 <?php
 
