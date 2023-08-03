@@ -66,22 +66,6 @@
 </head>
 
 <body>
-<script>
-    var todayDate = new Date();
-    var month = todayDate.getMonth() + 1;
-    var year = todayDate.getUTCFullYear() - 0;
-    var tdate = todayDate.getDate();
-    if (month < 10) {
-        month = "0" + month
-    }
-    if (tdate < 10) {
-        tdate = "0" + tdate;
-    }
-    var minDate = year + "-" + month + "-" + tdate;
-    document.getElementByName("pick_date").setAttribute("min", minDate);
-    console.log(minDate);
-    </script>
-
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
