@@ -1,8 +1,15 @@
-<!DOCTYPE html>
+<?php
+				session_start();
+				if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+					$showError = "Login Failed...!";
+				header("location: login.php");
+   				exit;
+				}?>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
-    <title>Welcome -  </title>
+    <title>Welcome - <?php $_SESSION['name'] ?>  </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -77,10 +84,9 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <!-- <li class="nav-item active"><a href="carbook.php" class="nav-link">Booking</a></li> -->
-                    <li class="nav-item"><a href="car1.php" class="nav-link">Booking</a></li>
+                    <li class="nav-item active"><a href="carbook.php" class="nav-link">Booking</a></li>
+                    <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-                    <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>
                     <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
                 </ul>
             </div>

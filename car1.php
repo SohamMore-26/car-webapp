@@ -1,4 +1,3 @@
-<?php session_start()?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,21 +32,6 @@
 </head>
 
 <body>
-<script type="text/javascript"> //src="js/login.js"
-	function login()
-			{
-				if(!isset($_SESSION['login']) || $_SESSION['login']!=true)
-				{
-					swal ("Your are not loggedin , Please login !" , "warning");
-					window.location.href="login.php";
-				}
-				else{
-					
-					window.location.href="login.php";
-				}
-			}
-</script>
-	
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
@@ -59,8 +43,8 @@
 			<div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="carbook.html" class="nav-link">Booking</a></li>
-                    <li class="nav-item active"><a href="car.html" class="nav-link">Cars</a></li>
+                    <li class="nav-item"><a href="carbook.php" class="nav-link">Booking</a></li>
+                    <li class="nav-item active"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                     <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>
                 </ul>
@@ -118,7 +102,7 @@
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 
-							<p class="d-flex mb-0 d-block"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5" onclick="login()">
+							<p class="d-flex mb-0 d-block"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5">
 						</div>
 
 					</div>
@@ -151,8 +135,7 @@
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 
-							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1"
-							onclick="login()">
+							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1">
 						</div>
 
 					</div>
@@ -185,8 +168,7 @@
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 
-							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1"
-							onclick="login()">
+							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1">
 						</div>
 
 					</div>
@@ -219,8 +201,7 @@
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 
-							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1"
-                                        onclick="login()">
+							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1">
 						</div>
 
 					</div>

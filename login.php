@@ -1,4 +1,27 @@
-<?php session_start();?>
+<?php
+include "config.php";
+$login = false ; 
+$showError = false; 
+if(isset($_POST['login'])){
+	extract($_POST);
+	$log = mysqli_query($con, "select * from register where r_email='".$_POST['email']."' and r_pass='".$_POST['password']."'") or die(mysqli_error($con));
+	if(mysqli_num_rows($log) > 0 ){
+        $fetch = mysqli_fetch_array($log);
+		$login = true ; 
+		session_start(); 
+        $_SESSION['loggedin'] = true; 
+		$_SESSION['email'] = $fetch['r_email'];
+		$_SESSION['name'] = $fetch['r_name'];
+		header("location: carbook.php"); 
+	}
+	
+	else{
+        $showError = "Login Failed...!"; 
+	}
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,8 +80,8 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <!-- <li class="nav-item"><a href="carbook.php" class="nav-link">Booking</a></li> -->
-                    <li class="nav-item"><a href="car1.php" class="nav-link">Booking</a></li>
+                    <li class="nav-item"><a href="carbook.php" class="nav-link">Booking</a></li>
+                    <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                     <li class="nav-item active"><a href="login.php" class="nav-link">Login</a></li>
                 </ul>
@@ -89,6 +112,16 @@
                 <form  class="bg-light p-5 contact-form" method="post" name="Login"  onsubmit="return validateForm2()">
                     <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
                     font-weight: 600; margin-bottom: 0.5rem !important;">Login</h2>
+                    <?php
+    if($showError){
+    echo ' <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> '. $showError.'
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div> ';
+    }
+    ?>
                     <div class="form-group">
                         <input type="email" class="form-control" placeholder="Your Email" name="email" >
                     </div>
@@ -200,32 +233,3 @@
 </body>
 
 </html>
-<?php
-
-include "config.php";
-
-if (isset($_POST['login'])) {
-
-	extract($_POST);
-    $log = mysqli_query($con, "select * from register where r_email='".$_POST['email']."' and r_pass='".$_POST['password']."'") or die(mysqli_error($con));
-   // echo $log; die();
-   if (mysqli_num_rows($log) > 0 ) {
-        $fetch = mysqli_fetch_array($log);
-        session_start();
-        $login=true; 
-        $_SESSION['login'] = true; 
-		$_SESSION['r_id'] = $fetch['r_id'];
-		$_SESSION['r_email'] = $fetch['r_email'];
-		echo "<script>";
-		echo "swal('Successfully Login...');";
-		echo 'window.location.href="carbook.php";';
-		echo "</script>";
-	} else {
-        echo "<script>";
-        echo "swal ( 'ERROR !' ,  'Login Failed !' , 'error')";
-        echo "</script>";
-
-	}
-}
-
-?>
