@@ -1,3 +1,11 @@
+<?php session_start();
+include "config.php";
+if(isset($_SESSION['id']))
+{
+    $view = mysqli_query($con,"select * from book where id = '".$_SESSION['id']."'") or die(mysqli_error($con));
+    $row = mysqli_fetch_array($view);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,7 +53,7 @@
                     <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                     <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
-                    <li class="nav-item active"><a href="profile.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg"
+                    <li class="nav-item active"><a href="profile.php" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg"
                         width="30" height="30" fill="currentColor" class="bi bi-person-circle"
                         viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -79,12 +87,12 @@
                             <h4>User Profile</h4>
                         </div>
                         <div class="card-body">
-                            <p><strong>Name:</strong> John Doe</p>
-                            <p><strong>Email:</strong> johndoe@example.com</p>
-                            <p><strong>Address:</strong> 123 Main St, City, Country</p>
-                            <p><strong>Phone Number:</strong> 123-456-7890</p>
+                            <p><strong>Name:</strong> <?php echo $_SESSION['name']?></p>
+                            <p><strong>Email:</strong> <?php echo $_SESSION['email']?> </p>
+                            <p><strong>Address:</strong> <?php echo $_SESSION['address']?></p>
+                            <p><strong>Phone Number:</strong> <?php echo $_SESSION['phone']?></p>
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="profileedit.html" style="margin: 20px;"><input
+                        <p class="d-flex mb-0 d-block"><a href="profileedit.php" style="margin: 20px;"><input
                                     type="button" name="Rent" value="Edit Details"
                                     class="btn btn-primary py-3 px-5"></a>
                     </div>
@@ -100,10 +108,12 @@
                             <h4>Booking History</h4>
                         </div>
                         <div class="card-body">
-                            <p><strong>Name:</strong> John Doe</p>
-                            <p><strong>Email:</strong> johndoe@example.com</p>
-                            <p><strong>Address:</strong> 123 Main St, City, Country</p>
-                            <p><strong>Phone Number:</strong> 123-456-7890</p>
+                            <p><strong>Name:</strong> <?php echo $_SESSION['name']?></p>
+                            <p><strong>Car:</strong> </p>
+                            <p><strong>Pick up Location:</strong>  <?php echo $row['pick_loc']?></p>
+                            <p><strong>Drop Location:</strong> <?php echo $row['pick_loc']?></p>
+                            <p><strong>Booking Date:</strong> <?php echo $row['pick_date']?></p>
+                            <p><strong>Pick up time:</strong> <?php echo $row['pick_time']?></p>
                         </div>
                     </div>
                 </div>

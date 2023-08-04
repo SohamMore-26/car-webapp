@@ -1,3 +1,11 @@
+<?php session_start();
+include "config.php";
+if(isset($_SESSION['id']))
+{
+    $view = mysqli_query($con,"select * from register where r_id = '".$_SESSION['id']."'") or die(mysqli_error($con));
+    $row = mysqli_fetch_array($view);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,30 +79,26 @@
 
     <div class="container mt-5" style="padding: 100px; background-color: aliceblue; margin-bottom: 100px;">
         <h2>Edit details</h2>
-        <form id="profileForm">
+        <form method="POST">
           <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+            <input type="text" class="form-control" id="name" name="name" value="<?php echo $row['r_name']?>">
           </div>
           <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+            <input type="email" class="form-control" id="email" name="email" value="<?php echo $row['r_email']?>">
           </div>
           <div class="form-group">
             <label for="address">Address:</label>
-            <input type="text" class="form-control" id="address" name="address" required>
+            <input type="text" class="form-control" id="address" name="address" value="<?php echo $row['r_address']?>">
           </div>
           <div class="form-group">
             <label for="phone">Phone Number:</label>
-            <input type="tel" class="form-control" id="phone" name="phone" required>
+            <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $row['r_phone']?>">
           </div>
-          <button type="submit" class="btn btn-primary">Save Details</button>
+          <button class="btn btn-primary" type="update" name="btn_update">Save Details</button>
         </form>
       </div>
-
-</body>
-
-
 
 <footer class="ftco-footer ftco-bg-dark ftco-section">
     <div class="container">
@@ -188,3 +192,26 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="js/google-map.js"></script>
 <script src="js/main.js"></script>
+</body>
+</html>
+<?php 
+	include "config.php";
+
+	if(isset($_POST['btn_update']))
+	{
+		extract($_POST);
+		$update = mysqli_query($con,"UPDATE `register` SET `r_name`='$name',`r_phone`='$phone',`r_address`='$address',`r_email`='$email' WHERE r_id = '".$_SESSION['id']."'") or die(mysqli_error($con));
+		if($update)
+		{
+            echo "<script>";
+            echo "window.alert('Data update successfully.....!')";
+            echo "</script>";
+        }
+        else
+        {
+            echo "<script>";
+            echo "window.alert('Data Error...!')";
+            echo "</script>";
+        }
+	}
+?>

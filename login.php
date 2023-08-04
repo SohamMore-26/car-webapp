@@ -12,6 +12,9 @@ if(isset($_POST['login'])){
         $_SESSION['loggedin'] = true; 
 		$_SESSION['email'] = $fetch['r_email'];
 		$_SESSION['name'] = $fetch['r_name'];
+		$_SESSION['address'] = $fetch['r_address'];
+		$_SESSION['phone'] = $fetch['r_phone'];
+		$_SESSION['id'] = $fetch['r_id'];
 		header("location: carbook.php"); 
 	}
 	
