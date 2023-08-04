@@ -77,8 +77,8 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item active"><a href="carbook.php" class="nav-link">Booking</a></li>
-                    <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
+                    <!-- <li class="nav-item active"><a href="carbook.php" class="nav-link">Booking</a></li> -->
+                    <li class="nav-item"><a href="car1.php" class="nav-link">Booking</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                     <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>
                     <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
@@ -87,33 +87,28 @@
         </div>
     </nav>
     <!-- END nav -->
-    <div class="hero-wrap ftco-degree-bg" style="background-image: url('images/bg_1.jpg');"
+    <div class="hero-wrap hero-wrap-3 ftco-degree-bg" style="background-image: url('images/bg_1.jpg');"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
                 <div class="col-lg-8 ftco-animate">
                     <div class="text w-100 text-center mb-md-5 pb-md-5">
-                        <h1 class="mb-4">Fast &amp; Rent Yourself A Car Now! </h1>
-                        <p style="font-size: 18px;">A small river named Duden flows by their place and supplies it with
-                            the necessary regelialia. It is a paradisematic country, in which roasted parts</p>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <section class="ftco-section ftco-no-pt bg-light">
+    <section class="ftco-section ftco-no-pt bg-light">  
     <?php
     include "config.php";
     $view = mysqli_query($con, "select * from car") or die(mysqli_error($con));
     ?>
         <div class="container">
-            <div class="row no-gutters">
-                <div class="col-md-12	featured-top">
-                    <div class="row no-gutters">
-                        <div class="col-md-4 d-flex align-items-center">
+           
+                
+                        <div class="align-items-center">
                             <form class="request-form ftco-animate bg-primary" method="post" name="Booking"
                         onsubmit="return validate() || return validateDate()">
                                 <h2>Make your trip</h2>
@@ -139,12 +134,8 @@
                                 </div>
                                 <div class="d-flex">
                                     <div class="form-group mr-2">
-                                        <label for="" class="label">Pick-up date</label>
+                                        <label class="label">Pick-up date</label>
                                         <input  type="date" class="form-control"  id="pick_date" placeholder="Date" name="pick_date" required min="">
-                                    </div>
-                                    <div class="form-group ml-2">
-                                        <label for="" class="label">Drop-off date</label>
-                                        <input id="drop_date" type="text" class="form-control"  placeholder="Date" name="drop_date" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -156,44 +147,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-md-8 d-flex align-items-center">
-                            <div class="services-wrap rounded-right w-100">
-                                <h3 class="heading-section mb-4">Better Way to Rent Your Perfect Cars</h3>
-                                <div class="row d-flex mb-4">
-                                    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-                                        <div class="services w-100 text-center">
-                                            <div class="icon d-flex align-items-center justify-content-center"><span
-                                                    class="flaticon-route"></span></div>
-                                            <div class="text w-100">
-                                                <h3 class="heading mb-2">Choose Your Pickup Location</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-                                        <div class="services w-100 text-center">
-                                            <div class="icon d-flex align-items-center justify-content-center"><span
-                                                    class="flaticon-handshake"></span></div>
-                                            <div class="text w-100">
-                                                <h3 class="heading mb-2">Select the Best Deal</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-                                        <div class="services w-100 text-center">
-                                            <div class="icon d-flex align-items-center justify-content-center"><span
-                                                    class="flaticon-rent"></span></div>
-                                            <div class="text w-100">
-                                                <h3 class="heading mb-2">Reserve Your Rental Car</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- <p><a href="car.html" class="btn btn-primary py-3 px-4">Reserve Your Perfect Car</a></p> -->
-                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
     </section>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>

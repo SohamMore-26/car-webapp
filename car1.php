@@ -1,3 +1,4 @@
+<?php session_start()?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-		rel="stylesheet">
+	rel="stylesheet">
 
 	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
@@ -27,25 +28,32 @@
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
-    <script>
-    function login()
-    {
-        swal("Login First..!");
-        window.location.href="login.php";
-    }
-
-</script>
-
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	
 </head>
 
 <body>
-
+<script type="text/javascript"> //src="js/login.js"
+	function login()
+			{
+				if(!$_SESSION['login'] || $_SESSION['login']!=true)
+				{
+					swal ("Your are not loggedin , Please login !" , "warning");
+					window.location.href="login.php";
+				}
+				else{
+					
+					window.location.href="login.php";
+				}
+			}
+</script>
+	
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
+			aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="oi oi-menu"></span> Menu
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
@@ -61,13 +69,13 @@
 	</nav>
 	<!-- END nav -->
 	<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');"
-		data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container">
+	data-stellar-background-ratio="0.5">
+	<div class="overlay"></div>
+	<div class="container">
 			<div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
 				<div class="col-md-9 ftco-animate pb-5">
 					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-									class="ion-ios-arrow-forward"></i></a></span> <span>Cars <i
+					class="ion-ios-arrow-forward"></i></a></span> <span>Cars <i
 								class="ion-ios-arrow-forward"></i></span></p>
 					<h1 class="mb-3 bread">Choose Your Car</h1>
 				</div>
@@ -90,15 +98,15 @@
 				<?php
            		while($row = mysqli_fetch_array($view))
            		{	
-					
+					   
             		extract($row);
-         			?>
+					?>
 				<div class="col-md-4">
 
 					<div class="car-wrap rounded ftco-animate">
 						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/<?php echo $row['photo'];?>);">
-						</div>
+						style="background-image: url(images/<?php echo $row['photo'];?>);">
+					</div>
 						<div class="text">
 							<h2 class="mb-0"><?php echo $row['car_name'];?></h2>
 							<div class="d-flex mb-3">
@@ -110,8 +118,7 @@
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 
-							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1"
-                                        onclick="login()">
+							<p class="d-flex mb-0 d-block"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5" onclick="login()">
 						</div>
 
 					</div>
@@ -124,9 +131,9 @@
 				<?php
            		while($row = mysqli_fetch_array($view1))
            		{	
-					
-            		extract($row);
-         			?>
+					   
+					   extract($row);
+					   ?>
 				<div class="col-md-4">
 
 					<div class="car-wrap rounded ftco-animate">
@@ -145,7 +152,7 @@
 							</div>
 
 							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1"
-                                        onclick="login()">
+							onclick="login()">
 						</div>
 
 					</div>
@@ -165,8 +172,8 @@
 
 					<div class="car-wrap rounded ftco-animate">
 						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/<?php echo $row['photo'];?>);">
-						</div>
+						style="background-image: url(images/<?php echo $row['photo'];?>);">
+					</div>
 						<div class="text">
 							<h2 class="mb-0"><?php echo $row['car_name'];?></h2>
 							<div class="d-flex mb-3">
@@ -179,7 +186,7 @@
 							</div>
 
 							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1"
-                                        onclick="login()">
+							onclick="login()">
 						</div>
 
 					</div>
@@ -199,7 +206,7 @@
 
 					<div class="car-wrap rounded ftco-animate">
 						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/<?php echo $row['photo'];?>);">
+						style="background-image: url(images/<?php echo $row['photo'];?>);">
 						</div>
 						<div class="text">
 							<h2 class="mb-0"><?php echo $row['car_name'];?></h2>
@@ -272,7 +279,7 @@
 								<li><a href="#"><span class="icon icon-phone"></span><span class="text">+91
 											9876543210</span></a></li>
 								<li><a href="#"><span class="icon icon-envelope"></span><span
-											class="text">info@carbook.com</span></a></li>
+								class="text">info@carbook.com</span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -319,6 +326,7 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="js/google-map.js"></script>
 	<script src="js/main.js"></script>
+
 
 </body>
 

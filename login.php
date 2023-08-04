@@ -57,8 +57,8 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="carbook.php" class="nav-link">Booking</a></li>
-                    <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
+                    <!-- <li class="nav-item"><a href="carbook.php" class="nav-link">Booking</a></li> -->
+                    <li class="nav-item"><a href="car1.php" class="nav-link">Booking</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                     <li class="nav-item active"><a href="login.php" class="nav-link">Login</a></li>
                 </ul>
@@ -192,9 +192,9 @@
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/jquery.timepicker.min.js"></script>
     <script src="js/scrollax.min.js"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="js/google-map.js"></script>
+    <!-- <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
+    <!-- <script src="js/google-map.js"></script> -->
     <script src="js/main.js"></script>
 
 </body>
@@ -207,19 +207,14 @@ include "config.php";
 if (isset($_POST['login'])) {
 
 	extract($_POST);
-
-	// $email = mysqli_real_escape_string($con, $_POST['email']);
-	// $name = mysqli_real_escape_string($con, $_POST['r_name']);
-	// $password = mysqli_real_escape_string($con, $_POST['password']);
-
     $log = mysqli_query($con, "select * from register where r_email='".$_POST['email']."' and r_pass='".$_POST['password']."'") or die(mysqli_error($con));
    // echo $log; die();
-	if (mysqli_num_rows($log) > 0 ) {
-
+   if (mysqli_num_rows($log) > 0 ) {
         $fetch = mysqli_fetch_array($log);
+        session_start();
+        $_SESSION['login'] = true; 
 		$_SESSION['r_id'] = $fetch['r_id'];
 		$_SESSION['r_email'] = $fetch['r_email'];
-
 		echo "<script>";
 		echo "swal('Successfully Login...');";
 		echo 'window.location.href="carbook.php";';
