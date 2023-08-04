@@ -43,8 +43,8 @@
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="carbook.php" class="nav-link"> Booking</a></li>
                     <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
-                    <li class="nav-item active"><a href="contact.php" class="nav-link">Contact</a></li>
-                    <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+                    <li class="nav-item active"><a href="profile.html" class="nav-link">Profile</a></li>
                 </ul>
             </div>
         </div>
@@ -63,44 +63,28 @@
         </div>
     </section>
 
-    <section class="ftco-section">
-        <div style="margin: 50px ;">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>User Profile</h4>
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Name:</strong> John Doe</p>
-                            <p><strong>Email:</strong> johndoe@example.com</p>
-                            <p><strong>Address:</strong> 123 Main St, City, Country</p>
-                            <p><strong>Phone Number:</strong> 123-456-7890</p>
-                        </div>
-                        <p class="d-flex mb-0 d-block"><a href = "profileedit.html" style="margin: 20px;"><input type="button" name="Rent" value="Edit Details" class="btn btn-primary py-3 px-5"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div style="margin: 50px ;">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Booking History</h4>
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Name:</strong> John Doe</p>
-                            <p><strong>Email:</strong> johndoe@example.com</p>
-                            <p><strong>Address:</strong> 123 Main St, City, Country</p>
-                            <p><strong>Phone Number:</strong> 123-456-7890</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="container mt-5" style="padding: 100px;">
+        <h2>Edit details</h2>
+        <form id="profileForm">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" class="form-control" id="address" name="address" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" class="form-control" id="phone" name="phone" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Save Details</button>
+        </form>
+      </div>
 
 </body>
 
