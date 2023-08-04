@@ -102,7 +102,7 @@
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 
-							<p class="d-flex mb-0 d-block"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5">
+							<p class="d-flex mb-0 d-block"><a href = "carbook.php"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a>
 						</div>
 
 					</div>
@@ -135,7 +135,7 @@
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 
-							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1">
+							<p class="d-flex mb-0 d-block"><a href = "carbook.php"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a>
 						</div>
 
 					</div>
@@ -168,7 +168,7 @@
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 
-							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1">
+							<p class="d-flex mb-0 d-block"><a href = "carbook.php"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a>
 						</div>
 
 					</div>
@@ -201,7 +201,7 @@
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 
-							<p class="d-flex mb-0 d-block"><input type="button" value="Book Now" class="btn btn-primary py-2 mr-1">
+							<p class="d-flex mb-0 d-block"><a href = "carbook.php"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a>
 						</div>
 
 					</div>
