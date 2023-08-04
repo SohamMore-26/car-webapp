@@ -36,7 +36,7 @@
 <script type="text/javascript"> //src="js/login.js"
 	function login()
 			{
-				if(!$_SESSION['login'] || $_SESSION['login']!=true)
+				if(!isset($_SESSION['login']) || $_SESSION['login']!=true)
 				{
 					swal ("Your are not loggedin , Please login !" , "warning");
 					window.location.href="login.php";

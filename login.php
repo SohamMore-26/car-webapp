@@ -212,6 +212,7 @@ if (isset($_POST['login'])) {
    if (mysqli_num_rows($log) > 0 ) {
         $fetch = mysqli_fetch_array($log);
         session_start();
+        $login=true; 
         $_SESSION['login'] = true; 
 		$_SESSION['r_id'] = $fetch['r_id'];
 		$_SESSION['r_email'] = $fetch['r_email'];
