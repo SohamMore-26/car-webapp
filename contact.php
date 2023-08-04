@@ -29,14 +29,14 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
-        function validate() {
-            var x = document.forms["Contact"]["name"].value;
-            if (!isNaN(x) || x=="") {
-              swal ( "ERROR !" ,  "Please Enter A Valid Name !" , "warning");
-                return false ;
-            }
-          }
-          </script>
+    function validate() {
+      var x = document.forms["Contact"]["name"].value;
+      if (!isNaN(x) || x == "") {
+        swal("ERROR !", "Please Enter A Valid Name !", "warning");
+        return false;
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -56,22 +56,19 @@
           <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
           <li class="nav-item active"><a href="contact.php" class="nav-link">Contact</a></li>
           <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>
-      </ul>
+        </ul>
       </div>
     </div>
   </nav>
   <!-- END nav -->
 
-  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');"
+  <section class="hero-wrap hero-wrap-3 js-fullheight"
+    style="background-image: url('images/damian-zaleski-RYyr-k3Ysqg-unsplash.jpg');"
     data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
         <div class="col-md-9 ftco-animate pb-5">
-          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-                  class="ion-ios-arrow-forward"></i></a></span> <span>Contact <i
-                class="ion-ios-arrow-forward"></i></span></p>
-          <h1 class="mb-3 bread">Contact Us</h1>
+          <h1 class="mb-3 bread">Contact</h1>
         </div>
       </div>
     </div>
@@ -109,8 +106,7 @@
           </div>
         </div>
         <div class="col-md-8 block-9 mb-md-5">
-        <form action="#" class="bg-light p-5 contact-form" method="post" name="Contact"
-                        onsubmit="return validate()">
+          <form action="#" class="bg-light p-5 contact-form" method="post" name="Contact" onsubmit="return validate()">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Your Name" name="name" required>
             </div>
@@ -121,7 +117,8 @@
               <input type="text" class="form-control" placeholder="Subject" name="subject" required>
             </div>
             <div class="form-group">
-              <textarea cols="30" rows="7" class="form-control" name="Message" placeholder="Message" required></textarea>
+              <textarea cols="30" rows="7" class="form-control" name="Message" placeholder="Message"
+                required></textarea>
             </div>
             <div class="form-group">
               <input name="submit" type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
@@ -230,25 +227,21 @@
 </html>
 <?php
 
-    include "config.php";
-    if(isset($_POST['submit']))
-	{
-		extract($_POST);
+include "config.php";
+if (isset($_POST['submit'])) {
+  extract($_POST);
 
-		$add = mysqli_query($con,"insert into contact(c_name , c_email , subject , message)values('$name','$email','$subject' , '$Message ')") or die(mysqli_error($con));
+  $add = mysqli_query($con, "insert into contact(c_name , c_email , subject , message)values('$name','$email','$subject' , '$Message ')") or die(mysqli_error($con));
 
-		if($add)
-		{
-			echo "<script>";
-			echo "alert('Data Entered Sucessfully..!')";
-			echo "</script>";
-		}
-		else
-		{
-			echo "<script>";
-			echo "alert('Data Entered Error..!')";
-			echo "</script>";
-		}
-	}
+  if ($add) {
+    echo "<script>";
+    echo "alert('Data Entered Sucessfully..!')";
+    echo "</script>";
+  } else {
+    echo "<script>";
+    echo "alert('Data Entered Error..!')";
+    echo "</script>";
+  }
+}
 
 ?>
