@@ -60,7 +60,7 @@
                     <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
                                     class="ion-ios-arrow-forward"></i></a></span> <span>Admin Login <i
                                 class="ion-ios-arrow-forward"></i></span></p>
-                    <h1 class="mb-3 bread">Admmin Login</h1>
+                    <h1 class="mb-3 bread">Admin Login</h1>
                 </div>
             </div>
         </div>
