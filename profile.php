@@ -1,5 +1,10 @@
 <?php session_start();
 include "config.php";
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+    $showError = "Login Failed...!";
+header("location: login.php");
+   exit;
+}
 if(isset($_SESSION['id']))
 {
     $view = mysqli_query($con,"select * from book where id = '".$_SESSION['id']."'") or die(mysqli_error($con));
