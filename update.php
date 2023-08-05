@@ -53,7 +53,7 @@
                                     if(isset($_GET['id']))
                                     {
                                         $view = mysqli_query($con,"select * from car where id = '".$_GET['id']."'") or die(mysqli_error($con));
-                                        $row = mysqli_fetch_array($view);
+                                        $row = mysqli_fetch_array($view); 
                                     }
                                 ?>
                         <div class="form-group">

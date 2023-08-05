@@ -5,6 +5,7 @@
 				header("location: login.php");
    				exit;
 				}?>
+                
 <!DOCTYPE html> 
 <html lang="en">
 
@@ -119,10 +120,6 @@
     </section>
 
     <section class="ftco-section ftco-no-pt bg-light">  
-    <?php
-    include "config.php";
-    $view = mysqli_query($con, "select * from car") or die(mysqli_error($con));
-    ?>
         <div class="container" style="margin-top: 50px;">
            
         <input type="text" class="form-control" id="name" name="name" >
@@ -146,11 +143,9 @@
                                     <label for="" class="label">Select your Car</label><br>
                                     <select class="form-control" id="cars" name="cars">
                                         <option style="background-color:#007bff !important;" value="select">Select Your Car</option>
-                                    <?php
-                                        while ($row = mysqli_fetch_array($view)) {
-                                        extract($row); ?>
+
                                         <option style="background-color:#007bff !important;" value=""><?php echo $row['car_name']; ?></option>
-                                        <?php } ?>  
+                                    
                                     </select>
                                       
                                 </div>
