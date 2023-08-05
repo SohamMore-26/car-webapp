@@ -15,7 +15,7 @@ if(isset($_POST['login'])){
 		$_SESSION['address'] = $fetch['r_address'];
 		$_SESSION['phone'] = $fetch['r_phone'];
 		$_SESSION['id'] = $fetch['r_id'];
-		header("location: carbook.php"); 
+		header("location: car1.php"); 
 	}
 	
 	else{
