@@ -108,14 +108,44 @@ if(isset($_SESSION['id']))
                         <div class="card-header">
                             <h4>Booking History</h4>
                         </div>
-                        <div class="card-body">
-                            <p><strong>Name:</strong> <?php echo $_SESSION['name']?></p>
-                            <p><strong>Car:</strong> </p>
-                            <p><strong>Pick up Location:</strong>  <?php echo $row['pick_loc']?></p>
-                            <p><strong>Drop Location:</strong> <?php echo $row['pick_loc']?></p>
-                            <p><strong>Booking Date:</strong> <?php echo $row['pick_date']?></p>
-                            <p><strong>Pick up time:</strong> <?php echo $row['pick_time']?></p>
-                        </div>
+                        <table class="table table-striped mb-0">
+                            <thead style="background-color: #80f08e; ">
+                              <tr class="text-center" data-expanded="true">
+                                <th scope="col">Car Name</th>
+                                <th scope="col">Company</th>
+                                <th scope="col">Pickup location</th>
+                                <th scope="col">Drop-off location</th>
+                                <th scope="col">Pickup date</th>
+                                <th scope="col">Pickup time</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <?php
+                              while ($row = mysqli_fetch_array($view)) {
+                                extract($row); ?>
+                                <tr class="text-center">
+                                  <td>
+                                    <?php echo $row['r_id']; ?>
+                                  </td>
+                                  <td>
+                                    <?php echo $row['r_name']; ?>
+                                  </td>
+                                  <td>
+                                    <?php echo $row['r_phone']; ?>
+                                  </td>
+                                  <td>
+                                    <?php echo $row['r_address']; ?>
+                                  </td>
+                                  <td>
+                                    <?php echo $row['r_email']; ?>
+                                  </td>
+                                  <td>
+                                    <?php echo $row['r_pass']; ?>
+                                  </td>
+                                </tr>
+                              <?php } ?>
+                            </tbody>
+                          </table>
                     </div>
                 </div>
             </div>
