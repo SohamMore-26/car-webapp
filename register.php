@@ -194,7 +194,7 @@
 		else
 		{
 			echo "<script>";
-			echo "alert('ERROR ! Registration Fail..!')";
+			echo "swal('ERROR ! Registration Fail..!')";
 			echo "</script>";
 		}
 	}

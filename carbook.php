@@ -125,14 +125,14 @@
     ?>
         <div class="container" style="margin-top: 50px;">
            
-                
+        <input type="text" class="form-control" id="name" name="name" >
                         <div class="align-items-center">
                             <form class="request-form ftco-animate bg-primary" method="post" name="Booking"
                         onsubmit="return validate() || return validateDate()">
                                 <h2>Make your trip</h2>
                                 <div class="form-group">
                                     <label for="" class="label">Name</label>
-                                    <input type="text" class="form-control" placeholder="Name" name="c_name"  required min="">
+                                    <input type="text" class="form-control" placeholder="Name" name="c_name"  required value="<?php echo $_SESSION['name']?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="label">Pick-up location</label>
@@ -147,8 +147,8 @@
                                     <select class="form-control" id="cars" name="cars">
                                         <option style="background-color:#007bff !important;" value="select">Select Your Car</option>
                                     <?php
-                        while ($row = mysqli_fetch_array($view)) {
-                          extract($row); ?>
+                                        while ($row = mysqli_fetch_array($view)) {
+                                        extract($row); ?>
                                         <option style="background-color:#007bff !important;" value=""><?php echo $row['car_name']; ?></option>
                                         <?php } ?>  
                                     </select>
@@ -214,7 +214,7 @@
 	{
 		extract($_POST);
 
-		$add = mysqli_query($con,"insert into book(pick_loc	, drop_loc , pick_date , pick_time)values('$pick_loc','$drop_loc','$pick_date','$pick_time')") or die(mysqli_error($con));
+		$add = mysqli_query($con,"insert into book(c_name , pick_loc, drop_loc ,car_name, pick_date , pick_time)values('$c_name','$pick_loc','$drop_loc','$cars','$pick_date','$pick_time')") or die(mysqli_error($con));
 
 		if($add)
 		{
