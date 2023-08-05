@@ -4,7 +4,8 @@
 					$showError = "Login Failed...!";
 				header("location: login.php");
    				exit;
-				}?>
+				}
+?>
                 
 <!DOCTYPE html> 
 <html lang="en">
@@ -121,7 +122,6 @@
 
     <section class="ftco-section ftco-no-pt bg-light">  
         <div class="container" style="margin-top: 50px;">
-           
         <input type="text" class="form-control" id="name" name="name" >
                         <div class="align-items-center">
                             <form class="request-form ftco-animate bg-primary" method="post" name="Booking"
@@ -142,10 +142,7 @@
                                 <div class="form-group">
                                     <label for="" class="label">Select your Car</label><br>
                                     <select class="form-control" id="cars" name="cars">
-                                        <option style="background-color:#007bff !important;" value="select">Select Your Car</option>
-
-                                        <option style="background-color:#007bff !important;" value=""><?php echo $row['car_name']; ?></option>
-                                    
+                                        <option style="background-color:#007bff !important;" value="select"></option>                                    
                                     </select>
                                       
                                 </div>
