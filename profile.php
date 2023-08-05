@@ -1,9 +1,7 @@
 <?php session_start();
 include "config.php";
-<<<<<<< HEAD
 if (isset($_SESSION['id'])) {
-    $view = mysqli_query($con, "select * from book where id = '" . $_SESSION['id'] . "'") or die(mysqli_error($con));
-=======
+    $view = mysqli_query($con, "select * from book where id = '" . $_SESSION['id'] . "'") or die(mysqli_error($con));}
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     $showError = "Login Failed...!";
 header("location: login.php");
@@ -12,7 +10,6 @@ header("location: login.php");
 if(isset($_SESSION['id']))
 {
     $view = mysqli_query($con,"select * from book where id = '".$_SESSION['id']."'") or die(mysqli_error($con));
->>>>>>> 66e866f9c4d2416abca97dc316954065f3cdc8f8
     $row = mysqli_fetch_array($view);
 }
 ?>
