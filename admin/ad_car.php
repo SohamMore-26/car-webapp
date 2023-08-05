@@ -97,9 +97,8 @@
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 
-							<p class="d-flex mb-0 d-block"><a href="update.php" class="btn btn-primary py-2 mr-1">Update</a>
+							<p class="d-flex mb-0 d-block"><a href="update.php?id=<?php echo $id; ?>" class="btn btn-primary py-2 mr-1">Update</a>
 						</div>
-
 					</div>
 
 				</div>

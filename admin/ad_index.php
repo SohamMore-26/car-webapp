@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Carbook - Admin Page</title>
+    <title>DriveEase - Contact Queries</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -87,8 +87,6 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body p-0">
-                                    <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true"
-                                        style="position: relative; height: 700px">
                                         <table class="table table-striped mb-0">
                                             <thead class="bg-light">
                                                 <tr class="text-center" style="background-color: #56db75;">

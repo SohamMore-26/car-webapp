@@ -77,55 +77,58 @@
       <div class="mask d-flex align-items-center h-100">
         <!-- <div class="container"> -->
         <div class="row justify-content-center">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-body p-0">
-                <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true"
-                  style="position: relative; height: 700px">
-                  <center>
-                    <table class="table table-striped mb-0">
-                      <thead style="background-color: #80f08e; ">
-                        <tr class="text-center" data-expanded="true">
-                          <th scope="col">Id</th>
-                          <th scope="col">Name</th>
-                          <th scope="col">Phone no.</th>
-                          <th scope="col">Address</th>
-                          <th scope="col">Email</th>
-                          <th scope="col">Password</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php
-                        while ($row = mysqli_fetch_array($view)) {
-                          extract($row); ?>
-                          <tr class="text-center">
-                            <td>
-                              <?php echo $row['r_id']; ?>
-                            </td>
-                            <td>
-                              <?php echo $row['r_name']; ?>
-                            </td>
-                            <td>
-                              <?php echo $row['r_phone']; ?>
-                            </td>
-                            <td>
-                              <?php echo $row['r_address']; ?>
-                            </td>
-                            <td>
-                              <?php echo $row['r_email']; ?>
-                            </td>
-                            <td>
-                              <?php echo $row['r_pass']; ?>
-                            </td>
-                          </tr>
-                        <?php } ?>
-                      </tbody>
-                    </table>
-                  </center>
+          <div class="col-md-12 offset-md-1">
+          <div style="margin: 50px ;">
+            <div class="row">
+                <div class="col-md-12 offset-md-1">
+                    <div class="card" >
+                        <div class="card-header">
+                            <h4>User Record</h4>
+                        </div>
+                        <div class="card-body">
+                            <table class ="table table-striped mb-0" style="color: rgb(45, 45, 45); font-style: normal;">
+                                <thead style="background-color: #56db75; ">
+                                    <tr class="text-center" data-expanded="true">
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>Phone No.</th>
+                                        <th>Address</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    while ($row = mysqli_fetch_array($view)) {
+                                        extract($row); ?>
+                                        <tr class="text-center">
+                                            <td>
+                                                <?php echo $row['r_id']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['r_name']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['r_phone']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['r_address']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['r_email']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['r_pass']; ?>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
         </div>
         <!-- </div> -->
       </div>

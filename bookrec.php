@@ -72,42 +72,65 @@
     <section class="intro">
         <?php
       include "config.php";
-      $view = mysqli_query($con,"select * from register") or die (mysqli_error($con));
+      $view = mysqli_query($con,"select * from book") or die (mysqli_error($con));
     ?>
         <div class="bg-image h-100" style="background-color: #f5f7fa" ;>
             <div class="mask d-flex align-items-center h-100">
                 <!-- <div class="container"> -->
                 <div class="row justify-content-center">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body p-0">
-                                <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true"
-                                    style="position: relative; height: 700px">
-                                    <table class="table table-striped mb-0">
-                                        <thead style="background-color: #80f08e; ">
-                                            <tr class="text-center" data-expanded="true">
-                                                <th scope="col">Customer Name</th>
-                                                <th scope="col">pickup loc.</th>
-                                                <th scope="col">drop loc.</th>
-                                                <th scope="col">pickup time</th>
-                                                <th scope="col">drop time</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="text-center">
-                                                <td>one</td>
-                                                <td>two</td>
-                                                <td>three</td>
-                                                <td>four</td>
-                                                <td>five</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+          <div class="col-md-12 offset-md-1">
+          <div style="margin: 50px ;">
+            <div class="row">
+                <div class="col-md-12 offset-md-1">
+                    <div class="card" >
+                        <div class="card-header">
+                            <h4>Booking Record</h4>
+                        </div>
+                        <div class="card-body">
+                            <table class ="table table-striped mb-0" style="color: rgb(45, 45, 45); font-style: normal;">
+                                <thead style="background-color: #56db75; ">
+                                    <tr class="text-center" data-expanded="true">
+                                        <th>Name</th>
+                                        <th>Car Name</th>
+                                        <th>Pickup Location</th>
+                                        <th>Drop Location</th>
+                                        <th>Pickup Date</th>
+                                        <th>Pickup Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    while ($row = mysqli_fetch_array($view)) {
+                                        extract($row); ?>
+                                        <tr class="text-center">
+                                            <td>
+                                                <?php echo $row['name']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['car']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['pick_loc']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['drop_loc']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['pick_date']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['pick_time']; ?>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        </div>
                 <!-- </div> -->
             </div>
         </div>

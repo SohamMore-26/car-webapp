@@ -57,16 +57,26 @@
                                     }
                                 ?>
                         <div class="form-group">
+                        <select class="form-control" id="cars" name="car_category">
+                            <option class="form-control" value="">Select Car Category</option>
+                            <option class="form-control" value="Suv">Suv</option>
+                            <option class="form-control" value="Sedan">Sedan</option>
+                            <option class="form-control" value="Hatchback">Hatchback</option>
+                            <option class="form-control" value="Compact">Compact </option>
+                            <option class="form-control" value="Crossover">Crossover</option>
+                            </select>               
+                        </div>
+                        <div class="form-group">
                             <input type="varchar" class="form-control"  name="car_name" value = "<?php echo $row['car_name'];?>">
                         </div>
                         <div class="form-group">
-                            <input type="varchar" class="form-control" placeholder="Enter Car Company" name="car_comp">
+                            <input type="varchar" class="form-control" placeholder="Enter Car Company" name="car_comp" value = "<?php echo $row['car_comp'];?>">
                         </div>
                         <div class="form-group">
-                            <input type="varchar" class="form-control" placeholder="Enter Price" name="car_price">
+                            <input type="varchar" class="form-control" placeholder="Enter Price" name="car_price" value = "<?php echo $row['car_price'];?>">
                         </div>
                         <div class="form-group">
-                            <input type="varchar" class="form-control" placeholder="Enter No. Of Seats" name="car_seat">
+                            <input type="varchar" class="form-control" placeholder="Enter No. Of Seats" name="car_seat" value = "<?php echo $row['car_seat'];?>">
                         </div>
                         <div class="form-group">
                             A/C
@@ -77,7 +87,7 @@
                         Select Car Photo <input type="file" class="form-control" name="photo"> 
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="register" value="Update Now" class="btn btn-primary py-3 px-5">
+                            <input type="submit" name="update" value="Update Now" class="btn btn-primary py-3 px-5">
                         </div>
                     </form>
                 </div>
@@ -108,3 +118,29 @@
 </body>
 
 </html>
+<?php
+
+    include "config.php";
+    if(isset($_POST['update']))
+	{
+		extract($_POST);
+
+		$add = mysqli_query($con,"UPDATE `car` SET `car_category`='$car_category',`car_name`='$car_name',`car_comp`='$car_comp',`car_price`='$car_price',`car_seat`='$car_seat',`car_ac`='$register',`photo`='$photo' WHERE id = '".$_GET['id']."'") or die(mysqli_error($con));
+        echo die(); 
+		if($add)
+		{
+			
+            echo "<script>";
+            echo "window.alert('Car Updated successfully.....!')";
+            echo "</script>";
+			
+		}
+		else
+		{
+			
+			swal('Error..!' , "Car not Booked !" , 'errors');
+			
+		}
+	}
+
+?>
