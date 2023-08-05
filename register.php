@@ -187,7 +187,8 @@
 		if($add)
 		{
 			echo "<script>";
-			echo "alert('Registered Sucessfully..!')";
+			echo "swal('Registered Sucessfully..!')";
+            header(location: "login.php"); 
 			echo "</script>";
 		}
 		else

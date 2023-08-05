@@ -100,31 +100,40 @@
         </div>
     </nav>
     <!-- END nav -->
-    <div class="hero-wrap hero-wrap-3 ftco-degree-bg" style="background-image: url('images/bg_1.jpg');"
+    <section class="hero-wrap hero-wrap-3 js-fullheight"
+        style="background-image: url('images/kobu-agency-7okkFhxrxNw-unsplash.jpg');"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
-            <div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
-                <div class="col-lg-8 ftco-animate">
-                    <div class="text w-100 text-center mb-md-5 pb-md-5">
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+                <div class="col-md-9 ftco-animate pb-5">
+                    <div class="breadup">
+                        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                                        class="ion-ios-arrow-forward"></i></a></span> <span>Register <i
+                                    class="ion-ios-arrow-forward"></i></span></p>
+                        <h1 class="mb-3 bread">Rent Here</h1>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <section class="ftco-section ftco-no-pt bg-light">  
     <?php
     include "config.php";
     $view = mysqli_query($con, "select * from car") or die(mysqli_error($con));
     ?>
-        <div class="container">
+        <div class="container" style="margin-top: 50px;">
            
                 
                         <div class="align-items-center">
                             <form class="request-form ftco-animate bg-primary" method="post" name="Booking"
                         onsubmit="return validate() || return validateDate()">
                                 <h2>Make your trip</h2>
+                                <div class="form-group">
+                                    <label for="" class="label">Name</label>
+                                    <input type="text" class="form-control" placeholder="Name" name="c_name"  required min="">
+                                </div>
                                 <div class="form-group">
                                     <label for="" class="label">Pick-up location</label>
                                     <input type="text" class="form-control" placeholder="City, Airport, Station, etc" name="pick_loc"  required min="">
