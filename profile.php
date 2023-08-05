@@ -1,8 +1,7 @@
 <?php session_start();
 include "config.php";
-if(isset($_SESSION['id']))
-{
-    $view = mysqli_query($con,"select * from book where id = '".$_SESSION['id']."'") or die(mysqli_error($con));
+if (isset($_SESSION['id'])) {
+    $view = mysqli_query($con, "select * from book where id = '" . $_SESSION['id'] . "'") or die(mysqli_error($con));
     $row = mysqli_fetch_array($view);
 }
 ?>
@@ -53,13 +52,13 @@ if(isset($_SESSION['id']))
                     <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                     <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
-                    <li class="nav-item active"><a href="profile.php" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg"
-                        width="30" height="30" fill="currentColor" class="bi bi-person-circle"
-                        viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                        <path fill-rule="evenodd"
-                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                    </svg></a></li>
+                    <li class="nav-item active"><a href="profile.php" class="nav-link"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            </svg></a></li>
                 </ul>
             </div>
         </div>
@@ -67,17 +66,17 @@ if(isset($_SESSION['id']))
     <!-- END nav -->
 
     <section class="hero-wrap hero-wrap-3 js-fullheight"
-    style="background-image: url('images/damian-zaleski-RYyr-k3Ysqg-unsplash.jpg');"
-    data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-        <div class="col-md-9 ftco-animate pb-5">
-          <h1 class="mb-3 bread">Profile</h1>
+        style="background-image: url('images/damian-zaleski-RYyr-k3Ysqg-unsplash.jpg');"
+        data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+                <div class="col-md-9 ftco-animate pb-5">
+                    <h1 class="mb-3 bread">Profile</h1>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
     <section class="ftco-section">
         <div style="margin: 50px ; ">
@@ -88,10 +87,18 @@ if(isset($_SESSION['id']))
                             <h4>User Profile</h4>
                         </div>
                         <div class="card-body">
-                            <p><strong>Name:</strong> <?php echo $_SESSION['name']?></p>
-                            <p><strong>Email:</strong> <?php echo $_SESSION['email']?> </p>
-                            <p><strong>Address:</strong> <?php echo $_SESSION['address']?></p>
-                            <p><strong>Phone Number:</strong> <?php echo $_SESSION['phone']?></p>
+                            <p><strong>Name:</strong>
+                                <?php echo $_SESSION['name'] ?>
+                            </p>
+                            <p><strong>Email:</strong>
+                                <?php echo $_SESSION['email'] ?>
+                            </p>
+                            <p><strong>Address:</strong>
+                                <?php echo $_SESSION['address'] ?>
+                            </p>
+                            <p><strong>Phone Number:</strong>
+                                <?php echo $_SESSION['phone'] ?>
+                            </p>
                         </div>
                         <p class="d-flex mb-0 d-block"><a href="profileedit.php" style="margin: 20px;"><input
                                     type="button" name="Rent" value="Edit Details"
@@ -103,50 +110,51 @@ if(isset($_SESSION['id']))
 
         <div style="margin: 50px ;">
             <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="card">
+                <div class="col-md-10 offset-md-1">
+                    <div class="card" >
                         <div class="card-header">
                             <h4>Booking History</h4>
                         </div>
                         <div class="card-body">
-                        <!-- <table class="table table-striped mb-0">
-                            <thead style="background-color: #62beff; ">
-                              <tr class="text-center" data-expanded="true">
-                                <th scope="col">Car Name</th>
-                                <th scope="col">Company</th>
-                                <th scope="col">Pickup location</th>
-                                <th scope="col">Drop-off location</th>
-                                <th scope="col">Pickup date</th>
-                                <th scope="col">Pickup time</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <?php
-                              while ($row = mysqli_fetch_array($view)) {
-                                extract($row); ?>
-                                <tr class="text-center">
-                                  <td>
-                                    <?php echo $row['r_id']; ?>
-                                  </td>
-                                  <td>
-                                    <?php echo $row['r_name']; ?>
-                                  </td>
-                                  <td>
-                                    <?php echo $row['r_phone']; ?>
-                                  </td>
-                                  <td>
-                                    <?php echo $row['r_address']; ?>
-                                  </td>
-                                  <td>
-                                    <?php echo $row['r_email']; ?>
-                                  </td>
-                                  <td>
-                                    <?php echo $row['r_pass']; ?>
-                                  </td>
-                                </tr>
-                              <?php } ?>
-                            </tbody>
-                          </table> -->
+                            <table class ="table table-striped mb-0" style="color: rgb(45, 45, 45); font-style: normal;">
+                                <thead style="background-color: #62beff; ">
+                                    <tr class="text-center" data-expanded="true">
+                                        <th>Car Name</th>
+                                        <th>Company</th>
+                                        <th>Pickup location</th>
+                                        <th>Drop-off location</th>
+                                        <th>Pickup date</th>
+                                        <th>Pickup time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    while ($row = mysqli_fetch_array($view)) {
+                                        extract($row); ?>
+                                        <tr class="text-center">
+                                            <td>
+                                                <?php echo $row['r_id']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['r_name']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['r_phone']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['r_address']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['r_email']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['r_pass']; ?>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
