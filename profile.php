@@ -108,8 +108,9 @@ if(isset($_SESSION['id']))
                         <div class="card-header">
                             <h4>Booking History</h4>
                         </div>
-                        <table class="table table-striped mb-0">
-                            <thead style="background-color: #80f08e; ">
+                        <div class="card-body">
+                        <!-- <table class="table table-striped mb-0">
+                            <thead style="background-color: #62beff; ">
                               <tr class="text-center" data-expanded="true">
                                 <th scope="col">Car Name</th>
                                 <th scope="col">Company</th>
@@ -145,7 +146,7 @@ if(isset($_SESSION['id']))
                                 </tr>
                               <?php } ?>
                             </tbody>
-                          </table>
+                          </table> -->
                     </div>
                 </div>
             </div>
