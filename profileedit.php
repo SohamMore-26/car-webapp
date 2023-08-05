@@ -49,9 +49,10 @@ if(isset($_SESSION['id']))
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="carbook.php" class="nav-link"> Booking</a></li>
+                    <!-- <li class="nav-item"><a href="carbook.php" class="nav-link"> Booking</a></li> -->
                     <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
                     <li class="nav-item active"><a href="profile.php" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg"
                         width="30" height="30" fill="currentColor" class="bi bi-person-circle"
                         viewBox="0 0 16 16">

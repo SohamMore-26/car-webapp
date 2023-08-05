@@ -43,7 +43,7 @@
 			<div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="carbook.php" class="nav-link">Booking</a></li>
+                    <!-- <li class="nav-item"><a href="carbook.php" class="nav-link">Booking</a></li> -->
                     <li class="nav-item active"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                     <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>
@@ -84,20 +84,20 @@
    	   $view3 = mysqli_query($con,"select * from car where car_category = 'Compact'") or die (mysqli_error($con));
    	 ?>
 		<div class="container">
-			<h1 class=" p-5 ">Suv</h1>
+		<h1 class=" p-5 ">Suv</h1>
 			<div class="row">
 				<?php
            		while($row = mysqli_fetch_array($view))
            		{	
-					   
+					
             		extract($row);
-					?>
+         			?>
 				<div class="col-md-4">
 
 					<div class="car-wrap rounded ftco-animate">
 						<div class="img rounded d-flex align-items-end"
 						style="background-image: url(images/<?php echo $row['photo'];?>);">
-					</div>
+						</div>
 						<div class="text">
 							<h2 class="mb-0"><?php echo $row['car_name'];?></h2>
 							<div class="d-flex mb-3">
@@ -109,12 +109,9 @@
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 
-							<p class="d-flex mb-0 d-block"><a href = "carbook.php"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a>
+							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a></div>
 						</div>
-
 					</div>
-
-				</div>
 				<?php }?>
 			</div>
 			<h1 class=" p-5 ">Sedan</h1>
@@ -122,14 +119,14 @@
 				<?php
            		while($row = mysqli_fetch_array($view1))
            		{	
-					   
-					   extract($row);
-					   ?>
+					
+            		extract($row);
+         			?>
 				<div class="col-md-4">
 
 					<div class="car-wrap rounded ftco-animate">
 						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/<?php echo $row['photo'];?>);">
+						style="background-image: url(images/<?php echo $row['photo'];?>);">
 						</div>
 						<div class="text">
 							<h2 class="mb-0"><?php echo $row['car_name'];?></h2>
@@ -142,12 +139,9 @@
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 
-							<p class="d-flex mb-0 d-block"><a href = "carbook.php"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a>
+							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a></div>
 						</div>
-
 					</div>
-
-				</div>
 				<?php }?>
 			</div>
 			<h1 class=" p-5 ">Hatchback</h1>
@@ -163,7 +157,7 @@
 					<div class="car-wrap rounded ftco-animate">
 						<div class="img rounded d-flex align-items-end"
 						style="background-image: url(images/<?php echo $row['photo'];?>);">
-					</div>
+						</div>
 						<div class="text">
 							<h2 class="mb-0"><?php echo $row['car_name'];?></h2>
 							<div class="d-flex mb-3">
@@ -175,12 +169,9 @@
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 
-							<p class="d-flex mb-0 d-block"><a href = "carbook.php"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a>
+							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a></div>
 						</div>
-
 					</div>
-
-				</div>
 				<?php }?>
 			</div>
 			<h1 class=" p-5 ">Compact</h1>
@@ -208,12 +199,9 @@
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
 
-							<p class="d-flex mb-0 d-block"><a href = "carbook.php"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a>
+							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a></div>
 						</div>
-
 					</div>
-
-				</div>
 				<?php }?>
 			</div>
 

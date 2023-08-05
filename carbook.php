@@ -6,7 +6,7 @@
    				exit;
 				}
 ?>
-                
+ 
 <!DOCTYPE html> 
 <html lang="en">
 
@@ -75,6 +75,14 @@
 </head>
 
 <body>
+<?php
+        include "config.php";
+        if(isset($_GET['id']))
+        {
+        $view = mysqli_query($con,"select * from car where id = '".$_GET['id']."'") or die(mysqli_error($con));
+        $row = mysqli_fetch_array($view); 
+        }
+        ?>   
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
@@ -86,7 +94,7 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item active"><a href="carbook.php" class="nav-link">Booking</a></li>
+                    <!-- <li class="nav-item active"><a href="carbook.php" class="nav-link">Booking</a></li> -->
                     <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                     <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
@@ -139,12 +147,10 @@
                                     <label for="" class="label">Drop-off location</label>
                                     <input type="text" class="form-control" placeholder="City, Airport, Station, etc" name="drop_loc" required>
                                 </div>
+                                
                                 <div class="form-group">
-                                    <label for="" class="label">Select your Car</label><br>
-                                    <select class="form-control" id="cars" name="cars">
-                                        <option style="background-color:#007bff !important;" value="select"></option>                                    
-                                    </select>
-                                      
+                                    <label for="" class="label"> Your Car</label><br>
+                                    <input type="text" class="form-control" placeholder="Your Car"  name="cars" value="<?php echo $row['car_name']?>"> 
                                 </div>
                                 <div class="d-flex">
                                     <div class="form-group mr-2">
@@ -206,19 +212,19 @@
 	{
 		extract($_POST);
 
-		$add = mysqli_query($con,"insert into book(c_name , pick_loc, drop_loc ,car_name, pick_date , pick_time)values('$c_name','$pick_loc','$drop_loc','$cars','$pick_date','$pick_time')") or die(mysqli_error($con));
-
+		$add = mysqli_query($con,"INSERT INTO `book`(`name`, `car`, `pick_loc`, `drop_loc`, `pick_date`, `pick_time`) VALUES ('$c_name','$cars','$pick_loc','$drop_loc','$pick_date','$pick_time')") or die(mysqli_error($con));
+        echo die(); 
 		if($add)
 		{
-			echo "<script>";
-			echo "swal('Car Booked..!')";
-			echo "</script>";
+			
+            swal ( "Success !" ,  "Car Booked Successfully !" , "success");
+			
 		}
 		else
 		{
-			echo "<script>";
-			echo "swal('Error..!' , Car not Booked ! , 'errors')";
-			echo "</script>";
+			
+			swal('Error..!' , "Car not Booked !" , 'errors');
+			
 		}
 	}
 
