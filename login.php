@@ -120,7 +120,6 @@ if(isset($_POST['login'])){
         <div class="container">
             <div class="col-md-8 block-9 mb-md-5">
                 <form  class="bg-light p-5 contact-form" method="post" name="Login"  onsubmit="return validateForm2()">
-                <strong><b><p style="color : red ;">"Login to rent a car..!"</p></b><strong>
                     <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
                     font-weight: 600; margin-bottom: 0.5rem !important;">Login</h2>
                     <?php
