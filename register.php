@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Carbook - Register Now</title>
+    <title>DriveEase - Register Now</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    
@@ -35,39 +35,45 @@
       var x=document.forms["Register"]["name"].value;
       if(x=="")
       {
-        alert("Enter name");
+        alert("Enter name...!");
         return false;
       }
       var x=document.forms["Register"]["phone"].value;
       if(x=="")
       {
-        alert("Enter phone no.");
+        alert("Enter phone no. ...!");
         return false;
       }
       var x=document.forms["Register"]["address"].value;
       if(x=="")
       {
-        alert("Enter address");
+        alert("Enter address...!");
         return false;
       }
       var x=document.forms["Register"]["email"].value;
       if(x=="")
       {
-        alert("Enter email");
+        alert("Enter email...!");
         return false;
       }
-      var x=document.forms["Register"]["password"].value;
-      if(x=="")
+      var pass=document.forms["Register"]["password"].value;
+      if(pass=="")
       {
-        alert("Enter password");
+        alert("Enter password...!");
         return false;
       }
-      var x=document.forms["Register"]["cpassword"].value;
-      if(x=="")
+      var cpass=document.forms["Register"]["cpassword"].value;
+      if(cpass=="")
       {
-        alert("Enter confirm password");
+        alert("Enter confirm password...!");
         return false;
       }
+      if(cpass!=pass)
+      {
+        alert("Password do not match...!");
+        return false;
+      }
+
     }
     </script>
    
@@ -76,8 +82,8 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Car<span>Ease<expanded="false" aria-label="Toggle navigation">/span></a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-
+	      <a class="navbar-brand" href="index.html">Car<span>Ease<expanded="false" aria-label="Toggle navigation"></span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
@@ -127,22 +133,22 @@
                 <input type="text" class="form-control" placeholder="Your Name" name="name">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Phone No." name="phone">
+                <input type="text" class="form-control" placeholder="Your Phone No."  maxlength = "10" name="phone">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Address" name="address">
+                <textarea type="text" class="form-control" rows="4" placeholder="Your Address" name="address"></textarea>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email" name="email">
+                <input type="email" class="form-control" placeholder="Your Email" name="email">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Password" name="password">
+                <input type="password" class="form-control" placeholder="Password" name="password">
               </div>
               <div class="form-group">
-              <input type="textarea" class="form-control" placeholder="Confirm Password" name="cpassword">
+              <input type="password" class="form-control" placeholder="Confirm Password" name="cpassword">
               </div>
               <div class="form-group">
-                <input type="submit" value="Register" class="btn btn-primary py-3 px-5">
+                <input type="submit" value="Register" name="register" class="btn btn-primary py-3 px-5">
               </div>
                         <a href="login.php">Already have an account ? Login</a>
                     </form>
@@ -181,14 +187,14 @@
 	{
 		extract($_POST);
 
-		$add = mysqli_query($con,"insert into register(r_name , r_phone	 , r_address , r_email , r_pass	)values('$name','$phone','$address','$email','$password')") or die(mysqli_error($con));
+		$add = mysqli_query($con,"INSERT INTO `register`(`r_name`, `r_phone`, `r_address`, `r_email`, `r_pass`) VALUES ('$name','$phone','$address','$email','$password')") or die(mysqli_error($con));
 
 		if($add)
 		{
 			echo "<script>";
-			echo "alert('Registered Sucessfully..!')";
-            header(location: "login.php"); 
-			echo "</script>";
+		echo "alert('Successfully Register...');";
+		echo 'window.location.href="login.php";';
+		echo "</script>";
 		}
 		else
 		{
