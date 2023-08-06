@@ -1,15 +1,15 @@
 <?php session_start();
 include "config.php";
 if (isset($_SESSION['id'])) {
-    $view = mysqli_query($con, "select * from book where id = '" . $_SESSION['id'] . "'") or die(mysqli_error($con));}
-if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
-    $showError = "Login Failed...!";
-header("location: login.php");
-   exit;
+    $view = mysqli_query($con, "select * from book where id = '" . $_SESSION['id'] . "'") or die(mysqli_error($con));
 }
-if(isset($_SESSION['id']))
-{
-    $view = mysqli_query($con,"select * from book where id = '".$_SESSION['id']."'") or die(mysqli_error($con));
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
+    $showError = "Login Failed...!";
+    header("location: login.php");
+    exit;
+}
+if (isset($_SESSION['id'])) {
+    $view = mysqli_query($con, "select * from book where id = '" . $_SESSION['id'] . "'") or die(mysqli_error($con));
     $row = mysqli_fetch_array($view);
 }
 ?>
@@ -44,8 +44,9 @@ if(isset($_SESSION['id']))
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body style="background-image: linear-gradient(to bottom left, rgb(85, 236, 236), rgb(85, 236, 140));">
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-dark" id="ftco-navbar"
+        style="background-color: #00aa73; padding: 20px;">
         <div class="container">
             <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
@@ -55,12 +56,15 @@ if(isset($_SESSION['id']))
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+
+                    <li class="nav-item" style="padding-right: 10px"><a href="index.html"
+                            class="nav-link">Home</a></li>
                     <!-- <li class="nav-item"><a href="carbook.php" class="nav-link"> Booking</a></li> -->
-                    <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
-                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-                    <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
-                    <li class="nav-item active"><a href="profile.php" class="nav-link"><svg
+                    <li class="nav-item" style="padding-right: 10px"><a href="car1.php" class="nav-link">Cars</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="contact.php" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="login.php" class="nav-link">Login</a></li>
+                    <li class="nav-item active" style="padding-right: 10px"><a href="profile.php" class="nav-link"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                 class="bi bi-person-circle" viewBox="0 0 16 16">
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -71,20 +75,6 @@ if(isset($_SESSION['id']))
             </div>
         </div>
     </nav>
-    <!-- END nav -->
-
-    <section class="hero-wrap hero-wrap-3 js-fullheight"
-        style="background-image: url('images/damian-zaleski-RYyr-k3Ysqg-unsplash.jpg');"
-        data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-                <div class="col-md-9 ftco-animate pb-5">
-                    <h1 class="mb-3 bread">Profile</h1>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="ftco-section">
         <div style="margin: 50px ; ">
@@ -119,12 +109,12 @@ if(isset($_SESSION['id']))
         <div style="margin: 50px ;">
             <div class="row">
                 <div class="col-md-10 offset-md-1">
-                    <div class="card" >
+                    <div class="card">
                         <div class="card-header">
                             <h4>Booking History</h4>
                         </div>
                         <div class="card-body">
-                            <table class ="table table-striped mb-0" style="color: rgb(45, 45, 45); font-style: normal;">
+                            <table class="table table-striped mb-0" style="color: rgb(45, 45, 45); font-style: normal;">
                                 <thead style="background-color: #62beff; ">
                                     <tr class="text-center" data-expanded="true">
                                         <th>Car Name</th>

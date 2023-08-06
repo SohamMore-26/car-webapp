@@ -1,26 +1,24 @@
 <?php
 include "config.php";
-$login = false ; 
-$showError = false; 
-if(isset($_POST['login'])){
-	extract($_POST);
-	$log = mysqli_query($con, "select * from register where r_email='".$_POST['email']."' and r_pass='".$_POST['password']."'") or die(mysqli_error($con));
-	if(mysqli_num_rows($log) > 0 ){
+$login = false;
+$showError = false;
+if (isset($_POST['login'])) {
+    extract($_POST);
+    $log = mysqli_query($con, "select * from register where r_email='" . $_POST['email'] . "' and r_pass='" . $_POST['password'] . "'") or die(mysqli_error($con));
+    if (mysqli_num_rows($log) > 0) {
         $fetch = mysqli_fetch_array($log);
-		$login = true ; 
-		session_start(); 
-        $_SESSION['loggedin'] = true; 
-		$_SESSION['email'] = $fetch['r_email'];
-		$_SESSION['name'] = $fetch['r_name'];
-		$_SESSION['address'] = $fetch['r_address'];
-		$_SESSION['phone'] = $fetch['r_phone'];
-		$_SESSION['id'] = $fetch['r_id'];
-		header("location: car1.php"); 
-	}
-	
-	else{
-        $showError = "Login Failed...!"; 
-	}
+        $login = true;
+        session_start();
+        $_SESSION['loggedin'] = true;
+        $_SESSION['email'] = $fetch['r_email'];
+        $_SESSION['name'] = $fetch['r_name'];
+        $_SESSION['address'] = $fetch['r_address'];
+        $_SESSION['phone'] = $fetch['r_phone'];
+        $_SESSION['id'] = $fetch['r_id'];
+        header("location: car1.php");
+    } else {
+        $showError = "Login Failed...!";
+    }
 }
 
 
@@ -54,28 +52,26 @@ if(isset($_POST['login'])){
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
     <script>
-        function validateLogin()
-    {
-        var x= document.forms["Login"]["email"].value;
-        if(x=="")
-        {
-            alert("Please enter email");
-            return false;
-        }
+        function validateLogin() {
+            var x = document.forms["Login"]["email"].value;
+            if (x == "") {
+                alert("Please enter email");
+                return false;
+            }
 
-        var x=document.forms["Login"]["password"].value;
-        if(x=="")
-        {
-            alert("please enter password");
-            return false;
+            var x = document.forms["Login"]["password"].value;
+            if (x == "") {
+                alert("please enter password");
+                return false;
+            }
         }
-    }
-        </script>
-    
+    </script>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-dark" id="ftco-navbar"
+        style="background-color: #00aa73; padding: 20px;">
         <div class="container">
             <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
@@ -85,14 +81,17 @@ if(isset($_POST['login'])){
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <!-- <li class="nav-item"><a href="carbook.php" class="nav-link">Booking</a></li> -->
-                    <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
-                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-                    <li class="nav-item active"><a href="login.php" class="nav-link">Login</a></li>
-                    <li class="nav-item"><a href="profile.php" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg"
-                                width="30" height="30" fill="currentColor" class="bi bi-person-circle"
-                                viewBox="0 0 16 16">
+
+                    <li class="nav-item" style="padding-right: 10px"><a href="index.html"
+                            class="nav-link">Home</a></li>
+                    <!-- <li class="nav-item"><a href="carbook.php" class="nav-link"> Booking</a></li> -->
+                    <li class="nav-item" style="padding-right: 10px"><a href="car1.php" class="nav-link">Cars</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="contact.php" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item active" style="padding-right: 10px"><a href="login.php" class="nav-link">Login</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="profile.php" class="nav-link"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                class="bi bi-person-circle" viewBox="0 0 16 16">
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                                 <path fill-rule="evenodd"
                                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
@@ -101,45 +100,27 @@ if(isset($_POST['login'])){
             </div>
         </div>
     </nav>
-    <!-- END nav -->
-    <section class="hero-wrap hero-wrap-3 js-fullheight"
-        style="background-image: url('images/scott-graham-5fNmWej4tAA-unsplash.jpg');"
-        data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-                <div class="col-md-9 ftco-animate pb-5">
-                    <div class="breadup">
-                        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-                                        class="ion-ios-arrow-forward"></i></a></span> <span>Login <i
-                                    class="ion-ios-arrow-forward"></i></span></p>
-                        <h1 class="mb-3 bread">Login</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="ftco-section ftco-about">
         <div class="container">
             <div class="col-md-8 block-9 mb-md-5">
-                <form  class="bg-light p-5 contact-form" method="post" name="Login"  onsubmit="return validateLogin()">
+                <form class="bg-light p-5 contact-form" method="post" name="Login" onsubmit="return validateLogin()">
                     <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
                     font-weight: 600; margin-bottom: 0.5rem !important;">Login</h2>
                     <?php
-    if($showError){
-    echo ' <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Error!</strong> '. $showError.'
+                    if ($showError) {
+                        echo ' <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> ' . $showError . '
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div> ';
-    }
-    ?>
+                    }
+                    ?>
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Your Email" name="email" >
+                        <input type="email" class="form-control" placeholder="Your Email" name="email">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Your Password" name="password" >
+                        <input type="password" class="form-control" placeholder="Your Password" name="password">
                     </div>
                     <div class="form-group">
                         <input type="submit" name="login" value="Login" class="btn btn-primary py-3 px-5">
