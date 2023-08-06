@@ -63,8 +63,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
 
-                    <li class="nav-item" style="padding-right: 10px"><a href="index.html"
-                            class="nav-link">Home</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="index.html" class="nav-link">Home</a></li>
                     <!-- <li class="nav-item  active"><a href="carbook.php" class="nav-link"> Booking</a></li> -->
                     <li class="nav-item" style="padding-right: 10px"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item" style="padding-right: 10px"><a href="contact.php" class="nav-link">Contact</a>
@@ -82,27 +81,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
         </div>
     </nav>
     <!-- END nav -->
-    <section class="hero-wrap hero-wrap-3 js-fullheight"
-        style="background-image: url('images/kobu-agency-7okkFhxrxNw-unsplash.jpg');"
-        data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-                <div class="col-md-9 ftco-animate pb-5">
-                    <div class="breadup">
-                        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-                                        class="ion-ios-arrow-forward"></i></a></span> <span>Register <i
-                                    class="ion-ios-arrow-forward"></i></span></p>
-                        <h1 class="mb-3 bread">Rent Here</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="ftco-section ftco-no-pt bg-light">
         <div class="container" style="margin-top: 50px;">
-            <input type="text" class="form-control" id="name" name="name">
+            <div class="breadup">
+                <h1 class="mb-3 bread">Rent Here</h1>
+            </div>
             <div class="align-items-center">
                 <form class="request-form ftco-animate bg-primary" method="post" name="Booking"
                     onsubmit="return validate() || return validateDate()">
