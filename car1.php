@@ -30,7 +30,44 @@
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	
 </head>
+<style>
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
 
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
@@ -83,9 +120,30 @@
    	   $view2 = mysqli_query($con,"select * from car where car_category = 'Hatchback'") or die (mysqli_error($con));
    	   $view3 = mysqli_query($con,"select * from car where car_category = 'Compact'") or die (mysqli_error($con));
    	 ?>
+
+<div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+    </div>
+
+    <!-- <div id="London" class="tabcontent">
+        <h3>London</h3>
+        <p>London is the capital city of England.</p>
+    </div> -->
+
+    <div id="Paris" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
 		<div class="container">
-		<h1 class=" p-5 ">Suv</h1>
-			<div class="row">
+			<h1 class=" p-5 ">Suv</h1>
+			<div id="London" class=" tabcontent row" >
 				<?php
            		while($row = mysqli_fetch_array($view))
            		{	
@@ -108,7 +166,7 @@
 								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
-
+							<p class="ml-auto">Car No. : <?php echo $row['car_no'];?></p>
 							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a></div>
 						</div>
 					</div>
@@ -138,7 +196,7 @@
 								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
-
+							<p class="ml-auto">Car No. : <?php echo $row['car_no'];?></p>
 							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a></div>
 						</div>
 					</div>
@@ -168,7 +226,7 @@
 								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
-
+							<p class="ml-auto">Car No. : <?php echo $row['car_no'];?></p>
 							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a></div>
 						</div>
 					</div>
@@ -198,7 +256,7 @@
 								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
 								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
-
+							<p class="ml-auto">Car No. : <?php echo $row['car_no'];?></p>
 							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a></div>
 						</div>
 					</div>
@@ -305,5 +363,19 @@
 
 
 </body>
-
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 </html>
