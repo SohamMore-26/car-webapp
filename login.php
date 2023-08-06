@@ -69,7 +69,7 @@ if (isset($_POST['login'])) {
 
 </head>
 
-<body>
+<body style="background-image: linear-gradient(to bottom left, rgb(85, 236, 236), rgb(85, 236, 140));">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-dark" id="ftco-navbar"
         style="background-color: #00aa73; padding: 20px;">
         <div class="container">
@@ -82,13 +82,13 @@ if (isset($_POST['login'])) {
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
 
-                    <li class="nav-item" style="padding-right: 10px"><a href="index.html"
-                            class="nav-link">Home</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="index.html" class="nav-link">Home</a></li>
                     <!-- <li class="nav-item"><a href="carbook.php" class="nav-link"> Booking</a></li> -->
                     <li class="nav-item" style="padding-right: 10px"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item" style="padding-right: 10px"><a href="contact.php" class="nav-link">Contact</a>
                     </li>
-                    <li class="nav-item active" style="padding-right: 10px"><a href="login.php" class="nav-link">Login</a></li>
+                    <li class="nav-item active" style="padding-right: 10px"><a href="login.php"
+                            class="nav-link">Login</a></li>
                     <li class="nav-item" style="padding-right: 10px"><a href="profile.php" class="nav-link"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                 class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -100,38 +100,33 @@ if (isset($_POST['login'])) {
             </div>
         </div>
     </nav>
-    <section class="ftco-section ftco-about">
-        <div class="container">
-            <div class="col-md-8 block-9 mb-md-5">
-                <form class="bg-light p-5 contact-form" method="post" name="Login" onsubmit="return validateLogin()">
-                    <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
-                    font-weight: 600; margin-bottom: 0.5rem !important;">Login</h2>
-                    <?php
-                    if ($showError) {
-                        echo ' <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Error!</strong> ' . $showError . '
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div> ';
-                    }
-                    ?>
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Your Email" name="email">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Your Password" name="password">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" name="login" value="Login" class="btn btn-primary py-3 px-5">
-                        <div class="login1"> Don't have an Account? <a href="register.php">Join CarBook</a></div>
-                    </div>
-
-                </form>
+    <div class="container mt-5" style="padding:50px; background-color: aliceblue; margin-bottom: 100px;">
+        <form class="col-md-8 offset-md-2" method="post" name="Login" onsubmit="return validateLogin()" style="">
+            <h2 class="" style="font-size: 40px;
+                    font-weight: 600; margin-bottom: 0.5rem !important; margin-top: 0px;">Login</h2> <br>
+            <?php
+            if ($showError) {
+                echo ' <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                             <strong>Error!</strong> ' . $showError . '
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div> ';
+            }
+            ?>
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Your Email" name="email">
             </div>
-        </div>
-        </div>
-    </section>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Your Password" name="password">
+            </div>
+            <div class="form-group">
+                <input type="submit" name="login" value="Login" class="btn btn-primary py-3 px-5">
+                <div class="login1"> Don't have an Account? <a href="register.php">Join CarBook</a></div>
+            </div>
+
+        </form>
+    </div>
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
             <div class="row mb-5">
