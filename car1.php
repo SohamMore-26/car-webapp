@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-		rel="stylesheet">
+	rel="stylesheet">
 
 	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
@@ -28,93 +28,82 @@
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+	
 </head>
 <style>
-	body,
-	html {
-		height: 100%;
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
 
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
 
-	}
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
 
-	.tablink {
-		background-color: #555;
-		color: white;
-		float: left;
-		border: none;
-		outline: none;
-		cursor: pointer;
-		padding: 14px 16px;
-		font-size: 17px;
-		width: 25%;
-	}
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
 
-	.tablink:hover {
-		background-color: #777;
-	}
-
-	/* Style the tab content (and add height:100% for full page content) */
-	.tabcontent {
-		color: white;
-		display: none;
-		padding: 100px 20px;
-		height: 100%;
-	}
-
-	#Suv {
-		background-color: white;
-	}
-
-	#Sedan {
-		background-color: white;
-	}
-
-	#Hatchback {
-		background-color: white;
-	}
-
-	#Compact {
-		background-color: white;
-	}
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
 </style>
-
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
+			aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="oi oi-menu"></span> Menu
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-					<!-- <li class="nav-item"><a href="carbook.php" class="nav-link">Booking</a></li> -->
-					<li class="nav-item active"><a href="car1.php" class="nav-link">Cars</a></li>
-					<li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-					<li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <!-- <li class="nav-item"><a href="carbook.php" class="nav-link">Booking</a></li> -->
+                    <li class="nav-item active"><a href="car1.php" class="nav-link">Cars</a></li>
+                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>
 					<li class="nav-item"><a href="profile.php" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg"
-								width="30" height="30" fill="currentColor" class="bi bi-person-circle"
-								viewBox="0 0 16 16">
-								<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-								<path fill-rule="evenodd"
-									d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-							</svg></a></li>
-				</ul>
+                                width="30" height="30" fill="currentColor" class="bi bi-person-circle"
+                                viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            </svg></a></li>
+                </ul>
 			</div>
 		</div>
 	</nav>
 	<!-- END nav -->
 	<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');"
-		data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container">
+	data-stellar-background-ratio="0.5">
+	<div class="overlay"></div>
+	<div class="container">
 			<div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
 				<div class="col-md-9 ftco-animate pb-5">
 					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-									class="ion-ios-arrow-forward"></i></a></span> <span>Cars <i
+					class="ion-ios-arrow-forward"></i></a></span> <span>Cars <i
 								class="ion-ios-arrow-forward"></i></span></p>
 					<h1 class="mb-3 bread">Choose Your Car</h1>
 				</div>
@@ -124,11 +113,6 @@
 
 
 	<section class="ftco-section bg-light">
-
-		<button class="tablink" onclick="openPage('Suv', this, '#777')" id="defaultOpen">Suv</button>
-		<button class="tablink" onclick="openPage('Sedan', this, '#777')">Sedan</button>
-		<button class="tablink" onclick="openPage('Hatchback', this, '#777')">Hatchback</button>
-		<button class="tablink" onclick="openPage('Compact', this, '#777')">Compact</button>
 		<?php
     	  include "config.php";
    	   $view = mysqli_query($con,"select * from car where car_category = 'Suv'") or die (mysqli_error($con));
@@ -137,55 +121,58 @@
    	   $view3 = mysqli_query($con,"select * from car where car_category = 'Compact'") or die (mysqli_error($con));
    	 ?>
 
-		<div id="Suv" class="tabcontent">
-			<?php
+<div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+    </div>
+
+    <!-- <div id="London" class="tabcontent">
+        <h3>London</h3>
+        <p>London is the capital city of England.</p>
+    </div> -->
+
+    <div id="Paris" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+		<div class="container">
+			<h1 class=" p-5 ">Suv</h1>
+			<div id="London" class=" tabcontent row" >
+				<?php
            		while($row = mysqli_fetch_array($view))
            		{	
 					
             		extract($row);
          			?>
-			<div class="row">
+				<div class="col-md-4">
 
-				<div class="col-md-3">
 					<div class="car-wrap rounded ftco-animate">
 						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/<?php echo $row['photo'];?>);">
+						style="background-image: url(images/<?php echo $row['photo'];?>);">
 						</div>
 						<div class="text">
-							<h2 class="mb-0">
-								<?php echo $row['car_name'];?>
-							</h2>
+							<h2 class="mb-0"><?php echo $row['car_name'];?></h2>
 							<div class="d-flex mb-3">
-								<span class="cat">
-									<?php echo $row['car_comp'];?>
-								</span>
-								<p class="price ml-auto">Rs.
-									<?php echo $row['car_price'];?><span>/day</span>
-								</p>
+								<span class="cat"><?php echo $row['car_comp'];?></span>
+								<p class="price ml-auto">Rs.<?php echo $row['car_price'];?><span>/day</span></p>
 							</div>
 							<div class="d-flex mb-3">
-								<span>Seats :
-									<?php echo $row['car_seat'];?>+1
-								</span>
-								<p class="ml-auto">A/C :
-									<?php echo $row['car_ac'];?>
-								</p>
+								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
+								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
-							<p class="">Car number :
-								<?php echo $row['car_no'];?>
-							</p>
-							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input
-										type="button" name="Rent" value="Rent Now"
-										class="btn btn-primary py-3 px-5"></a>
+							<p class="ml-auto">Car No. : <?php echo $row['car_no'];?></p>
+							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a></div>
 						</div>
 					</div>
-				</div>
+				<?php }?>
 			</div>
-		</div>
-		<?php }?>
-		</div>
-		</div>
-		<div id="Sedan" class="tabcontent">
+			<h1 class=" p-5 ">Sedan</h1>
 			<div class="row">
 				<?php
            		while($row = mysqli_fetch_array($view1))
@@ -197,40 +184,25 @@
 
 					<div class="car-wrap rounded ftco-animate">
 						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/<?php echo $row['photo'];?>);">
+						style="background-image: url(images/<?php echo $row['photo'];?>);">
 						</div>
 						<div class="text">
-							<h2 class="mb-0">
-								<?php echo $row['car_name'];?>
-							</h2>
+							<h2 class="mb-0"><?php echo $row['car_name'];?></h2>
 							<div class="d-flex mb-3">
-								<span class="cat">
-									<?php echo $row['car_comp'];?>
-								</span>
-								<p class="price ml-auto">Rs.
-									<?php echo $row['car_price'];?><span>/day</span>
-								</p>
+								<span class="cat"><?php echo $row['car_comp'];?></span>
+								<p class="price ml-auto">Rs.<?php echo $row['car_price'];?><span>/day</span></p>
 							</div>
 							<div class="d-flex mb-3">
-								<span>Seats :
-									<?php echo $row['car_seat'];?>+1
-								</span>
-								<p class="ml-auto">A/C :
-									<?php echo $row['car_ac'];?>
-								</p>
+								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
+								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
-
-							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input
-										type="button" name="Rent" value="Rent Now"
-										class="btn btn-primary py-3 px-5"></a>
+							<p class="ml-auto">Car No. : <?php echo $row['car_no'];?></p>
+							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a></div>
 						</div>
 					</div>
-				</div>
 				<?php }?>
 			</div>
-		</div>
-
-		<div id="Hatchback" class="tabcontent">
+			<h1 class=" p-5 ">Hatchback</h1>
 			<div class="row">
 				<?php
            		while($row = mysqli_fetch_array($view2))
@@ -242,39 +214,25 @@
 
 					<div class="car-wrap rounded ftco-animate">
 						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/<?php echo $row['photo'];?>);">
+						style="background-image: url(images/<?php echo $row['photo'];?>);">
 						</div>
 						<div class="text">
-							<h2 class="mb-0">
-								<?php echo $row['car_name'];?>
-							</h2>
+							<h2 class="mb-0"><?php echo $row['car_name'];?></h2>
 							<div class="d-flex mb-3">
-								<span class="cat">
-									<?php echo $row['car_comp'];?>
-								</span>
-								<p class="price ml-auto">Rs.
-									<?php echo $row['car_price'];?><span>/day</span>
-								</p>
+								<span class="cat"><?php echo $row['car_comp'];?></span>
+								<p class="price ml-auto">Rs.<?php echo $row['car_price'];?><span>/day</span></p>
 							</div>
 							<div class="d-flex mb-3">
-								<span>Seats :
-									<?php echo $row['car_seat'];?>+1
-								</span>
-								<p class="ml-auto">A/C :
-									<?php echo $row['car_ac'];?>
-								</p>
+								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
+								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
-
-							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input
-										type="button" name="Rent" value="Rent Now"
-										class="btn btn-primary py-3 px-5"></a>
+							<p class="ml-auto">Car No. : <?php echo $row['car_no'];?></p>
+							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a></div>
 						</div>
 					</div>
-				</div>
 				<?php }?>
 			</div>
-		</div>
-		<div id="Compact" class="tabcontent">
+			<h1 class=" p-5 ">Compact</h1>
 			<div class="row">
 				<?php
            		while($row = mysqli_fetch_array($view3))
@@ -283,39 +241,29 @@
             		extract($row);
          			?>
 				<div class="col-md-4">
+
 					<div class="car-wrap rounded ftco-animate">
 						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/<?php echo $row['photo'];?>);">
+						style="background-image: url(images/<?php echo $row['photo'];?>);">
 						</div>
 						<div class="text">
-							<h2 class="mb-0">
-								<?php echo $row['car_name'];?>
-							</h2>
+							<h2 class="mb-0"><?php echo $row['car_name'];?></h2>
 							<div class="d-flex mb-3">
-								<span class="cat">
-									<?php echo $row['car_comp'];?>
-								</span>
-								<p class="price ml-auto">Rs.
-									<?php echo $row['car_price'];?><span>/day</span>
-								</p>
+								<span class="cat"><?php echo $row['car_comp'];?></span>
+								<p class="price ml-auto">Rs.<?php echo $row['car_price'];?><span>/day</span></p>
 							</div>
 							<div class="d-flex mb-3">
-								<span>Seats :
-									<?php echo $row['car_seat'];?>+1
-								</span>
-								<p class="ml-auto">A/C :
-									<?php echo $row['car_ac'];?>
-								</p>
+								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
+								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
 							</div>
-
-							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input
-										type="button" name="Rent" value="Rent Now"
-										class="btn btn-primary py-3 px-5"></a>
+							<p class="ml-auto">Car No. : <?php echo $row['car_no'];?></p>
+							<p class="d-flex mb-0 d-block"><a href="carbook.php?id=<?php echo $id; ?>"><input type="button" name="Rent" value="Rent Now" class="btn btn-primary py-3 px-5"></a></div>
 						</div>
 					</div>
-				</div>
 				<?php }?>
 			</div>
+
+		</div>
 		</div>
 	</section>
 
@@ -365,7 +313,7 @@
 								<li><a href="#"><span class="icon icon-phone"></span><span class="text">+91
 											9876543210</span></a></li>
 								<li><a href="#"><span class="icon icon-envelope"></span><span
-											class="text">info@carbook.com</span></a></li>
+								class="text">info@carbook.com</span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -412,25 +360,22 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="js/google-map.js"></script>
 	<script src="js/main.js"></script>
-	<script>
-		function openPage(pageName, elmnt, color) {
-			var i, tabcontent, tablinks;
-			tabcontent = document.getElementsByClassName("tabcontent");
-			for (i = 0; i < tabcontent.length; i++) {
-				tabcontent[i].style.display = "none";
-			}
-			tablinks = document.getElementsByClassName("tablink");
-			for (i = 0; i < tablinks.length; i++) {
-				tablinks[i].style.backgroundColor = "";
-			}
-			document.getElementById(pageName).style.display = "block";
-			elmnt.style.backgroundColor = color;
-		}
 
-		// Get the element with id="defaultOpen" and click on it
-		document.getElementById("defaultOpen").click();
-	</script>
 
 </body>
-
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 </html>
