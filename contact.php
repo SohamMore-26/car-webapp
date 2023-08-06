@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-=======
   <head>
     <title>DriveEase</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
->>>>>>> e1ea1ae8c15156ebbcaff825e113564be1179e6c
 
 <head>
   <title>CarEase</title>
