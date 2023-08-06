@@ -1,56 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>CarEase</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
 
-<head>
-  <title>Carbook - Contact Us</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
 
-  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-    rel="stylesheet">
+    <link rel="stylesheet" href="css/aos.css">
 
-  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-  <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
 
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-  <link rel="stylesheet" href="css/aos.css">
-
-  <link rel="stylesheet" href="css/ionicons.min.css">
-
-  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-  <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
-  <link rel="stylesheet" href="css/flaticon.css">
-  <link rel="stylesheet" href="css/icomoon.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script>
-    function validate() {
-      var x = document.forms["Contact"]["name"].value;
-      if (!isNaN(x) || x == "") {
-        swal("ERROR !", "Please Enter A Valid Name !", "warning");
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+    function validateContact()
+    {
+      var x=document.forms["Contact"]["name"].value;
+      if(x=="")
+      {
+        alert("Enter name");
+        return false;
+      }
+      var x=document.forms["Contact"]["email"].value;
+      if(x=="")
+      {
+        alert("Enter email");
+        return false;
+      }
+      var x=document.forms["Contact"]["subject"].value;
+      if(x=="")
+      {
+        alert("Enter subject");
+        return false;
+      }
+      var x=document.forms["Contact"]["message"].value;
+      if(x=="")
+      {
+        alert("Enter message");
         return false;
       }
     }
-  </script>
-</head>
+    </script>
+  </head>
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
-      </button>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Car<span>Ease<expanded="false" aria-label="Toggle navigation">/span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
 
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <!-- <li class="nav-item"><a href="carbook.php" class="nav-link"> Booking</a></li> -->
           <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
@@ -119,25 +136,23 @@
           </div>
         </div>
         <div class="col-md-8 block-9 mb-md-5">
-          <form action="#" class="bg-light p-5 contact-form" method="post" name="Contact" onsubmit="return validate()">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name" name="name" required>
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" placeholder="Your Email" name="email" required>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Subject" name="subject" required>
-            </div>
-            <div class="form-group">
-              <textarea cols="30" rows="7" class="form-control" name="Message" placeholder="Message"
-                required></textarea>
-            </div>
-            <div class="form-group">
-              <input name="submit" type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-            </div>
-          </form>
-
+        <form class="bg-light p-5 contact-form" method="post" name="Contact" onsubmit="return validateContact()">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Name" name="name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Email" name="email">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Subject" name="subject">
+              </div>
+              <div class="form-group">
+              <input type="textarea" class="form-control" placeholder="Subject" name="message">
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+              </div>
+            </form>
         </div>
       </div>
     </div>
