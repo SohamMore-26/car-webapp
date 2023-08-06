@@ -53,22 +53,25 @@ if(isset($_POST['login'])){
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
-        function validateForm2() {
-            var x = document.forms["Login"]["email"].value;
-            if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Valid Email !" , "warning");
-                return false ;
-            }
-            var x = document.forms["Login"]["password"].value;
-            if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter Your Password !" , "warning");
-                return false ;
-            }
+        function validateLogin()
+    {
+        var x= document.forms["Login"]["email"].value;
+        if(x=="")
+        {
+            alert("Please enter email");
+            return false;
         }
 
+        var x=document.forms["Login"]["password"].value;
+        if(x=="")
+        {
+            alert("please enter password");
+            return false;
+        }
+    }
         </script>
+    
 </head>
 
 <body>
@@ -119,7 +122,7 @@ if(isset($_POST['login'])){
     <section class="ftco-section ftco-about">
         <div class="container">
             <div class="col-md-8 block-9 mb-md-5">
-                <form  class="bg-light p-5 contact-form" method="post" name="Login"  onsubmit="return validateForm2()">
+                <form  class="bg-light p-5 contact-form" method="post" name="Login"  onsubmit="return validateLogin()">
                     <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
                     font-weight: 600; margin-bottom: 0.5rem !important;">Login</h2>
                     <?php

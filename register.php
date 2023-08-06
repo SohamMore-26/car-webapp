@@ -28,62 +28,58 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   
     <script>
-        function validateForm() {
-            var x = document.form["Register"]["name"].value;
-            if (!isNaN(x) || x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Valid Name !", "warning" );
-                return false ;
-            }
-
-            var x = document.form["Register"]["phone"].value;
-            if (isNaN(x) || x.length != 10) {
-                swal ( "ERROR !" ,  "Please Enter A Valid Phone No. !" , "warning" );
-                return false ;
-            }
-
-            var x = document.form["Register"]["address"].value;
-            if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Valid Address !" , "warning");
-                return false ;
-            }
-
-            var x = document.form["Register"]["email"].value;
-            if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Valid Email !" , "warning");
-                return false ;
-            }
-
-            var p = document.form["Register"]["password"].value;
-            if (p == "" || p.length<8 && p.length > 16 ) {
-                swal ( "ERROR !" ,  "Please Enter Minimum 8 Digit or Maximun 16 Digit Strong Password !" , "warning");
-                return false ;
-            }
-
-            var y = document.form["Register"]["cpassword"].value;
-            if (y == "") {
-                swal ( "ERROR !" ,  "Please Confirm Your Password Once Again !" , "warning");
-                return false ;
-            }
-            if (y!=p) {
-                swal ( "ERROR !" ,  "Passwords doesnt Match" , "warning");
-                return false ;
-            }
-
-        }
+    function validateRegister()
+    {
+      var x=document.forms["Register"]["name"].value;
+      if(x=="")
+      {
+        alert("Enter name");
+        return false;
+      }
+      var x=document.forms["Register"]["phone"].value;
+      if(x=="")
+      {
+        alert("Enter phone no.");
+        return false;
+      }
+      var x=document.forms["Register"]["address"].value;
+      if(x=="")
+      {
+        alert("Enter address");
+        return false;
+      }
+      var x=document.forms["Register"]["email"].value;
+      if(x=="")
+      {
+        alert("Enter email");
+        return false;
+      }
+      var x=document.forms["Register"]["password"].value;
+      if(x=="")
+      {
+        alert("Enter password");
+        return false;
+      }
+      var x=document.forms["Register"]["cpassword"].value;
+      if(x=="")
+      {
+        alert("Enter confirm password");
+        return false;
+      }
+    }
     </script>
+   
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
-            </button>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Car<span>Ease<expanded="false" aria-label="Toggle navigation">/span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
@@ -126,32 +122,28 @@
         <div class="container">
             <div class="formup">
                 <div class="col-md-8 block-9 mb-md-5">
-                <form action="#" class="bg-light p-5 contact-form" method="post" name="Register"  onsubmit="return validateForm()">
-                        <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
-            font-weight: 600; margin-bottom: 0.5rem !important;">Register Here</h2>
-                        <div class="form-group">
-                            <input type="varchar" class="form-control" placeholder="Your Name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="integer" class="form-control" placeholder="Your Phone No." name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea type="text" class="form-control" placeholder="Your Address"
-                                name="address" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder=" Confirm Password" name="cpassword" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" name="register" value="Register Now" class="btn btn-primary py-3 px-5">
-
-                        </div>
+                <form class="bg-light p-5 contact-form" method="post" name="Register" onsubmit="return validateRegister()">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Name" name="name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Phone No." name="phone">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Address" name="address">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Email" name="email">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Password" name="password">
+              </div>
+              <div class="form-group">
+              <input type="textarea" class="form-control" placeholder="Confirm Password" name="cpassword">
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary py-3 px-5">
+              </div>
                         <a href="login.php">Already have an account ? Login</a>
                     </form>
                 </div>
@@ -194,14 +186,14 @@
 		if($add)
 		{
 			echo "<script>";
-			echo "swal('Registered Sucessfully..!')";
+			echo "alert('Registered Sucessfully..!')";
             header(location: "login.php"); 
 			echo "</script>";
 		}
 		else
 		{
 			echo "<script>";
-			echo "swal('ERROR ! Registration Fail..!')";
+			echo "alert('ERROR ! Registration Fail..!')";
 			echo "</script>";
 		}
 	}

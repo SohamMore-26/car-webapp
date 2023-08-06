@@ -38,40 +38,7 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script>
-        function validate() {
-            var x = document.forms["Booking"]["pick_loc"].value;
-            if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Pickup Location!" , "error");
-                return false ;
-            }
-
-            var x = document.forms["Booking"]["drop_loc"].value;
-            if (x=="") {
-                swal ( "ERROR !" ,  "Please Enter A Drop Location !" , "error" );
-                return false ;
-            }
-
-            var x = document.forms["Booking"]["pick_date"].value;
-            if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Pickup Date!" , "error");
-                return false ;
-            }
-
-            var x = document.forms["Booking"]["drop_date"].value;
-            if (x == "") {
-                swal ( "ERROR !" ,  "Please Enter A Drop Date !" , "error");
-                return false ;
-            }
-
-            var x = document.forms["Booking"]["pick_time"].value;
-            if (x == ""  ) {
-                swal ( "ERROR !" ,  "Please Enter A Pickup Time !" , "error");
-                return false ;
-            }
-        }
-    </script>
+   
 </head>
 
 <body>
@@ -217,13 +184,13 @@
 		if($add)
 		{
 			
-            swal ( "Success !" ,  "Car Booked Successfully !" , "success");
+            alert("Car Booked Successfully !");
 			
 		}
 		else
 		{
 			
-			swal('Error..!' , "Car not Booked !" , 'errors');
+			alert("Car not Booked !");
 			
 		}
 	}
