@@ -28,53 +28,66 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-   
+    <script src=
+"https://cdn.jsdelivr.net/npm/sweetalert2@9">
+    </script>
     <script>
     function validateRegister()
     {
       var x=document.forms["Register"]["name"].value;
-      if(x=="")
+      if(x=="" || ! isNaN(x))
       {
-        alert("Enter name...!");
+       alert("Enter Name");
         return false;
       }
-      var x=document.forms["Register"]["phone"].value;
-      if(x=="")
+    
+      var y=document.forms["Register"]["phone"].value;
+      if(y.length!=10 || isNaN(y))
       {
-        alert("Enter phone no. ...!");
+        alert("Enter Phone No.");
         return false;
       }
-      var x=document.forms["Register"]["address"].value;
-      if(x=="")
+     
+      var z=document.forms["Register"]["address"].value;
+      if(z=="")
       {
-        alert("Enter address...!");
+        alert("Enter Address");
         return false;
       }
-      var x=document.forms["Register"]["email"].value;
-      if(x=="")
+
+      var e=document.forms["Register"]["email"].value;
+      if(e=="")
       {
-        alert("Enter email...!");
+        alert("Enter Email");
         return false;
       }
+
       var pass=document.forms["Register"]["password"].value;
       if(pass=="")
       {
-        alert("Enter password...!");
+        alert("Enter Password");
+        return false;
+      }
+      
+      if(pass.length<8 || pass.length>16)
+      {
+        alert("Enter Password");
         return false;
       }
       var cpass=document.forms["Register"]["cpassword"].value;
       if(cpass=="")
       {
-        alert("Enter confirm password...!");
+        alert("Confirm Password");
         return false;
       }
-      if(cpass!=pass)
+      if(pass != cpass)
       {
-        alert("Password do not match...!");
+        alert("Confirm Password");
         return false;
+      }
       }
 
-    }
+    
     </script>
    
 </head>
@@ -118,7 +131,7 @@
                 <input type="text" class="form-control" placeholder="Your Name" name="name">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Phone No."  maxlength = "10" name="phone">
+                <input type="text" class="form-control" placeholder="Your Phone No."  name="phone">
               </div>
               <div class="form-group">
                 <textarea type="text" class="form-control" rows="4" placeholder="Your Address" name="address"></textarea>
