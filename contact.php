@@ -33,26 +33,28 @@
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
-    function validateContact() {
+    function validateContact() {             
       var x = document.forms["Contact"]["name"].value;
-      if (x == "") {
-        alert("Enter name");
+      if(x=="" || ! isNaN(x))
+      {
+        swal ( "Oops" ,  "Enter A Valid Name!" ,  "error" );
         return false;
       }
       var x = document.forms["Contact"]["email"].value;
       if (x == "") {
-        alert("Enter email");
+        swal ( "Oops" ,  "Enter A Valid Email!" ,  "error" );
         return false;
       }
       var x = document.forms["Contact"]["subject"].value;
       if (x == "") {
-        alert("Enter subject");
+        swal ( "Oops" ,  "Enter A Subject to Contact Us!" ,  "error" );
         return false;
       }
       var x = document.forms["Contact"]["message"].value;
       if (x == "") {
-        alert("Enter message");
+        swal ( "Oops" ,  "Enter a Message to Contact Us!" ,  "error" );
         return false;
       }
     }
