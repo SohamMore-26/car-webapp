@@ -108,6 +108,7 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
                                                         <th>Name</th>
                                                         <th>Subject</th>
                                                         <th>Message</th>
+                                                        <th>Delete</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -143,6 +144,9 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
                                                             <td>
                                                                 <?php echo $row['message']; ?>
                                                             </td>
+                                                            <td>
+                                                          <p>  <a href="delete1.php?c_id=<?php echo $c_id; ?>">Delete</a></p>
+                                                        </td>
                                                         </tr>
                                                     <?php } ?>
                                                 </tbody>

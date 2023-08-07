@@ -93,7 +93,7 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
                 <div class="col-md-6 offset-md-3">
                     <div class="card" style="margin-top: -100px;">
                     <div class="card-header">
-                        <h4>User Profile</h4>
+                        <h4>Admin Profile</h4>
                         </div>
                        
                             <div class="card-body">
@@ -116,11 +116,7 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
             </div>
         </div>
     </section>
-
-
-
-
-
+    
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
             <div class="row mb-5">
