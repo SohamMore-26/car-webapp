@@ -2,7 +2,7 @@
 include "config.php";
 $login = false;
 $showError = false;
-if (isset($_POST['login1'])) {
+if (isset($_POST['login'])) {
     extract($_POST);
     $log = mysqli_query($con, "select * from admin where ad_email='" . $_POST['ad-email'] . "' and ad_pass='" . $_POST['ad-pass'] . "'") or die(mysqli_error($con));
     if (mysqli_num_rows($log) > 0) {
@@ -10,6 +10,9 @@ if (isset($_POST['login1'])) {
         $login = true;
         session_start();
         $_SESSION['loggedin1'] = true;
+        $_SESSION['ad_name'] = $fetch['ad_name'];
+        $_SESSION['ad_email'] = $fetch['ad_email'];
+        $_SESSION['ad_pass'] = $fetch['ad_pass'];
         header("location: ad_index.php");
     } else {
         $showError = "Login Failed...!(Check your email id and Password Once Again)";

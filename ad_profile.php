@@ -10,7 +10,7 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
 <html lang="en">
 
 <head>
-    <title>Carbook - Admin Login</title>
+    <title>DriveEase - Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -38,35 +38,42 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-dark" id="ftco-navbar"
-		style="background-color: #00aa73; padding: 20px;">
-		<div class="container">
-			<a class="navbar-brand" href="ad_index.html">Drive<span>Ease</span></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
+                    <?php
+                    if (isset($_SESSION['id'])) {
+                        $view = mysqli_query($con, "select * from book where id = '" . $_SESSION['id'] . "'") or die(mysqli_error($con));
+                    }
+                    ?>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-dark" id="ftco-navbar"
+        style="background-color: #00aa73; padding: 20px;">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item" style="padding-right: 10px"><a href="ad_index.php" class="nav-link">Contact Queries</a></li>
-                    <li class="nav-item" style="padding-right: 10px"><a href="ad_record.php" class="nav-link">User Record</a></li>
-                    <li class="nav-item active" style="padding-right: 10px"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
-                    <li class="nav-item" style="padding-right: 10px"><a href="ad_car.php" class="nav-link">Update cars</a></li>
-                    <li class="nav-item" style="padding-right: 10px"><a href="add.php" class="nav-link">Add cars</a></li>
+
+                    <li class="nav-item" style="padding-right: 10px"><a href="index.html"
+                            class="nav-link">Home</a></li>
+                    <!-- <li class="nav-item"><a href="carbook.php" class="nav-link"> Booking</a></li> -->
+                    <li class="nav-item" style="padding-right: 10px"><a href="car1.php" class="nav-link">Cars</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="contact.php" class="nav-link">Contact</a>
+                    </li>
                     <?php
                 if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
                     echo ' <li class="nav-item" style="padding-right: 10px"><a href="login.php" class="nav-link">Login</a>';
                 }
                 else{
-					echo ' <li class="nav-item" style="padding-right: 10px"><a href="logout.php" class="nav-link">Logout</a>';
-					echo  '<li class="nav-item" style="padding-right: 10px"><a href="ad_profile.php" class="nav-link"><svg
-								xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-								class="bi bi-person-circle" viewBox="0 0 16 16">
-								<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-								<path fill-rule="evenodd"
-									d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-							</svg></a></li>';
+                echo ' <li class="nav-item" style="padding-right: 10px"><a href="logout.php" class="nav-link">Logout</a>';
+                echo  '<li class="nav-item" style="padding-right: 10px"><a href="ad_profile.php" class="nav-link"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg></a></li>';
                 }
 
             ?>
@@ -74,74 +81,42 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
             </div>
         </div>
     </nav>
-    <!-- END nav -->
 
-    <section class="intro">
-        <?php
-      include "config.php";
-      $view = mysqli_query($con,"select * from book") or die (mysqli_error($con));
-    ?>
-        <div class="bg-image h-100" style="background-color: #f5f7fa" ;>
-            <div class="mask d-flex align-items-center h-100">
-                <!-- <div class="container"> -->
-                <div class="row justify-content-center">
-          <!-- <div class="col-md-12 offset-md-1"> -->
-          <div style="margin: 50px ;">
+    <section class="ftco-section">
+   
+           
+        <div style="margin: 50px ; ">
             <div class="row">
-                <div class="col-md-12 offset-md-2">
-                    <div class="card" >
-                        <div class="card-header">
-                            <h4>Booking Record</h4>
+                <div class="col-md-6 offset-md-3">
+                    <div class="card" style="margin-top: -100px;">
+                    <div class="card-header">
+                        <h4>User Profile</h4>
                         </div>
-                        <div class="card-body">
-                            <table class ="table table-striped mb-0" style="color: rgb(45, 45, 45); font-style: normal;">
-                                <thead style="background-color: #56db75; ">
-                                    <tr class="text-center" data-expanded="true">
-                                        <th>Name</th>
-                                        <th>Car Name</th>
-                                        <th>Pickup Location</th>
-                                        <th>Drop Location</th>
-                                        <th>Pickup Date</th>
-                                        <th>Pickup Time</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    while ($row = mysqli_fetch_array($view)) {
-                                        extract($row); ?>
-                                        <tr class="text-center">
-                                            <td>
-                                                <?php echo $row['name']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row['car']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row['pick_loc']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row['drop_loc']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row['pick_date']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row['pick_time']; ?>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
-                        </div>
+                       
+                            <div class="card-body">
+                            <p><strong>Name:</strong>
+                                <?php echo $_SESSION['ad_name'] ?>
+                            </p>
+                            <p><strong>Email:</strong>
+                                <?php echo $_SESSION['ad_email'] ?>
+                            </p>
+                            <p><strong>Password:</strong>
+                                <?php echo $_SESSION['ad_pass'] ?>
+                            </p>
+                            </div>
+                            <p class="d-flex mb-0 d-block"><a href="profileedit.php" style="margin: 20px;"><input
+                                    type="button" name="Rent" value="Edit Details"
+                                    class="btn btn-primary py-3 px-5"></a>
+                        
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-                <!-- </div> -->
-            </div>
-        </div>
     </section>
+
+
+
+
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
@@ -183,7 +158,8 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
                         <div class="block-23 mb-3">
                             <ul>
                                 <li><a href="#"><span class="icon icon-map-marker"></span><span class="text">SSVPS
-                                            Polytechnic Dhule, 424001</span></li></a>
+                                            Polytechnic Dhule,
+                                            424001</span></li></a>
                                 <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91
                                             9876543210</span></a></li>
                                 <li><a href="#"><span class="icon icon-envelope"></span><span
@@ -216,7 +192,6 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
                 stroke="#F96D00" />
         </svg></div>
 
-
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -235,7 +210,6 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
-
 </body>
 
 </html>
