@@ -80,7 +80,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     </nav>
     
     <section class="ftco-section">
-        <!-- <div style="margin: 50px ; ">
+        <div style="margin: 50px ; ">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <div class="card" style="margin-top: -100px;">
@@ -90,21 +90,21 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                         
                         <div class="card-body">
                             <p><strong>Name:</strong>
-                            <?php echo $row1['r_name'] ?>
+                            <?php echo $_SESSION['name'] ?>
                         </p>
                         <p><strong>Email:</strong>
-                        <?php echo $row1['r_email'] ?>
+                        <?php echo $_SESSION['email'] ?>
                     </p>
                     <p><strong>Address:</strong>
-                    <?php echo $row1['r_address'] ?>
+                    <?php echo $_SESSION['address'] ?>
                 </p>
                 <p><strong>Phone Number:</strong>
-                <?php echo $row1['r_phone'] ?>
+                <?php echo $_SESSION['phone'] ?>
             </p>
-        </div> -->
-        <!-- <p class="d-flex mb-0 d-block"><a href="profileedit.php" style="margin: 20px;"><input
+        </div>
+         <p class="d-flex mb-0 d-block"><a href="profileedit.php" style="margin: 20px;"><input
         type="button" name="Rent" value="Edit Details"
-        class="btn btn-primary py-3 px-5"></a> -->
+        class="btn btn-primary py-3 px-5"></a>
     </div>
 </div>
 </div>

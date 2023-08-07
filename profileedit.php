@@ -195,6 +195,7 @@ if(isset($_SESSION['id']))
 		{
             echo "<script>";
             echo "window.alert('Data update successfully.....!')";
+             echo 'window.location.href="profile.php";';
             echo "</script>";
         }
         else
