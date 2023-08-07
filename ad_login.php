@@ -1,3 +1,23 @@
+<?php
+include "config.php";
+$login = false;
+$showError = false;
+if (isset($_POST['login'])) {
+    extract($_POST);
+    $log = mysqli_query($con, "select * from admin where ad_email='" . $_POST['ad-email'] . "' and ad_pass='" . $_POST['ad-pass'] . "'") or die(mysqli_error($con));
+    if (mysqli_num_rows($log) > 0) {
+        $fetch = mysqli_fetch_array($log);
+        $login = true;
+        session_start();
+        $_SESSION['loggedin'] = true;
+        header("location: ad_index.php");
+    } else {
+        $showError = "Login Failed...!(Check your email id and Password Once Again)";
+    }
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,16 +91,25 @@
                 <form action="#" class="bg-light p-5 contact-form" method="post" name="ad-form">
                     <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
                     font-weight: 600; margin-bottom: 0.5rem !important;">Admin Login</h2>
+                    <?php
+            if ($showError) {
+                echo ' <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                             <strong>Error!</strong> ' . $showError . '
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div> ';
+            }
+            ?>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Admin ID" id="ad-name">
+                        <input type="text" class="form-control" placeholder="Admin ID" name="ad-email">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Admin Password" id="ad-pass">
+                        <input type="password" class="form-control" placeholder="Admin Password" name="ad-pass">
                     </div>
                     <div class="form-group">
                         <input type="submit" name="login" value="Login" class="btn btn-primary py-3 px-5">
                     </div>
-
                 </form>
             </div>
         </div>
