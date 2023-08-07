@@ -9,7 +9,7 @@ if (isset($_POST['login1'])) {
         $fetch = mysqli_fetch_array($log);
         $login = true;
         session_start();
-        $_SESSION['loggedin'] = true;
+        $_SESSION['loggedin1'] = true;
         header("location: ad_index.php");
     } else {
         $showError = "Login Failed...!(Check your email id and Password Once Again)";

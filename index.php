@@ -42,13 +42,21 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
 
-                    <li class="nav-item active" style="padding-right: 10px"><a href="index.html"
+                    <li class="nav-item active" style="padding-right: 10px"><a href="index.php"
                             class="nav-link">Home</a></li>
-                    <!-- <li class="nav-item"><a href="carbook.php" class="nav-link"> Booking</a></li> -->
                     <li class="nav-item" style="padding-right: 10px"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item" style="padding-right: 10px"><a href="contact.php" class="nav-link">Contact</a>
                     </li>
-                    <li class="nav-item" style="padding-right: 10px"><a href="login.php" class="nav-link">Login</a></li>
+                    <?php
+                    session_start();    
+                if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
+                    echo ' <li class="nav-item" style="padding-right: 10px"><a href="login.php" class="nav-link">Login</a>';
+                }
+                else{
+                echo ' <li class="nav-item" style="padding-right: 10px"><a href="logout.php" class="nav-link">Logout</a>';
+                }
+
+            ?>
                     <li class="nav-item" style="padding-right: 10px"><a href="profile.php" class="nav-link"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                 class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -61,23 +69,6 @@
         </div>
     </nav>
     <!-- END nav -->
-
-    <!-- <div class="hero-wrap ftco-degree-bg" style="background-image: url('images/bg_1.jpg');"
-        data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
-                <div class="col-lg-8 ftco-animate">
-                    <div class="text w-100 text-center mb-md-5 pb-md-5">
-                        <h1 class="mb-4">Fast &amp; Easy Way To Rent A Car</h1>
-                        <p style="font-size: 18px;">Welcome to DriveEase, an innovative and user-friendly Car rental
-                            Services. We are excited to present a seamless and enjoyable car rental experience like no
-                            other!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <section class="ftco-section ftco-about">
         <div class="container">
             <div class="row no-gutters">
