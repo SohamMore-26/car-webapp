@@ -52,8 +52,9 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+<body style="background-image: linear-gradient(to bottom left, rgb(85, 236, 236), rgb(85, 236, 140));">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-dark" id="ftco-navbar"
+        style="background-color: #00aa73; padding: 20px;">
         <div class="container">
             <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
@@ -63,38 +64,38 @@ if (isset($_POST['login'])) {
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="carbook.html" class="nav-link">Booking</a></li>
-                    <li class="nav-item"><a href="car.html" class="nav-link">Cars</a></li>
-                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-                    <li class="nav-item active"><a href="login.php" class="nav-link">Login</a></li>
+
+                    <li class="nav-item" style="padding-right: 10px"><a href="index.php" class="nav-link">Home</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="car1.php" class="nav-link">Cars</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="contact.php" class="nav-link">Contact</a>
+                    </li>
+                    <?php
+                    session_start();
+                    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
+                        echo ' <li class="nav-item active" style="padding-right: 10px"><a href="login.php" class="nav-link">Login</a>';
+                    } else {
+                        echo ' <li class="nav-item" style="padding-right: 10px"><a href="logout.php" class="nav-link">Logout</a>';
+                        echo '<li class="nav-item " style="padding-right: 10px"><a href="profile.php" class="nav-link"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg></a></li>';
+                    }
+
+                    ?>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- END nav -->
-    <section class="hero-wrap hero-wrap-2 js-fullheight"
-        style="background-image: url('images/scott-graham-5fNmWej4tAA-unsplash.jpg');"
-        data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-                <div class="col-md-9 ftco-animate pb-5">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-                                    class="ion-ios-arrow-forward"></i></a></span> <span>Admin Login <i
-                                class="ion-ios-arrow-forward"></i></span></p>
-                    <h1 class="mb-3 bread">Admin Login</h1>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="ftco-section ftco-about">
-        <div class="container">
-            <div class="col-md-8 block-9 mb-md-5">
-                <form action="#" class="bg-light p-5 contact-form" method="post" name="ad-form">
-                    <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
+    <div class="container mt-5" style="padding:50px; background-color: aliceblue; margin-bottom: 100px;">
+
+        <form action="#" class="bg-light p-5 contact-form" method="post" name="ad-form">
+            <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
                     font-weight: 600; margin-bottom: 0.5rem !important;">Admin Login</h2>
-                    <?php
+            <?php
             if ($showError) {
                 echo ' <div class="alert alert-danger alert-dismissible fade show" role="alert">
                              <strong>Error!</strong> ' . $showError . '
@@ -104,20 +105,17 @@ if (isset($_POST['login'])) {
                         </div> ';
             }
             ?>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Admin ID" name="ad-email">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Admin Password" name="ad-pass">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" name="login" value="Login" class="btn btn-primary py-3 px-5">
-                    </div>
-                </form>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Admin ID" name="ad-email">
             </div>
-        </div>
-        </div>
-    </section>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Admin Password" name="ad-pass">
+            </div>
+            <div class="form-group">
+                <input type="submit" name="login" value="Login" class="btn btn-primary py-3 px-5">
+            </div>
+        </form>
+    </div>
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
