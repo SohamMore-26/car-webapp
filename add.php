@@ -61,7 +61,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-dark" id="ftco-navbar"
         style="background-color: #00aa73; padding: 20px;">
         <div class="container">
-            <a class="navbar-brand" href="ad_index.html">Drive<span>Ease</span></a>
+            <a class="navbar-brand" href="ad_index.php">Drive<span>Ease</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
