@@ -95,6 +95,7 @@
    	 ?>
 
 		<div class="container">
+			<h1>Select a Car</h1>
 			<h1 class=" p-5 ">Suv</h1>
 			<div class="row" >
 				<?php
