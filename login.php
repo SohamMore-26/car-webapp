@@ -17,7 +17,7 @@ if (isset($_POST['login'])) {
         $_SESSION['id'] = $fetch['r_id'];
         header("location: car1.php");
     } else {
-        $showError = "Login Failed...!";
+        $showError = "Login Failed...!(Check your email id and Password Once Again)";
     }
 }
 
@@ -51,17 +51,18 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         function validateLogin() {
             var x = document.forms["Login"]["email"].value;
             if (x == "") {
-                alert("Please enter email");
+                swal ( "Oops" ,  "Enter A Valid Email!" ,  "error" );
                 return false;
             }
 
             var x = document.forms["Login"]["password"].value;
             if (x == "") {
-                alert("please enter password");
+                swal ( "Oops" ,  "Enter A Valid Password!" ,  "error" )
                 return false;
             }
         }
