@@ -31,13 +31,25 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Drive<span style = "color : white ; ">Ease</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
-            </button>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-dark" id="ftco-navbar"
+		style="background-color: #00aa73; padding: 20px;">
+		<div class="container">
+			<a class="navbar-brand" href="ad_index.html">Drive<span>Ease</span></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item" style="padding-right: 10px"><a href="ad_index.php" class="nav-link">Contact Queries</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="ad_record.php" class="nav-link">User Record</a></li>
+                    <li class="nav-item active" style="padding-right: 10px"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="ad_car.php" class="nav-link">Update cars</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="add.php" class="nav-link">Add cars</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="index.html" class="nav-link">Log Out</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
     <!-- END nav -->

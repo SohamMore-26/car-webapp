@@ -58,9 +58,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-dark" id="ftco-navbar"
+        style="background-color: #00aa73; padding: 20px;">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
+            <a class="navbar-brand" href="ad_index.php">Drive<span>Ease</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -68,83 +69,118 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="ad_index.php" class="nav-link">Admin</a></li>
-                    <li class="nav-item"><a href="ad_record.php" class="nav-link">User Record</a></li>
-                    <li class="nav-item"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
-                    <li class="nav-item"><a href="ad_car.php" class="nav-link">Update cars</a></li>
-                    <li class="nav-item active"><a href="add.php" class="nav-link">Add cars</a></li>
-                    <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="ad_index.php" class="nav-link">Contact
+                            Queries</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="ad_record.php" class="nav-link">User
+                            Record</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="bookrec.php" class="nav-link">Booking
+                            Record</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="ad_car.php" class="nav-link">Update
+                            cars</a></li>
+                    <li class="nav-item active" style="padding-right: 10px"><a href="add.php" class="nav-link">Add
+                            cars</a>
+                    </li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="index.html" class="nav-link">Log Out</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <section class="hero-wrap hero-wrap-3 js-fullheight" style="background-image: url('images/bg_3.jpg');"
-		data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-				<div class="col-md-9 ftco-animate pb-5">
-					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-									class="ion-ios-arrow-forward"></i></a></span> <span>Cars <i
-								class="ion-ios-arrow-forward"></i></span></p>
-					<h1 class="mb-3 bread">Add New Car</h1>
-				</div>
-			</div>
-		</div>
-	</section>
-    <!-- END nav -->
-    <section class="ftco-section ftco-intro">
+    <!-- <section class="hero-wrap hero-wrap-3 js-fullheight" style="background-image: url('images/bg_3.jpg');"
+        data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
-            <div class="formup">
-                <div class="col-md-8 block-9 mb-md-5">
-                    <form class="bg-light p-5 contact-form" method="post" name="Register"
-                        onsubmit="return validateForm()">
-                        <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
-                            font-weight: 600; margin-bottom: 0.5rem !important;">Add New Car</h2>
-                        <div class="form-group">
-                        <label for="" class="label">Select Car Category</label><br>
-                         <select class="form-control" id="cars" name="car_category">
-                            <option class="form-control" value="">Select Car Category</option>
-                            <option class="form-control" value="Suv">Suv</option>
-                            <option class="form-control" value="Sedan">Sedan</option>
-                            <option class="form-control" value="Hatchback">Hatchback</option>
-                            <option class="form-control" value="Compact">Compact </option>
-                            <option class="form-control" value="Crossover">Crossover</option>
-                            </select>        
-                        </div>
-                        <div class="form-group">
-                            <input type="varchar" class="form-control" placeholder="Enter Car Name" name="car_name">
-                        </div>
-                        <div class="form-group">
-                            <input type="varchar" class="form-control" placeholder="Enter Car Company" name="car_comp">
-                        </div>
-                        <div class="form-group">
-                            <input type="varchar" class="form-control" placeholder="Enter Price" name="car_price">
-                        </div>
-                        <div class="form-group">
-                            <input type="varchar" class="form-control" placeholder="Enter No. Of Seats" name="car_seat">
-                        </div>
-                        <div class="form-group">
-                            <input type="varchar" class="form-control" placeholder="Enter Car Number" name="car_no">
-                        </div>
-                        <div class="form-group">
-                            A/C
-                            <br><input type="radio" name="car_ac" value="Yes" class="btn btn-primary py-3 px-5"> Yes
-                            <input type="radio" name="car_ac" value="No" class="btn btn-primary py-3 px-5"> No
-                        </div>
-                        <div class="form-group">
-                            Select Car Photo <input type="file" class="form-control" name="photo">
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" name="add" value="Add Now" class="btn btn-primary py-3 px-5">
-                        </div>
-                    </form>
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+                <div class="col-md-9 ftco-animate pb-5">
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                                    class="ion-ios-arrow-forward"></i></a></span> <span>Cars <i
+                                class="ion-ios-arrow-forward"></i></span></p>
+                    <h1 class="mb-3 bread">Add New Car</h1>
                 </div>
             </div>
         </div>
+    </section> -->
+    <!-- END nav -->
+    <div class="bg-image h-100" style="background-color: #f5f7fa" ;>
+        <div class="mask d-flex align-items-center h-100">
+            <div class="row justify-content-center">
+                <div style="margin: 50px ;">
+                    <div class="row">
+                        <div class="col-md-12 offset-md-2">
+                            <div class="col-md-12 offset-md-2">
+                                <div class="col-md-12 offset-md-2">
+                                    <div class="col-md-12 offset-md-2">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4>User Record</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <form class="bg-light p-5 contact-form" method="post" name="Register"
+                                                    onsubmit="return validateForm()">
+                                                    <h2 class="bg-light p-5 contact-form" style="font-size: 40px;
+                            font-weight: 600; margin-bottom: 0.5rem !important;">Add New Car</h2>
+                                                    <div class="form-group">
+                                                        <label for="" class="label">Select Car Category</label><br>
+                                                        <select class="form-control" id="cars" name="car_category">
+                                                            <option class="form-control" value="">Select Car Category
+                                                            </option>
+                                                            <option class="form-control" value="Suv">Suv</option>
+                                                            <option class="form-control" value="Sedan">Sedan</option>
+                                                            <option class="form-control" value="Hatchback">Hatchback
+                                                            </option>
+                                                            <option class="form-control" value="Compact">Compact
+                                                            </option>
+                                                            <option class="form-control" value="Crossover">Crossover
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="varchar" class="form-control"
+                                                            placeholder="Enter Car Name" name="car_name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="varchar" class="form-control"
+                                                            placeholder="Enter Car Company" name="car_comp">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="varchar" class="form-control"
+                                                            placeholder="Enter Price" name="car_price">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="varchar" class="form-control"
+                                                            placeholder="Enter No. Of Seats" name="car_seat">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="varchar" class="form-control"
+                                                            placeholder="Enter Car Number" name="car_no">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        A/C
+                                                        <br><input type="radio" name="car_ac" value="Yes"
+                                                            class="btn btn-primary py-3 px-5"> Yes
+                                                        <input type="radio" name="car_ac" value="No"
+                                                            class="btn btn-primary py-3 px-5"> No
+                                                    </div>
+                                                    <div class="form-group">
+                                                        Select Car Photo <input type="file" class="form-control"
+                                                            name="photo">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="submit" name="add" value="Add Now"
+                                                            class="btn btn-primary py-3 px-5">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
