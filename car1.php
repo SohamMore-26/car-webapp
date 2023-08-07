@@ -44,7 +44,7 @@
 				<ul class="navbar-nav ml-auto">
 
 					<li class="nav-item" style="padding-right: 10px"><a href="index.php" class="nav-link">Home</a></li>
-					<li class="nav-item" style="padding-right: 10px"><a href="car1.php" class="nav-link">Cars</a></li>
+					<li class="nav-item active" style="padding-right: 10px"><a href="car1.php" class="nav-link">Cars</a></li>
 					<li class="nav-item" style="padding-right: 10px"><a href="contact.php" class="nav-link">Contact</a>
 					</li>
 					<?php

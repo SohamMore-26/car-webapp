@@ -94,7 +94,7 @@ if (isset($_POST['login'])) {
                 }
                 else{
                 echo ' <li class="nav-item" style="padding-right: 10px"><a href="logout.php" class="nav-link">Logout</a>';
-                echo  '<li class="nav-item" style="padding-right: 10px"><a href="profile.php" class="nav-link"><svg
+                echo  '<li class="nav-item active" style="padding-right: 10px"><a href="profile.php" class="nav-link"><svg
                             xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                             class="bi bi-person-circle" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
