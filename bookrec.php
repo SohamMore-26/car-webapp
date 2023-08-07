@@ -30,44 +30,28 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
-            </button>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-dark" id="ftco-navbar"
+		style="background-color: #00aa73; padding: 20px;">
+		<div class="container">
+			<a class="navbar-brand" href="ad_index.html">Drive<span>Ease</span></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="ad_index.php" class="nav-link">Admin</a></li>
-                    <li class="nav-item"><a href="ad_record.php" class="nav-link">User Record</a></li>
-                    <li class="nav-item active"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
-                    <li class="nav-item"><a href="ad_car.php" class="nav-link">Update cars</a></li>
-                    <li class="nav-item"><a href="add.php" class="nav-link">Add cars</a></li>
-                    <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="ad_index.php" class="nav-link">Contact Queries</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="ad_record.php" class="nav-link">User Record</a></li>
+                    <li class="nav-item active" style="padding-right: 10px"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="ad_car.php" class="nav-link">Update cars</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="add.php" class="nav-link">Add cars</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="index.html" class="nav-link">Log Out</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- END nav -->
-    <section class="hero-wrap hero-wrap-3 js-fullheight"
-        style="background-image: url('images/scott-graham-5fNmWej4tAA-unsplash.jpg');"
-        data-stellar-background-ratio="0.5">
-        <!-- <div class="overlay"></div> -->
-        <div class="container">
-            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-                <div class="col-md-9 ftco-animate pb-5">
-                    <div class="breadup">
-                        <p class="breadcrumbs"><span class="mr-2"><a href="ad_index.html">Admin<i
-                                        class="ion-ios-arrow-forward"></i></a></span> <span>View Records<i
-                                    class="ion-ios-arrow-forward"></i></span></p>
-                        <h1 class="mb-3 bread">Booking Records</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="intro">
         <?php
@@ -78,10 +62,10 @@
             <div class="mask d-flex align-items-center h-100">
                 <!-- <div class="container"> -->
                 <div class="row justify-content-center">
-          <div class="col-md-12 offset-md-1">
+          <!-- <div class="col-md-12 offset-md-1"> -->
           <div style="margin: 50px ;">
             <div class="row">
-                <div class="col-md-12 offset-md-1">
+                <div class="col-md-12 offset-md-2">
                     <div class="card" >
                         <div class="card-header">
                             <h4>Booking Record</h4>
