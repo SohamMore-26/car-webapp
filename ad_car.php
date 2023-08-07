@@ -88,7 +88,7 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
 		$view = mysqli_query($con, "select * from car") or die(mysqli_error($con));
 		?>
 		<div class="container">
-		<h1 class="mb-3 bread" style="">Choose Your Car</h1>
+		<!-- <h1 class="mb-3 bread" style="">Choose Your Car</h1> -->
 			<div class="row">
 				<?php
 				while ($row = mysqli_fetch_array($view)) {
@@ -120,11 +120,15 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
 										<?php echo $row['car_ac']; ?>
 									</p>
 								</div>
-
-								<p class="d-flex mb-0 d-block"><a href="update.php?id=<?php echo $id; ?>"
-										class="btn btn-primary py-2 mr-1">Update</a>
-								<p class="d-flex mb-0 d-block"><a href="update.php?id=<?php echo $id; ?>"
-										class="btn btn-danger py-2 mr-1">Delete</a>
+								<p class="ml-auto">Car No. :
+									<?php echo $row['car_no']; ?>
+								</p>
+									
+									<p class="d-flex mb-0 d-block"><a href="update.php?id=<?php echo $id; ?>"
+											class="btn btn-primary py-2 mr-1">Update</a></p><br>
+									<p class="d-flex mb-0 d-block"><a href="delete.php?id=<?php echo $id; ?>"
+											class="btn btn-danger py-2 mr-1">Delete</a></p>
+							
 							</div>
 						</div>
 

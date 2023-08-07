@@ -77,7 +77,7 @@
                 </div>
                 <div class="col-md-6 wrap-about ftco-animate">
                     <div class="heading-section heading-section-white pl-md-5">
-                        <h2 class="mb-4">Welcome to Carbook</h2>
+                        <h2 class="mb-4">Welcome to DriveEase</h2>
                         <span class="subheading">About us</span>
 
                         <p>Welcome to DriveEase - Your Premier Car Rental Service! <br><br>

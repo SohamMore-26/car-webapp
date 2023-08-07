@@ -134,7 +134,7 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
                                     <div class="col-md-12 offset-md-2">
                                         <div class="card">
                                             <div class="card-header">
-                                                <h4>User Record</h4>
+                                                <h4>Add Car</h4>
                                             </div>
                                             <div class="card-body">
                                                 <form class="bg-light p-5 contact-form" method="post" name="Register"
