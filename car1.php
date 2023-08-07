@@ -83,8 +83,8 @@
    	   $view3 = mysqli_query($con,"select * from car where car_category = 'Compact'") or die (mysqli_error($con));
    	 ?>
 		<div class="container">
-			<h1 class=" p-5 ">Suv</h1>
-			<div class=" row" >
+			<h1 class="p-5">Suv</h1>
+			<div class="row" >
 				<?php
            		while($row = mysqli_fetch_array($view))
            		{	
