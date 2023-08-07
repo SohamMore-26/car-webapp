@@ -123,6 +123,8 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
 
 								<p class="d-flex mb-0 d-block"><a href="update.php?id=<?php echo $id; ?>"
 										class="btn btn-primary py-2 mr-1">Update</a>
+								<p class="d-flex mb-0 d-block"><a href="update.php?id=<?php echo $id; ?>"
+										class="btn btn-danger py-2 mr-1">Delete</a>
 							</div>
 						</div>
 
