@@ -39,8 +39,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -177,7 +176,7 @@ if (isset($_POST['book'])) {
     if($add)
 		{
 		echo "<script>";
-		echo "alert('Successfully Register...');";
+		echo "swal('Successfully Register...');";
 		echo "</script>";
 		}
 		else

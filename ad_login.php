@@ -2,7 +2,7 @@
 include "config.php";
 $login = false;
 $showError = false;
-if (isset($_POST['login'])) {
+if (isset($_POST['login1'])) {
     extract($_POST);
     $log = mysqli_query($con, "select * from admin where ad_email='" . $_POST['ad-email'] . "' and ad_pass='" . $_POST['ad-pass'] . "'") or die(mysqli_error($con));
     if (mysqli_num_rows($log) > 0) {
