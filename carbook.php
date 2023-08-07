@@ -174,16 +174,18 @@ if (isset($_POST['book'])) {
     extract($_POST);
 
     $add = mysqli_query($con, "INSERT INTO `book`(`name`, `car`, `pick_loc`, `drop_loc`, `pick_date`, `pick_time`) VALUES ('$c_name','$cars','$pick_loc','$drop_loc','$pick_date','$pick_time')") or die(mysqli_error($con));
-    echo die();
-    if ($add) {
-
-        alert("Car Booked Successfully !");
-
-    } else {
-
-        alert("Car not Booked !");
-
-    }
+    if($add)
+		{
+		echo "<script>";
+		echo "alert('Successfully Register...');";
+		echo "</script>";
+		}
+		else
+		{
+			echo "<script>";
+			echo "alert('ERROR ! Registration Fail..!')";
+			echo "</script>";
+		}
 }
 
 ?>
