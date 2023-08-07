@@ -99,6 +99,7 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
                                     <tr class="text-center" data-expanded="true">
                                         <th>Name</th>
                                         <th>Car Name</th>
+                                        <th>Car Numbar</th>
                                         <th>Pickup Location</th>
                                         <th>Drop Location</th>
                                         <th>Pickup Date</th>
@@ -115,6 +116,9 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
                                             </td>
                                             <td>
                                                 <?php echo $row['car']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['carno']; ?>
                                             </td>
                                             <td>
                                                 <?php echo $row['pick_loc']; ?>
