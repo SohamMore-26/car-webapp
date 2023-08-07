@@ -189,7 +189,7 @@
 
 		if($add)
 		{
-			echo "<script>";
+		echo "<script>";
 		echo "alert('Successfully Register...');";
 		echo 'window.location.href="login.php";';
 		echo "</script>";

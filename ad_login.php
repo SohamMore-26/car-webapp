@@ -78,8 +78,7 @@
                         <input type="password" class="form-control" placeholder="Admin Password" id="ad-pass">
                     </div>
                     <div class="form-group">
-                        <input type="button" name="login" value="Login" class="btn btn-primary py-3 px-5"
-                            onclick="admincheck()">
+                        <input type="submit" name="login" value="Login" class="btn btn-primary py-3 px-5">
                     </div>
 
                 </form>
@@ -180,23 +179,6 @@
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script>
-
-        function admincheck() {
-            var ad_name = document.getElementById("ad-name").value;
-            var ad_pass = document.getElementById("ad-pass").value;
-            if (ad_name == "admin@gmail.com" && ad_pass == "admin") {
-                window.location.href="ad_index.php";
-            }
-            else {
-
-                swal ( "ERROR !" ,  "Login Fail.....!(Enter Correct Admin id and Password)" , "warning" );
-              
-            }
-
-        }
-    </script>
-
 </body>
 
 </html>
