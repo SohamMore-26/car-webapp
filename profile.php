@@ -80,7 +80,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     </nav>
     
     <section class="ftco-section">
-        <div style="margin: 50px ; ">
+        <!-- <div style="margin: 50px ; ">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <div class="card" style="margin-top: -100px;">
@@ -101,10 +101,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                 <p><strong>Phone Number:</strong>
                 <?php echo $row1['r_phone'] ?>
             </p>
-        </div>
-        <p class="d-flex mb-0 d-block"><a href="profileedit.php" style="margin: 20px;"><input
+        </div> -->
+        <!-- <p class="d-flex mb-0 d-block"><a href="profileedit.php" style="margin: 20px;"><input
         type="button" name="Rent" value="Edit Details"
-        class="btn btn-primary py-3 px-5"></a>
+        class="btn btn-primary py-3 px-5"></a> -->
     </div>
 </div>
 </div>
@@ -122,6 +122,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                         <thead style="background-color: #62beff; ">
                             <tr class="text-center" data-expanded="true">
                                 <th>Car Name</th>
+                                <th>Car Number</th>
                                 <th>Pickup location</th>
                                 <th>Drop-off location</th>
                                 <th>Pickup date</th>
@@ -139,6 +140,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                                     <tr class="text-center">
                                         <td>
                                             <?php echo $row['car']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row['carno']; ?>
                                         </td>
                                         <td>
                                             <?php echo $row['pick_loc']; ?>

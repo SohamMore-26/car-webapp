@@ -63,7 +63,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item" style="padding-right: 10px"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item" style="padding-right: 10px"><a href="car1.php" class="nav-link">Cars</a></li>
+                    <li class="nav-item active" style="padding-right: 10px"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item" style="padding-right: 10px"><a href="contact.php" class="nav-link">Contact</a>
                     </li>
                     <li class="nav-item" style="padding-right: 10px"><a href="logout.php" class="nav-link">Logout</a></li>
@@ -109,6 +109,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                         <label for="" class="label"> Your Car</label><br>
                         <input type="text" class="form-control" placeholder="Your Car" name="cars"
                             value="<?php echo $row['car_name'] ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="label"> Car Number</label><br>
+                        <input type="text" class="form-control" placeholder="Your Car" name="carno"
+                            value="<?php echo $row['car_no'] ?>">
                     </div>
                     <div class="d-flex">
                         <div class="form-group mr-2">
@@ -171,11 +176,11 @@ include "config.php";
 if (isset($_POST['book'])) {
     extract($_POST);
 
-    $add = mysqli_query($con, "INSERT INTO `book`(`name`, `car`, `pick_loc`, `drop_loc`, `pick_date`, `pick_time`) VALUES ('$c_name','$cars','$pick_loc','$drop_loc','$pick_date','$pick_time')") or die(mysqli_error($con));
+    $add = mysqli_query($con, "INSERT INTO `book`(`name`, `car`, `carno`, `pick_loc`, `drop_loc`, `pick_date`, `pick_time`) VALUES ('$c_name','$cars','$carno','$pick_loc','$drop_loc','$pick_date','$pick_time')") or die(mysqli_error($con));
     if($add)
 		{
 		echo "<script>";
-		echo "swal('Successfully Register...');";
+		echo "swal('Car Booked Successfully ...');";
 		echo "</script>";
 		}
 		else
