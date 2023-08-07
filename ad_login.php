@@ -13,7 +13,7 @@ if (isset($_POST['login'])) {
         $_SESSION['ad_name'] = $fetch['ad_name'];
         $_SESSION['ad_email'] = $fetch['ad_email'];
         $_SESSION['ad_pass'] = $fetch['ad_pass'];
-        header("location: ad_index.php");
+        header("location: ad_profile.php");
     } else {
         $showError = "Login Failed...!(Check your email id and Password Once Again)";
     }
