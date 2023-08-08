@@ -8,25 +8,21 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     header("location: login.php");
     exit;
 }
-if (isset($_SESSION['id'])) {
-    $view = mysqli_query($con, "select * from book where id = '" . $_SESSION['id'] . "'") or die(mysqli_error($con));
-    $row = mysqli_fetch_array($view);
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <title>DriveEase - Profile</title>
-    <meta charset="utf-8">
+    
+    <head>
+        <title>DriveEase - Profile</title>
+        <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-        rel="stylesheet">
-
+    rel="stylesheet">
+    
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-
+    
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -34,11 +30,11 @@ if (isset($_SESSION['id'])) {
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/ionicons.min.css">
-
+    
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-
+    
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
@@ -46,36 +42,43 @@ if (isset($_SESSION['id'])) {
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-dark" id="ftco-navbar"
-        style="background-color: #00aa73; padding: 20px;">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+    style="background-color: #00aa73; padding: 20px;">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
-
+            
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
 
-                    <li class="nav-item" style="padding-right: 10px"><a href="index.html"
-                            class="nav-link">Home</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="index.php" class="nav-link">Home</a></li>
                     <!-- <li class="nav-item"><a href="carbook.php" class="nav-link"> Booking</a></li> -->
                     <li class="nav-item" style="padding-right: 10px"><a href="car1.php" class="nav-link">Cars</a></li>
                     <li class="nav-item" style="padding-right: 10px"><a href="contact.php" class="nav-link">Contact</a>
                     </li>
-                    <li class="nav-item" style="padding-right: 10px"><a href="login.php" class="nav-link">Login</a></li>
-                    <li class="nav-item active" style="padding-right: 10px"><a href="profile.php" class="nav-link"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                <path fill-rule="evenodd"
-                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                            </svg></a></li>
+                    <?php
+                if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
+                    echo ' <li class="nav-item" style="padding-right: 10px"><a href="login.php" class="nav-link">Login</a>';
+                }
+                else{
+                echo ' <li class="nav-item" style="padding-right: 10px"><a href="logout.php" class="nav-link">Logout</a>';
+                echo  '<li class="nav-item active" style="padding-right: 10px"><a href="profile.php" class="nav-link"><svg
+                xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg></a></li>';
+                    }
+                    
+            ?>
                 </ul>
             </div>
         </div>
     </nav>
-
+    
     <section class="ftco-section">
         <div style="margin: 50px ; ">
             <div class="row">
@@ -84,71 +87,76 @@ if (isset($_SESSION['id'])) {
                         <div class="card-header">
                             <h4>User Profile</h4>
                         </div>
+                        
                         <div class="card-body">
                             <p><strong>Name:</strong>
-                                <?php echo $_SESSION['name'] ?>
-                            </p>
-                            <p><strong>Email:</strong>
-                                <?php echo $_SESSION['email'] ?>
-                            </p>
-                            <p><strong>Address:</strong>
-                                <?php echo $_SESSION['address'] ?>
-                            </p>
-                            <p><strong>Phone Number:</strong>
-                                <?php echo $_SESSION['phone'] ?>
-                            </p>
-                        </div>
-                        <p class="d-flex mb-0 d-block"><a href="profileedit.php" style="margin: 20px;"><input
-                                    type="button" name="Rent" value="Edit Details"
-                                    class="btn btn-primary py-3 px-5"></a>
-                    </div>
-                </div>
-            </div>
+                            <?php echo $_SESSION['name'] ?>
+                        </p>
+                        <p><strong>Email:</strong>
+                        <?php echo $_SESSION['email'] ?>
+                    </p>
+                    <p><strong>Address:</strong>
+                    <?php echo $_SESSION['address'] ?>
+                </p>
+                <p><strong>Phone Number:</strong>
+                <?php echo $_SESSION['phone'] ?>
+            </p>
         </div>
+         <p class="d-flex mb-0 d-block"><a href="profileedit.php" style="margin: 20px;"><input
+        type="button" name="Rent" value="Edit Details"
+        class="btn btn-primary py-3 px-5"></a>
+    </div>
+</div>
+</div>
+</div>
 
-        <div style="margin: 50px ;">
-            <div class="row">
-                <div class="col-md-10 offset-md-1">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Booking History</h4>
-                        </div>
-                        <div class="card-body">
-                            <table class="table table-striped mb-0" style="color: rgb(45, 45, 45); font-style: normal;">
-                                <thead style="background-color: #62beff; ">
-                                    <tr class="text-center" data-expanded="true">
-                                        <th>Car Name</th>
-                                        <th>Company</th>
-                                        <th>Pickup location</th>
-                                        <th>Drop-off location</th>
-                                        <th>Pickup date</th>
-                                        <th>Pickup time</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
+<div style="margin: 50px ;">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Booking History</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped mb-0" style="color: rgb(45, 45, 45); font-style: normal;">
+                        <thead style="background-color: #62beff; ">
+                            <tr class="text-center" data-expanded="true">
+                                <th>Car Name</th>
+                                <th>Car Number</th>
+                                <th>Pickup location</th>
+                                <th>Drop-off location</th>
+                                <th>Pickup date</th>
+                                <th>Pickup time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                        if (isset($_SESSION['id'])) {
+                                        $view = mysqli_query($con, "select * from book where name = '" . $_SESSION['name'] . "'") or die(mysqli_error($con));
+                                        $row = mysqli_fetch_array($view);
+                                        }
                                     while ($row = mysqli_fetch_array($view)) {
                                         extract($row); ?>
-                                        <tr class="text-center">
-                                            <td>
-                                                <?php echo $row['r_id']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row['r_name']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row['r_phone']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row['r_address']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row['r_email']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row['r_pass']; ?>
-                                            </td>
-                                        </tr>
+                                    <tr class="text-center">
+                                        <td>
+                                            <?php echo $row['car']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row['carno']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row['pick_loc']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row['drop_loc']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row['pick_date']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row['pick_time']; ?>
+                                        </td>
+                                    </tr>
                                     <?php } ?>
                                 </tbody>
                             </table>

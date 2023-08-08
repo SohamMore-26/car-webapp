@@ -4,6 +4,6 @@
 
    echo "<script>";
    echo "alert('Logout successfully');";
-   echo 'window.location.href="index.html";';
+   echo 'window.location.href="index.php";';
    echo "</script>";
 ?>

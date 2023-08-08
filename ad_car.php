@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+session_start();
+if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
+    $showError = "Login Failed...!";
+    header("location: ad_login.php");
+    exit;
+}
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -31,78 +38,102 @@
 
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-dark" id="ftco-navbar"
+		style="background-color: #00aa73; padding: 20px;">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
+			<a class="navbar-brand" href="ad_index.html">Drive<span>Ease</span></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
 				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a href="admin/ad_index.php" class="nav-link">Admin</a></li>
-					<li class="nav-item"><a href="ad_record.php" class="nav-link">User Record</a></li>
-                    <li class="nav-item"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
-                    <li class="nav-item active"><a href="ad_car.php" class="nav-link">Update cars</a></li>
-                    <li class="nav-item"><a href="add.php" class="nav-link">Add cars</a></li>
-                    <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
-                </ul>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item" style="padding-right: 10px"><a href="ad_index.php" class="nav-link">Contact
+							Queries</a></li>
+					<li class="nav-item" style="padding-right: 10px"><a href="ad_record.php" class="nav-link">User
+							Record</a></li>
+					<li class="nav-item" style="padding-right: 10px"><a href="bookrec.php"
+							class="nav-link">Booking Record</a></li>
+					<li class="nav-item  active" style="padding-right: 10px"><a href="ad_car.php" class="nav-link">Update
+							cars</a></li>
+					<li class="nav-item" style="padding-right: 10px"><a href="add.php" class="nav-link">Add cars</a>
+					</li>
+					<?php
+                if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
+                    echo ' <li class="nav-item" style="padding-right: 10px"><a href="login.php" class="nav-link">Login</a>';
+                }
+                else{
+					echo ' <li class="nav-item" style="padding-right: 10px"><a href="logout.php" class="nav-link">Logout</a>';
+					echo  '<li class="nav-item" style="padding-right: 10px"><a href="ad_profile.php" class="nav-link"><svg
+								xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+								class="bi bi-person-circle" viewBox="0 0 16 16">
+								<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+								<path fill-rule="evenodd"
+									d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+							</svg></a></li>';
+                }
+
+            ?>
+				</ul>
 			</div>
 		</div>
 	</nav>
 	<!-- END nav -->
-	<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');"
-		data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-				<div class="col-md-9 ftco-animate pb-5">
-					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-									class="ion-ios-arrow-forward"></i></a></span> <span>Cars <i
-								class="ion-ios-arrow-forward"></i></span></p>
-					<h1 class="mb-3 bread">Choose Your Car</h1>
-				</div>
-			</div>
-		</div>
-	</section>
 
 	<section class="ftco-section bg-light">
+		
 		<?php
-    	  include "config.php";
-   	   $view = mysqli_query($con,"select * from car") or die (mysqli_error($con));
-   	 ?>
+		include "config.php";
+		$view = mysqli_query($con, "select * from car") or die(mysqli_error($con));
+		?>
 		<div class="container">
-
+		<!-- <h1 class="mb-3 bread" style="">Choose Your Car</h1> -->
 			<div class="row">
 				<?php
-           		while($row = mysqli_fetch_array($view))
-           		{
-            		extract($row);
-         			?>
-				<div class="col-md-4">
+				while ($row = mysqli_fetch_array($view)) {
+					extract($row);
+					?>
+					<div class="col-md-4">
 
-					<div class="car-wrap rounded ftco-animate">
-						<div class="img rounded d-flex align-items-end"
-							style="background-image: url(images/<?php echo $row['photo'];?>);">
+						<div class="car-wrap rounded ftco-animate">
+							<div class="img rounded d-flex align-items-end"
+								style="background-image: url(images/<?php echo $row['photo']; ?>);">
+							</div>
+							<div class="text">
+								<h2 class="mb-0">
+									<?php echo $row['car_name']; ?>
+								</h2>
+								<div class="d-flex mb-3">
+									<span class="cat">
+										<?php echo $row['car_comp']; ?>
+									</span>
+									<p class="price ml-auto">Rs.
+										<?php echo $row['car_price']; ?><span>/day</span>
+									</p>
+								</div>
+								<div class="d-flex mb-3">
+									<span>Seats :
+										<?php echo $row['car_seat']; ?>+1
+									</span>
+									<p class="ml-auto">A/C :
+										<?php echo $row['car_ac']; ?>
+									</p>
+								</div>
+								<p class="ml-auto">Car No. :
+									<?php echo $row['car_no']; ?>
+								</p>
+									
+									<p class="d-flex mb-0 d-block"><a href="update.php?id=<?php echo $id; ?>"
+											class="btn btn-primary py-2 mr-1">Update</a></p><br>
+									<p class="d-flex mb-0 d-block"><a href="delete.php?id=<?php echo $id; ?>"
+											class="btn btn-danger py-2 mr-1">Delete</a></p>
+							
+							</div>
 						</div>
-						<div class="text">
-							<h2 class="mb-0"><?php echo $row['car_name'];?></h2>
-							<div class="d-flex mb-3">
-								<span class="cat"><?php echo $row['car_comp'];?></span>
-								<p class="price ml-auto">Rs.<?php echo $row['car_price'];?><span>/day</span></p>
-							</div>
-							<div class="d-flex mb-3">
-								<span>Seats : <?php echo $row['car_seat'];?>+1</span>
-								<p class="ml-auto">A/C : <?php echo $row['car_ac'];?></p>
-							</div>
 
-							<p class="d-flex mb-0 d-block"><a href="update.php?id=<?php echo $id; ?>" class="btn btn-primary py-2 mr-1">Update</a>
-						</div>
 					</div>
-
-				</div>
-				<?php }?>
+				<?php } ?>
 			</div>
 
 		</div>

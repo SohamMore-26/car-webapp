@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
+    $showError = "Login Failed...!";
+    header("location: ad_login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,124 +37,86 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body style="background-image: linear-gradient(to bottom left, rgb(85, 236, 236), rgb(85, 236, 140));">
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
-            </button>
+<body>
+                    <?php
+                    if (isset($_SESSION['id'])) {
+                        $view = mysqli_query($con, "select * from book where id = '" . $_SESSION['id'] . "'") or die(mysqli_error($con));
+                    }
+                    ?>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-dark" id="ftco-navbar"
+		style="background-color: #00aa73; padding: 20px;">
+		<div class="container">
+			<a class="navbar-brand" href="ad_index.html">Drive<span>Ease</span></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
 
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="carbook.php" class="nav-link"> Booking</a></li>
-                    <li class="nav-item"><a href="car1.php" class="nav-link">Cars</a></li>
-                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-                    <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
-                    <li class="nav-item active"><a href="profile.html" class="nav-link"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                <path fill-rule="evenodd"
-                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                            </svg></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- END nav -->
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item" style="padding-right: 10px"><a href="ad_index.php" class="nav-link">Contact
+							Queries</a></li>
+					<li class="nav-item" style="padding-right: 10px"><a href="ad_record.php" class="nav-link">User
+							Record</a></li>
+					<li class="nav-item" style="padding-right: 10px"><a href="bookrec.php"
+							class="nav-link">Booking Record</a></li>
+					<li class="nav-item  " style="padding-right: 10px"><a href="ad_car.php" class="nav-link">Update
+							cars</a></li>
+					<li class="nav-item" style="padding-right: 10px"><a href="add.php" class="nav-link">Add cars</a>
+					</li>
+					<?php
+                if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
+                    echo ' <li class="nav-item" style="padding-right: 10px"><a href="login.php" class="nav-link">Login</a>';
+                }
+                else{
+					echo ' <li class="nav-item" style="padding-right: 10px"><a href="logout.php" class="nav-link">Logout</a>';
+					echo  '<li class="nav-item active" style="padding-right: 10px"><a href="ad_profile.php" class="nav-link"><svg
+								xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+								class="bi bi-person-circle" viewBox="0 0 16 16">
+								<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+								<path fill-rule="evenodd"
+									d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+							</svg></a></li>';
+                }
 
-    <section class="hero-wrap hero-wrap-3 js-fullheight"
-        style="background-image: url('images/damian-zaleski-RYyr-k3Ysqg-unsplash.jpg');"
-        data-stellar-background-ratio="0.5">
-        <div class="container">
-            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-                <div class="col-md-9 ftco-animate pb-5">
-                    <h1 class="mb-3 bread">Profile</h1>
-                </div>
-            </div>
-        </div>
-    </section>
-
+            ?>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- END nav -->
     <section class="ftco-section">
+   
+           
         <div style="margin: 50px ; ">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <div class="card" style="margin-top: -100px;">
-                        <div class="card-header">
-                            <h4>User Profile</h4>
+                    <div class="card-header">
+                        <h4>Admin Profile</h4>
                         </div>
-                        <div class="card-body">
-                            <p><strong>Name:</strong> John Doe</p>
-                            <p><strong>Email:</strong> johndoe@example.com</p>
-                            <p><strong>Address:</strong> 123 Main St, City, Country</p>
-                            <p><strong>Phone Number:</strong> 123-456-7890</p>
-                        </div>
-                        <p class="d-flex mb-0 d-block"><a href="profileedit.html" style="margin: 20px;"><input
+                       
+                            <div class="card-body">
+                            <p><strong>Name:</strong>
+                                <?php echo $_SESSION['ad_name'] ?>
+                            </p>
+                            <p><strong>Email:</strong>
+                                <?php echo $_SESSION['ad_email'] ?>
+                            </p>
+                            <p><strong>Password:</strong>
+                                <?php echo $_SESSION['ad_pass'] ?>
+                            </p>
+                            </div>
+                            <p class="d-flex mb-0 d-block"><a href="profileedit.php" style="margin: 20px;"><input
                                     type="button" name="Rent" value="Edit Details"
                                     class="btn btn-primary py-3 px-5"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div style="margin: 50px ;">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Booking History</h4>
-                        </div>
-                        <table class="table table-striped mb-0">
-                            <thead style="background-color: #80f08e; ">
-                                <tr class="text-center" data-expanded="true">
-                                    <th scope="col">Car Name</th>
-                                    <th scope="col">Company</th>
-                                    <th scope="col">Pickup location</th>
-                                    <th scope="col">Drop-off location</th>
-                                    <th scope="col">Pickup date</th>
-                                    <th scope="col">Pickup time</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                              while ($row = mysqli_fetch_array($view)) {
-                                extract($row); ?>
-                                <tr class="text-center">
-                                    <td>
-                                        <?php echo $row['r_id']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row['r_name']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row['r_phone']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row['r_address']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row['r_email']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row['r_pass']; ?>
-                                    </td>
-                                </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
-
-
-
+    
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
             <div class="row mb-5">

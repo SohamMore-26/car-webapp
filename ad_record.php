@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
+    $showError = "Login Failed...!";
+    header("location: ad_login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,9 +38,10 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-dark" id="ftco-navbar"
+    style="background-color: #00aa73; padding: 20px;">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Drive<span>Ease</span></a>
+      <a class="navbar-brand" href="ad_index.html">Drive<span>Ease</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
@@ -40,33 +49,36 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="ad_index.php" class="nav-link">Admin</a></li>
-          <li class="nav-item active"><a href="ad_record.php" class="nav-link">User Record</a></li>
-          <li class="nav-item"><a href="bookrec.php" class="nav-link">Booking Record</a></li>
-          <li class="nav-item"><a href="ad_car.php" class="nav-link">Update cars</a></li>
-          <li class="nav-item"><a href="add.php" class="nav-link">Add cars</a></li>
-          <li class="nav-item"><a href="index.html" class="nav-link">Log Out</a></li>
+          <li class="nav-item" style="padding-right: 10px"><a href="ad_index.php" class="nav-link">Contact Queries</a>
+          </li>
+          <li class="nav-item active" style="padding-right: 10px"><a href="ad_record.php" class="nav-link">User
+              Record</a></li>
+          <li class="nav-item" style="padding-right: 10px"><a href="bookrec.php" class="nav-link">Booking
+              Record</a></li>
+          <li class="nav-item" style="padding-right: 10px"><a href="ad_car.php" class="nav-link">Update cars</a></li>
+          <li class="nav-item" style="padding-right: 10px"><a href="add.php" class="nav-link">Add cars</a></li>
+          <?php
+                if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
+                    echo ' <li class="nav-item" style="padding-right: 10px"><a href="login.php" class="nav-link">Login</a>';
+                }
+                else{
+					echo ' <li class="nav-item" style="padding-right: 10px"><a href="logout.php" class="nav-link">Logout</a>';
+					echo  '<li class="nav-item" style="padding-right: 10px"><a href="ad_profile.php" class="nav-link"><svg
+								xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+								class="bi bi-person-circle" viewBox="0 0 16 16">
+								<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+								<path fill-rule="evenodd"
+									d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+							</svg></a></li>';
+                }
+
+            ?>
         </ul>
       </div>
     </div>
   </nav>
   <!-- END nav -->
-  <section class="hero-wrap hero-wrap-3 js-fullheight"
-    style="background-image: url('images/scott-graham-5fNmWej4tAA-unsplash.jpg');" data-stellar-background-ratio="0.5">
-    <!-- <div class="overlay"></div> -->
-    <div class="container">
-      <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-        <div class="col-md-9 ftco-animate pb-5">
-          <div class="breadup">
-            <p class="breadcrumbs"><span class="mr-2"><a href="ad_index.html">Admin<i
-                    class="ion-ios-arrow-forward"></i></a></span> <span>View Records<i
-                  class="ion-ios-arrow-forward"></i></span></p>
-            <h1 class="mb-3 bread">User Record</h1>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <section class="intro">
     <?php
@@ -77,58 +89,58 @@
       <div class="mask d-flex align-items-center h-100">
         <!-- <div class="container"> -->
         <div class="row justify-content-center">
-          <div class="col-md-12 offset-md-1">
+          <!-- <div class="col-md-12 offset-md-1"> -->
           <div style="margin: 50px ;">
             <div class="row">
-                <div class="col-md-12 offset-md-1">
-                    <div class="card" >
-                        <div class="card-header">
-                            <h4>User Record</h4>
-                        </div>
-                        <div class="card-body">
-                            <table class ="table table-striped mb-0" style="color: rgb(45, 45, 45); font-style: normal;">
-                                <thead style="background-color: #56db75; ">
-                                    <tr class="text-center" data-expanded="true">
-                                        <th>Id</th>
-                                        <th>Name</th>
-                                        <th>Phone No.</th>
-                                        <th>Address</th>
-                                        <th>Email</th>
-                                        <th>Password</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    while ($row = mysqli_fetch_array($view)) {
-                                        extract($row); ?>
-                                        <tr class="text-center">
-                                            <td>
-                                                <?php echo $row['r_id']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row['r_name']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row['r_phone']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row['r_address']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row['r_email']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row['r_pass']; ?>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+              <div class="col-md-12 offset-md-2">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>User Record</h4>
+                  </div>
+                  <div class="card-body">
+                    <table class="table table-striped mb-0" style="color: rgb(45, 45, 45); font-style: normal;">
+                      <thead style="background-color: #56db75; ">
+                        <tr class="text-center" data-expanded="true">
+                          <th>Id</th>
+                          <th>Name</th>
+                          <th>Phone No.</th>
+                          <th>Address</th>
+                          <th>Email</th>
+                          <th>Password</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+                        while ($row = mysqli_fetch_array($view)) {
+                          extract($row); ?>
+                          <tr class="text-center">
+                            <td>
+                              <?php echo $row['r_id']; ?>
+                            </td>
+                            <td>
+                              <?php echo $row['r_name']; ?>
+                            </td>
+                            <td>
+                              <?php echo $row['r_phone']; ?>
+                            </td>
+                            <td>
+                              <?php echo $row['r_address']; ?>
+                            </td>
+                            <td>
+                              <?php echo $row['r_email']; ?>
+                            </td>
+                            <td>
+                              <?php echo $row['r_pass']; ?>
+                            </td>
+                          </tr>
+                        <?php } ?>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
+          </div>
         </div>
         <!-- </div> -->
       </div>

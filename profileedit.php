@@ -86,10 +86,6 @@ if(isset($_SESSION['id']))
             <label for="phone">Phone Number:</label>
             <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $row['r_phone']?>">
           </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="text" class="form-control" id="phone" name="password" value="<?php echo $row['r_pass']?>">
-          </div>
           <button class="btn btn-primary" type="update" name="btn_update">Save Details</button>
         </form>
       </div>
@@ -199,6 +195,7 @@ if(isset($_SESSION['id']))
 		{
             echo "<script>";
             echo "window.alert('Data update successfully.....!')";
+             echo 'window.location.href="profile.php";';
             echo "</script>";
         }
         else
