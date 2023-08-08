@@ -147,7 +147,7 @@
               <input type="text" class="form-control" placeholder="Subject" name="subject">
             </div>
             <div class="form-group">
-              <input type="textarea" class="form-control" placeholder="Subject" name="message">
+              <input type="textarea" class="form-control" placeholder="message" name="message">
             </div>
             <div class="form-group">
               <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">

@@ -7,6 +7,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
+<<<<<<< HEAD
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+    function validateRegister()
+    {
+      var x=document.forms["Register"]["name"].value;
+      if(x=="" || ! isNaN(x))
+      {
+        swal ( "Oops" ,  "Enter A Valid Name!" ,  "error" );
+        return false;
+      }
+    
+      var y=document.forms["Register"]["phone"].value;
+      if(y.length!=10 || isNaN(y))
+      {
+        swal ( "Oops" ,  "Enter A Valid 10 Digit Phone No.!" ,  "error" );
+        return false;
+      }
+     
+      var z=document.forms["Register"]["address"].value;
+      if(z=="")
+      {
+        swal ( "Oops" ,  "Enter A Valid Addres!" ,  "error" );
+=======
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
     rel="stylesheet">
 
@@ -34,6 +61,7 @@
       var x = document.forms["Register"]["name"].value;
       if (x == "" || !isNaN(x)) {
         swal("Oops", "Enter A Valid Name!", "error");
+>>>>>>> 4f65c447d949d08dacf1d0b65af4d5fab4a3a6f8
         return false;
       }
 
@@ -48,6 +76,27 @@
         swal("Oops", "Enter A Valid Addres!", "error");
         return false;
       }
+<<<<<<< HEAD
+      
+      if(pass.length<8 || pass.length>16)
+      {
+        swal ( "Oops" ,  "Enter A Valid Password Between 8 - 16 Characters!" ,  "error" );
+        return false;
+      }
+      var cpass=document.forms["Register"]["cpassword"].value;
+      if(cpass=="")
+      {
+        swal ( "Oops" ,  " Confirm Password Once!" ,  "error" );
+        return false;
+      }
+      if(pass != cpass)
+      {
+        swal ( "Oops" ,  "Password Missmatch Confirm Again!" ,  "error" );
+        return false;
+      }
+      }
+=======
+>>>>>>> 4f65c447d949d08dacf1d0b65af4d5fab4a3a6f8
 
       var e = document.forms["Register"]["email"].value;
       if (e == "") {
