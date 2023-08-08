@@ -42,7 +42,7 @@
       var y=document.forms["Register"]["phone"].value;
       if(y.length!=10 || isNaN(y))
       {
-        swal ( "Oops" ,  "Enter A Valid Phone No.!" ,  "error" );
+        swal ( "Oops" ,  "Enter A Valid 10 Digit Phone No.!" ,  "error" );
         return false;
       }
      
@@ -69,18 +69,18 @@
       
       if(pass.length<8 || pass.length>16)
       {
-        swal ( "Oops" ,  "Enter A Valid Password!" ,  "error" );
+        swal ( "Oops" ,  "Enter A Valid Password Between 8 - 16 Characters!" ,  "error" );
         return false;
       }
       var cpass=document.forms["Register"]["cpassword"].value;
       if(cpass=="")
       {
-        swal ( "Oops" ,  "Enter A Valid Confirm Password!" ,  "error" );
+        swal ( "Oops" ,  " Confirm Password Once!" ,  "error" );
         return false;
       }
       if(pass != cpass)
       {
-        swal ( "Oops" ,  "Enter A Valid Confirm Password!" ,  "error" );
+        swal ( "Oops" ,  "Password Missmatch Confirm Again!" ,  "error" );
         return false;
       }
       }
