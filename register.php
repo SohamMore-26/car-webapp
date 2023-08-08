@@ -76,7 +76,6 @@
         swal("Oops", "Enter A Valid Addres!", "error");
         return false;
       }
-<<<<<<< HEAD
       
       if(pass.length<8 || pass.length>16)
       {
@@ -95,8 +94,6 @@
         return false;
       }
       }
-=======
->>>>>>> 4f65c447d949d08dacf1d0b65af4d5fab4a3a6f8
 
       var e = document.forms["Register"]["email"].value;
       if (e == "") {
