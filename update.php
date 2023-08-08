@@ -97,7 +97,7 @@
                             <input type="varchar" class="form-control"  name="car_name" value = "<?php echo $row['car_name'];?>">
                         </div>
                         <div class="form-group">
-                            <input type="varchar" class="form-control"  name="car_name" value = "<?php echo $row['car_no'];?>">
+                            <input type="varchar" class="form-control"  name="car_no" value = "<?php echo $row['car_no'];?>">
                         </div>
                         <div class="form-group">
                             <input type="varchar" class="form-control" placeholder="Enter Car Company" name="car_comp" value = "<?php echo $row['car_comp'];?>">
