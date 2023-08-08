@@ -161,7 +161,7 @@
 		{
 			
             echo "<script>";
-            echo "window.alert('Car Updated successfully.....!')";
+            echo "swal('Car Updated successfully.....!')";
             echo "</script>";
 			
 		}
