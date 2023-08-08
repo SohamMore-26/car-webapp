@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2023 at 06:47 AM
+-- Generation Time: Aug 07, 2023 at 10:18 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,6 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `ad_name` varchar(100) NOT NULL,
+  `ad_email` varchar(50) NOT NULL,
+  `ad_pass` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `ad_name`, `ad_email`, `ad_pass`) VALUES
+(1, 'Yuvraj Joshi', 'admin@gmail.com', 'admin@123');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `book`
 --
 
@@ -31,6 +51,7 @@ CREATE TABLE `book` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `car` varchar(150) NOT NULL,
+  `carno` varchar(50) NOT NULL,
   `pick_loc` varchar(200) NOT NULL,
   `drop_loc` varchar(200) NOT NULL,
   `pick_date` varchar(100) NOT NULL,
@@ -41,9 +62,8 @@ CREATE TABLE `book` (
 -- Dumping data for table `book`
 --
 
-INSERT INTO `book` (`id`, `name`, `car`, `pick_loc`, `drop_loc`, `pick_date`, `pick_time`) VALUES
-(12, 'Yuvraj Joshi ', 'Fortuner ', 'Dhule', 'Nashik', '2023-08-09', '00:08'),
-(14, 'Ndp', 'Endeavor', 'Dhule', 'Nashik', '2023-08-11', '17:33');
+INSERT INTO `book` (`id`, `name`, `car`, `carno`, `pick_loc`, `drop_loc`, `pick_date`, `pick_time`) VALUES
+(19, 'Yuvraj Joshi ', 'XUV 500', 'MH 12 BX 5546', 'Dhule ', 'Nashik ', '2023-08-08', '13:30');
 
 -- --------------------------------------------------------
 
@@ -122,12 +142,18 @@ CREATE TABLE `register` (
 --
 
 INSERT INTO `register` (`r_id`, `r_name`, `r_phone`, `r_address`, `r_email`, `r_pass`) VALUES
-(1, 'Yuvraj Joshi ', '9876543210', '1293/3, Pulwala Chowk Agra Road, Dhule 424001', 'uvjoshi2005@gmail.com', 'Yuvi@31'),
+(1, 'Yuvraj Joshi ', '9876543210', 'test', 'uvjoshi2005@gmail.com', 'Yuvi@31'),
 (2, 'Sonai Joshi', '9999999999', '1293/3\r\nPulwala Chowk Agra Road\r\nDhule 424001', 'sonujcomp2013@gmail.com', '123456');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `book`
@@ -158,10 +184,16 @@ ALTER TABLE `register`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `car`
