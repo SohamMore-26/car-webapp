@@ -35,26 +35,6 @@
   <script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
-    function validateRegister()
-    {
-      var x=document.forms["Register"]["name"].value;
-      if(x=="" || ! isNaN(x))
-      {
-        swal ( "Oops" ,  "Enter A Valid Name!" ,  "error" );
-        return false;
-      }
-    
-      var y=document.forms["Register"]["phone"].value;
-      if(y.length!=10 || isNaN(y))
-      {
-        swal ( "Oops" ,  "Enter A Valid 10 Digit Phone No.!" ,  "error" );
-        return false;
-      }
-     
-      var z=document.forms["Register"]["address"].value;
-      if(z=="")
-      {
-        swal ( "Oops" ,  "Enter A Valid Addres!" ,  "error" );
     function validateRegister() {
       var x = document.forms["Register"]["name"].value;
       if (x == "" || !isNaN(x)) {
