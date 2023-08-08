@@ -168,7 +168,7 @@
   <!-- END nav -->
   <section>
     <div class="container">
-    <div class="bg-image h-100" style="background-color: #f5f7fa" ;>
+    <div class="bg-image h-100" style="background-color: #f5f7fa;">
       <!-- <div class="mask d-flex align-items-center h-100"> -->
       <!-- <div class="row justify-content-center"> -->
         <div style="margin: 50px ;">
