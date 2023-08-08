@@ -155,7 +155,7 @@
 	{
 		extract($_POST);
 
-		$add = mysqli_query($con,"UPDATE `car` SET `car_category`='$car_category',`car_name`='$car_name',`car_comp`='$car_comp',`car_price`='$car_price',`car_seat`='$car_seat',`car_ac`='$register',`photo`='$photo' WHERE id = '".$_GET['id']."'") or die(mysqli_error($con));
+		$add = mysqli_query($con,"UPDATE `car` SET `car_category`='$car_category',`car_name`='$car_name', `car_no`='$car_no',`car_comp`='$car_comp',`car_price`='$car_price',`car_seat`='$car_seat',`car_ac`='$register',`photo`='$photo' WHERE id = '".$_GET['id']."'") or die(mysqli_error($con));
         echo die(); 
 		if($add)
 		{
