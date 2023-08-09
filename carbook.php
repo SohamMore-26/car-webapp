@@ -63,10 +63,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item" style="padding-right: 10px"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item active" style="padding-right: 10px"><a href="car1.php" class="nav-link">Cars</a></li>
+                    <li class="nav-item active" style="padding-right: 10px"><a href="car1.php" class="nav-link">Cars</a>
+                    </li>
                     <li class="nav-item" style="padding-right: 10px"><a href="contact.php" class="nav-link">Contact</a>
                     </li>
-                    <li class="nav-item" style="padding-right: 10px"><a href="logout.php" class="nav-link">Logout</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="logout.php" class="nav-link">Logout</a>
+                    </li>
                     <li class="nav-item" style="padding-right: 10px"><a href="profile.php" class="nav-link"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                 class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -85,51 +87,59 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
             <div class="breadup">
                 <h1 class="mb-3 bread">Rent Here</h1>
             </div>
-            <div class="align-items-center">
-                <form class="request-form ftco-animate bg-primary" method="post" name="Booking"
-                    onsubmit="return validate() || return validateDate()">
-                    <h2>Make your trip</h2>
-                    <div class="form-group">
-                        <label for="" class="label">Name</label>
-                        <input type="text" class="form-control" placeholder="Name" name="c_name" required disabled=""
-                            value="<?php echo $_SESSION['name'] ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="label">Pick-up location</label>
-                        <input type="text" class="form-control" placeholder="City, Airport, Station, etc"
-                            name="pick_loc" required min="">
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="label">Drop-off location</label>
-                        <input type="text" class="form-control" placeholder="City, Airport, Station, etc"
-                            name="drop_loc" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="" class="label"> Your Car</label><br>
-                        <input type="text" class="form-control" placeholder="Your Car" name="cars" disabled=""
-                            value="<?php echo $row['car_name'] ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="label"> Car Number</label><br>
-                        <input type="text" class="form-control" placeholder="Your Car" name="carno" disabled=""
-                            value="<?php echo $row['car_no'] ?>">
-                    </div>
-                    <div class="d-flex">
-                        <div class="form-group mr-2">
-                            <label class="label">Pick-up date</label>
-                            <input type="date" class="form-control" id="pick_date" placeholder="Date" name="pick_date"
-                                required min="">
+            <div class="row">
+                <div class="col-md-6">
+                    <form class="request-form ftco-animate bg-primary" method="post" name="Booking"
+                        onsubmit="return validate() || return validateDate()">
+                        <h2>Your details</h2>
+                        <div class="form-group">
+                            <label for="" class="label">Name</label>
+                            <input type="text" class="form-control" placeholder="Name" name="c_name" required
+                                disabled="" value="<?php echo $_SESSION['name'] ?>" readonly>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="label">Pick-up time</label>
-                        <input type="time" class="form-control" id="" placeholder="Time" name="pick_time" required>
-                    </div>
-                    <div class="form-group">
-                        <input name="book" type="submit" value="Rent A Car Now" class="btn btn-secondary py-3 px-4">
-                    </div>
-                </form>
+                        
+                        <div class="form-group">
+                            <label for="" class="label"> Your Car</label><br>
+                            <input type="text" class="form-control" placeholder="Your Car" name="cars" disabled=""
+                            value="<?php echo $row['car_name'] ?>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="label"> Car Number</label><br>
+                            <input type="text" class="form-control" placeholder="Your Car" name="carno" disabled=""
+                            value="<?php echo $row['car_no'] ?>" readonly>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                <form class="request-form ftco-animate bg-primary" method="post" name="Booking"
+                        onsubmit="return validate() || return validateDate()">
+                        <h2>Enter additional details</h2>
+                        <div class="form-group">
+                            <label for="" class="label">Pick-up location</label>
+                            <input type="text" class="form-control" placeholder="City, Airport, Station, etc"
+                                name="pick_loc" required min="">
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="label">Drop-off location</label>
+                            <input type="text" class="form-control" placeholder="City, Airport, Station, etc"
+                                name="drop_loc" required>
+                        </div>
+                        <div class="d-flex">
+                            <div class="form-group">
+                                <label class="label">Pick-up date</label>
+                                <input type="date" class="form-control" id="pick_date" placeholder="Date"
+                                    name="pick_date" required min="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="label">Pick-up time</label>
+                            <input type="time" class="form-control" id="" placeholder="Time" name="pick_time" required>
+                        </div>
+                        <div class="form-group">
+                            <input name="book" type="submit" value="Rent A Car Now" class="btn btn-secondary py-3 px-4">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -177,18 +187,15 @@ if (isset($_POST['book'])) {
     extract($_POST);
 
     $add = mysqli_query($con, "INSERT INTO `book`(`name`, `car`, `carno`, `pick_loc`, `drop_loc`, `pick_date`, `pick_time`) VALUES ('$c_name','$cars','$carno','$pick_loc','$drop_loc','$pick_date','$pick_time')") or die(mysqli_error($con));
-    if($add)
-		{
-		echo "<script>";
-		echo "swal('Car Booked Successfully ...');";
-		echo "</script>";
-		}
-		else
-		{
-			echo "<script>";
-			echo "swal('ERROR ! Registration Fail..!')";
-			echo "</script>";
-		}
+    if ($add) {
+        echo "<script>";
+        echo "swal('Car Booked Successfully ...');";
+        echo "</script>";
+    } else {
+        echo "<script>";
+        echo "swal('ERROR ! Registration Fail..!')";
+        echo "</script>";
+    }
 }
 
 ?>
