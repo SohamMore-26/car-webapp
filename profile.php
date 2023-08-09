@@ -110,26 +110,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 </div>
 </div>
 
-<div style="margin: 50px ;">
-    <div class="row">
-        <div class="col-md-10 offset-md-1">
-            <div class="card">
-                <div class="card-header">
-                    <h4>Booking History</h4>
-                </div>
-                <div class="card-body">
-                    <table class="table table-striped mb-0" style="color: rgb(45, 45, 45); font-style: normal;">
-                        <thead style="background-color: #62beff; ">
-                            <tr class="text-center" data-expanded="true">
-                                <th>Car Name</th>
-                                <th>Car Number</th>
-                                <th>Pickup location</th>
-                                <th>Drop-off location</th>
-                                <th>Pickup date</th>
-                                <th>Pickup time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+
                             <?php
                                         if (isset($_SESSION['id'])) {
                                         $view = mysqli_query($con, "select * from book where name = '" . $_SESSION['name'] . "'") or die(mysqli_error($con));
