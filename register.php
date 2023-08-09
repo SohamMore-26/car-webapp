@@ -36,6 +36,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
     function validateRegister() {
+      
       var x = document.forms["Register"]["name"].value;
       if (x == "" || !isNaN(x)) {
         swal("Oops", "Enter A Valid Name!", "error");
@@ -51,6 +52,11 @@
       var z = document.forms["Register"]["address"].value;
       if (z == "") {
         swal("Oops", "Enter A Valid Addres!", "error");
+        return false;
+      }
+      var pass = document.forms["Register"]["password"].value;
+      if (pass == "") {
+        swal("Oops", "Enter A Valid Password!", "error");
         return false;
       }
       
@@ -70,7 +76,6 @@
         swal ( "Oops" ,  "Password Missmatch Confirm Again!" ,  "error" );
         return false;
       }
-      }
 
       var e = document.forms["Register"]["email"].value;
       if (e == "") {
@@ -78,25 +83,6 @@
         return false;
       }
 
-      var pass = document.forms["Register"]["password"].value;
-      if (pass == "") {
-        swal("Oops", "Enter A Valid Password!", "error");
-        return false;
-      }
-
-      if (pass.length < 8 || pass.length > 16) {
-        swal("Oops", "Enter A Valid Password!", "error");
-        return false;
-      }
-      var cpass = document.forms["Register"]["cpassword"].value;
-      if (cpass == "") {
-        swal("Oops", "Enter A Valid Confirm Password!", "error");
-        return false;
-      }
-      if (pass != cpass) {
-        swal("Oops", "Enter A Valid Confirm Password!", "error");
-        return false;
-      }
     }
 
 
