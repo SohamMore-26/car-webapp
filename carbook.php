@@ -91,7 +91,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                     <h2>Make your trip</h2>
                     <div class="form-group">
                         <label for="" class="label">Name</label>
-                        <input type="text" class="form-control" placeholder="Name" name="c_name" required
+                        <input type="text" class="form-control" placeholder="Name" name="c_name" required disabled=""
                             value="<?php echo $_SESSION['name'] ?>">
                     </div>
                     <div class="form-group">
@@ -107,12 +107,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
                     <div class="form-group">
                         <label for="" class="label"> Your Car</label><br>
-                        <input type="text" class="form-control" placeholder="Your Car" name="cars"
+                        <input type="text" class="form-control" placeholder="Your Car" name="cars" disabled=""
                             value="<?php echo $row['car_name'] ?>">
                     </div>
                     <div class="form-group">
                         <label for="" class="label"> Car Number</label><br>
-                        <input type="text" class="form-control" placeholder="Your Car" name="carno"
+                        <input type="text" class="form-control" placeholder="Your Car" name="carno" disabled=""
                             value="<?php echo $row['car_no'] ?>">
                     </div>
                     <div class="d-flex">
