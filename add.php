@@ -177,6 +177,10 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
                                                             placeholder="Enter Car Number" name="car_no">
                                                     </div>
                                                     <div class="form-group">
+                                                        <input type="varchar" class="form-control"
+                                                            placeholder="Enter Car Owner" name="car_own">
+                                                    </div>
+                                                    <div class="form-group">
                                                         A/C
                                                         <br><input type="radio" name="car_ac" value="Yes"
                                                             class="btn btn-primary py-3 px-5"> Yes
