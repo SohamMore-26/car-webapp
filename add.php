@@ -244,7 +244,7 @@ if (isset($_POST['add'])) {
     //     move_uploaded_file($temp, $upload . $photo);
     // }
 
-    $add = mysqli_query($con, "insert into car(car_category,car_name, car_comp, car_price, car_seat ,car_no, car_ac, photo) values('$car_category','$car_name','$car_comp','$car_price','$car_seat','$car_no','$car_ac','$photo')") or die(mysqli_error($con));
+    $add = mysqli_query($con, "insert into car(car_category,car_name, car_comp, car_price,car_seat,car_no,car_ac,photo,car_own) values('$car_category','$car_name','$car_comp','$car_price','$car_seat','$car_no','$car_ac','$photo','$car_own')") or die(mysqli_error($con));
     if ($add) {
         echo "<script>";
         echo "window.alert('Car Added successfully.....!')";

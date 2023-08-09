@@ -174,13 +174,13 @@ if (isset($_POST['update'])) {
     if ($add) {
 
         echo "<script>";
-        echo "swal('Car Updated successfully.....!')";
+        echo "swal('Car Updated successfully...!')";
         echo "</script>";
 
     } else {
-
-        swal('Error..!', "Car not Booked !", 'errors');
-
+        echo "<script>";
+        echo "swal('Error..!', 'Car not Booked...!', 'errors')";
+        echo "</script>";
     }
 }
 

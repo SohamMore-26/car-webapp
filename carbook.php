@@ -130,13 +130,18 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                                 <input type="date" class="form-control" id="pick_date" placeholder="Date"
                                     name="pick_date" required min="">
                             </div>
+                            <div class="form-group">
+                                <label class="label">Drop-off date</label>
+                                <input type="date" class="form-control" id="drop_date" placeholder="Date"
+                                    name="drop_date" required min="">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="" class="label">Pick-up time</label>
                             <input type="time" class="form-control" id="" placeholder="Time" name="pick_time" required>
                         </div>
                         <div class="form-group">
-                            <input name="book" type="submit" value="Rent A Car Now" class="btn btn-secondary py-3 px-4">
+                            <input name="book" type="button" value="Rent A Car Now" class="btn btn-secondary py-3 px-4">
                         </div>
                     </form>
                 </div>
@@ -177,6 +182,19 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     }
     var mindate = year + "-" + month + "-" + tdate;
     document.getElementById("pick_date").setAttribute("min", mindate);
+
+    var todayDate1 = new Date();
+    var tdate1 = todayDate1.getDate();
+    var month1 = todayDate1.getMonth() + 1;
+    var year1 = todayDate1.getUTCFullYear() - 0;
+    if (month1 < 10) {
+        month1 = "0" + month1
+    }
+    if (tdate1 < 10) {
+        tdate1 = "0" + tdate1;
+    }
+    var mindate1 = year1 + "-" + month1 + "-" + tdate1;
+    document.getElementById("drop_date").setAttribute("min", mindate1);
 </script>
 
 </html>
@@ -186,7 +204,7 @@ include "config.php";
 if (isset($_POST['book'])) {
     extract($_POST);
 
-    $add = mysqli_query($con, "INSERT INTO `book`(`name`, `car`, `carno`, `pick_loc`, `drop_loc`, `pick_date`, `pick_time`) VALUES ('$c_name','$cars','$carno','$pick_loc','$drop_loc','$pick_date','$pick_time')") or die(mysqli_error($con));
+    $add = mysqli_query($con, "INSERT INTO `book`(`name`, `car`, `carno`, `pick_loc`, `drop_loc`, `pick_date`,`drop_date`, `pick_time`) VALUES ('$c_name','$cars','$carno','$pick_loc','$drop_loc','$pick_date','$drop_date','$pick_time')") or die(mysqli_error($con));
     if ($add) {
         echo "<script>";
         echo "swal('Car Booked Successfully ...');";

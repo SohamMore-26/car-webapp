@@ -106,52 +106,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
         type="button" name="Rent" value="Edit Details"
         class="btn btn-primary py-3 px-5"></a>
     </div>
-</div>
-</div>
-</div>
-
-
-                            <?php
-                                        if (isset($_SESSION['id'])) {
-                                        $view = mysqli_query($con, "select * from book where name = '" . $_SESSION['name'] . "'") or die(mysqli_error($con));
-                                        $row = mysqli_fetch_array($view);
-                                        }
-                                    while ($row = mysqli_fetch_array($view)) {
-                                        extract($row); ?>
-                                    <tr class="text-center">
-                                        <td>
-                                            <?php echo $row['car']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row['carno']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row['pick_loc']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row['drop_loc']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row['pick_date']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row['pick_time']; ?>
-                                        </td>
-                                    </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
-
-
-
-
-
+    
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
             <div class="row mb-5">
