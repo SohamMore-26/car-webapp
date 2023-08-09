@@ -35,7 +35,8 @@
   <script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
-    function validateRegister() {
+    function validateRegister()
+    {
       var x = document.forms["Register"]["name"].value;
       if (x == "" || !isNaN(x)) {
         swal("Oops", "Enter A Valid Name!", "error");
@@ -70,7 +71,7 @@
         swal ( "Oops" ,  "Password Missmatch Confirm Again!" ,  "error" );
         return false;
       }
-      }
+      
 
       var e = document.forms["Register"]["email"].value;
       if (e == "") {
@@ -98,8 +99,6 @@
         return false;
       }
     }
-
-
   </script>
 
 </head>
@@ -143,12 +142,12 @@
   <section>
     <div class="container">
     <div class="bg-image h-100" style="background-color: #f5f7fa;">
-      <!-- <div class="mask d-flex align-items-center h-100"> -->
+       <div class="mask d-flex align-items-center h-100"> 
       <!-- <div class="row justify-content-center"> -->
         <div style="margin: 50px ;">
           <div class="row">
-            <!-- <div class="col-md-12 offset-md-1">
-              <div class="col-md-12 offset-md-1"> -->
+            <div class="col-md-12 offset-md-1">
+              <div class="col-md-12 offset-md-1">
                 <div class="col-md-10 offset-md-1">
                   <div class="card">
                     <div class="card-header">
@@ -191,6 +190,7 @@
       </div>
     </div>
   </section>
+  
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
