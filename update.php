@@ -97,7 +97,7 @@
                             <input type="varchar" class="form-control"  name="car_name" value = "<?php echo $row['car_name'];?>">
                         </div>
                         <div class="form-group">
-                            <input type="varchar" class="form-control"  name="car_name" value = "<?php echo $row['car_no'];?>">
+                            <input type="varchar" class="form-control"  name="car_no" value = "<?php echo $row['car_no'];?>">
                         </div>
                         <div class="form-group">
                             <input type="varchar" class="form-control" placeholder="Enter Car Company" name="car_comp" value = "<?php echo $row['car_comp'];?>">
@@ -155,13 +155,13 @@
 	{
 		extract($_POST);
 
-		$add = mysqli_query($con,"UPDATE `car` SET `car_category`='$car_category',`car_name`='$car_name',`car_comp`='$car_comp',`car_price`='$car_price',`car_seat`='$car_seat',`car_ac`='$register',`photo`='$photo' WHERE id = '".$_GET['id']."'") or die(mysqli_error($con));
+		$add = mysqli_query($con,"UPDATE `car` SET `car_category`='$car_category',`car_name`='$car_name', `car_no`='$car_no',`car_comp`='$car_comp',`car_price`='$car_price',`car_seat`='$car_seat',`car_ac`='$register',`photo`='$photo' WHERE id = '".$_GET['id']."'") or die(mysqli_error($con));
         echo die(); 
 		if($add)
 		{
 			
             echo "<script>";
-            echo "window.alert('Car Updated successfully.....!')";
+            echo "swal('Car Updated successfully.....!')";
             echo "</script>";
 			
 		}
