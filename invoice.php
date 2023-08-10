@@ -102,13 +102,9 @@
 								</td>
 								
 								<td>
-								<?php
-                while ($row = mysqli_fetch_array($view)) {
-                                extract($row); ?>
-								<p>Customer Name : </p><?php echo $row['name']; ?> <br>
-								<p>Car Name : </p><?php echo $row['name']; ?> <br>
-								<p>Car Number : </p><?php echo $row['name']; ?>
-									<?php}?>
+								Customer Name : <br>
+								Car Name : <br>
+								Car Number :
 								</td>
 							</tr>
 						</table>
@@ -120,10 +116,10 @@
 						<table>
 							<tr>
 								<td>
-								Pick-up location : <?php echo $row['name']; ?>	<br />
-								Drop location : <?php echo $row['name']; ?>	<br />
-								Pick-up date : <?php echo $row['name']; ?>	<br />
-								Drop date : <?php echo $row['name']; ?>	
+								Pick-up location : 	<br />
+								Drop location : 	<br />
+								Pick-up date : 	<br />
+								Drop date : 	
 								</td>
 
 								<td>
