@@ -35,57 +35,52 @@
       var x=document.forms["Register"]["name"].value;
       if(x=="" || ! isNaN(x))
       {
-        swal ( "Oops" ,  "Enter A Valid Name!" ,  "error" );
+        swal ( "Oops" ,  " Please Enter A Valid Name!" ,  "error" );
         return false;
       }
     
       var y=document.forms["Register"]["phone"].value;
       if(y.length!=10 || isNaN(y))
       {
-        swal ( "Oops" ,  "Enter A Valid 10 Digit Phone No.!" ,  "error" );
+        swal ( "Oops" ,  " Please Enter A Valid 10 Digit Phone No.!" ,  "error" );
         return false;
       }
      
       var z=document.forms["Register"]["address"].value;
       if(z=="")
       {
-        swal ( "Oops" ,  "Enter A Valid Addres!" ,  "error" );
+        swal ( "Oops" ,  " Please Enter A Valid Addres!" ,  "error" );
         return false;
       }
 
       var e=document.forms["Register"]["email"].value;
       if(e=="")
       {
-        swal ( "Oops" ,  "Enter A Valid Email!" ,  "error" );
+        swal ( "Oops" ,  " Please Enter A Valid Email!" ,  "error" );
         return false;
       }
 
       var pass=document.forms["Register"]["password"].value;
       if(pass=="")
       {
-        swal ( "Oops" ,  "Enter A Valid Password!" ,  "error" );
-        return false;
-      }
-      var pass = document.forms["Register"]["password"].value;
-      if (pass == "") {
-        swal("Oops", "Enter A Valid Password!", "error");
+        swal ( "Oops" ,  "Please Enter A Strong Password Between 8-16 Characters!" ,  "error" );
         return false;
       }
       
       if(pass.length<8 || pass.length>16)
       {
-        swal ( "Oops" ,  "Enter A Valid Password Between 8 - 16 Characters!" ,  "error" );
+        swal ( "Oops" ,  " PleaseEnter A Strong Password Between 8 - 16 Characters!" ,  "error" );
         return false;
       }
       var cpass=document.forms["Register"]["cpassword"].value;
       if(cpass=="")
       {
-        swal ( "Oops" ,  " Confirm Password Once!" ,  "error" );
+        swal ( "Oops" ,  "Please Confirm Password Once Again!" ,  "error" );
         return false;
       }
       if(pass != cpass)
       {
-        swal ( "Oops" ,  "Password Missmatch Confirm Again!" ,  "error" );
+        swal ( "Oops" ,  "Password Missmatch Please Confirm Once Again!" ,  "error" );
         return false;
       }
     }
