@@ -87,17 +87,17 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
             <div class="breadup">
                 <h1 class="mb-3 bread">Rent Here</h1>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <form class="request-form ftco-animate bg-primary" method="post" name="Booking"
-                        onsubmit="return validate() || return validateDate()">
+            <form class="request-form ftco-animate bg-primary" method="post" name="Booking"
+                onsubmit="return validate() || return validateDate()">
+                <div class="row">
+                    <div class="col-md-6">
                         <h2>Your details</h2>
                         <div class="form-group">
                             <label for="" class="label">Name</label>
                             <input type="text" class="form-control" placeholder="Name" name="c_name" required
                             disabled=""     value="<?php echo $_SESSION['name'] ?>" >
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="" class="label"> Your Car</label><br>
                             <input type="text" class="form-control" placeholder="Your Car" name="cars"  disabled=""
@@ -108,11 +108,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                             <input type="text" class="form-control" placeholder="Your Car" name="carno" disabled=""
                             value="<?php echo $row['car_no'] ?>">
                         </div>
-                    </form>
-                </div>
-                <div class="col-md-6">
-                <form class="request-form ftco-animate bg-primary" method="post" name="Booking"
-                        onsubmit="return validate() || return validateDate()">
+                    </div>
+                    <div class="col-md-6">
                         <h2>Enter additional details</h2>
                         <div class="form-group">
                             <label for="" class="label">Pick-up location</label>
@@ -143,9 +140,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                         <div class="form-group">
                             <input name="book" type="submit" value="Rent A Car Now" class="btn btn-secondary py-3 px-4">
                         </div>
-                    </form>
-                </div>
-            </div>
+            </form>
+        </div>
+        </div>
         </div>
     </section>
     <script src="js/jquery.min.js"></script>
