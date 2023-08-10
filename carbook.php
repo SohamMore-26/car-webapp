@@ -95,18 +95,18 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                         <div class="form-group">
                             <label for="" class="label">Name</label>
                             <input type="text" class="form-control" placeholder="Name" name="c_name" required
-                                disabled="" value="<?php echo $_SESSION['name'] ?>" readonly>
+                            disabled=""     value="<?php echo $_SESSION['name'] ?>" >
                         </div>
 
                         <div class="form-group">
                             <label for="" class="label"> Your Car</label><br>
-                            <input type="text" class="form-control" placeholder="Your Car" name="cars" disabled=""
-                                value="<?php echo $row['car_name'] ?>" readonly>
+                            <input type="text" class="form-control" placeholder="Your Car" name="cars"  disabled=""
+                            value="<?php echo $row['car_name'] ?>" >
                         </div>
                         <div class="form-group">
                             <label for="" class="label"> Car Number</label><br>
                             <input type="text" class="form-control" placeholder="Your Car" name="carno" disabled=""
-                                value="<?php echo $row['car_no'] ?>" readonly>
+                            value="<?php echo $row['car_no'] ?>">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -138,7 +138,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                             <input type="time" class="form-control" id="" placeholder="Time" name="pick_time" required>
                         </div>
                         <div class="form-group">
-                            <input name="book" type="button" value="Rent A Car Now" class="btn btn-secondary py-3 px-4">
+                            <input name="book" type="submit" value="Rent A Car Now" class="btn btn-secondary py-3 px-4">
                         </div>
             </form>
         </div>
