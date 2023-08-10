@@ -66,6 +66,11 @@
         swal ( "Oops" ,  "Enter A Valid Password!" ,  "error" );
         return false;
       }
+      var pass = document.forms["Register"]["password"].value;
+      if (pass == "") {
+        swal("Oops", "Enter A Valid Password!", "error");
+        return false;
+      }
       
       if(pass.length<8 || pass.length>16)
       {
@@ -83,8 +88,7 @@
         swal ( "Oops" ,  "Password Missmatch Confirm Again!" ,  "error" );
         return false;
       }
-      }
-
+    }
     
     </script>
    

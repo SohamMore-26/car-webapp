@@ -106,71 +106,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
         type="button" name="Rent" value="Edit Details"
         class="btn btn-primary py-3 px-5"></a>
     </div>
-</div>
-</div>
-</div>
-
-<div style="margin: 50px ;">
-    <div class="row">
-        <div class="col-md-10 offset-md-1">
-            <div class="card">
-                <div class="card-header">
-                    <h4>Booking History</h4>
-                </div>
-                <div class="card-body">
-                    <table class="table table-striped mb-0" style="color: rgb(45, 45, 45); font-style: normal;">
-                        <thead style="background-color: #62beff; ">
-                            <tr class="text-center" data-expanded="true">
-                                <th>Car Name</th>
-                                <th>Car Number</th>
-                                <th>Pickup location</th>
-                                <th>Drop-off location</th>
-                                <th>Pickup date</th>
-                                <th>Pickup time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                        if (isset($_SESSION['id'])) {
-                                        $view = mysqli_query($con, "select * from book where name = '" . $_SESSION['name'] . "'") or die(mysqli_error($con));
-                                        $row = mysqli_fetch_array($view);
-                                        }
-                                    while ($row = mysqli_fetch_array($view)) {
-                                        extract($row); ?>
-                                    <tr class="text-center">
-                                        <td>
-                                            <?php echo $row['car']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row['carno']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row['pick_loc']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row['drop_loc']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row['pick_date']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row['pick_time']; ?>
-                                        </td>
-                                    </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
-
-
-
-
-
+    
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
             <div class="row mb-5">

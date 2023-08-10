@@ -177,6 +177,10 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
                                                             placeholder="Enter Car Number" name="car_no">
                                                     </div>
                                                     <div class="form-group">
+                                                        <input type="varchar" class="form-control"
+                                                            placeholder="Enter Car Owner" name="car_own">
+                                                    </div>
+                                                    <div class="form-group">
                                                         A/C
                                                         <br><input type="radio" name="car_ac" value="Yes"
                                                             class="btn btn-primary py-3 px-5"> Yes
@@ -240,7 +244,7 @@ if (isset($_POST['add'])) {
     //     move_uploaded_file($temp, $upload . $photo);
     // }
 
-    $add = mysqli_query($con, "insert into car(car_category,car_name, car_comp, car_price, car_seat ,car_no, car_ac, photo) values('$car_category','$car_name','$car_comp','$car_price','$car_seat','$car_no','$car_ac','$photo')") or die(mysqli_error($con));
+    $add = mysqli_query($con, "insert into car(car_category,car_name, car_comp, car_price,car_seat,car_no,car_ac,photo,car_own) values('$car_category','$car_name','$car_comp','$car_price','$car_seat','$car_no','$car_ac','$photo','$car_own')") or die(mysqli_error($con));
     if ($add) {
         echo "<script>";
         echo "window.alert('Car Added successfully.....!')";
