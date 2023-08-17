@@ -128,7 +128,7 @@ if (isset($_POST['login'])) {
             </div>
             <div class="form-group">
                 <input type="submit" name="login" value="Login" class="btn btn-primary py-3 px-5">
-                <div class="login1"> Don't have an Account? <a href="register.php">Join CarBook</a></div>
+                <div class="login1"> Don't have an Account? <a href="register.php">Join DriveEase</a></div>
             </div>
 
         </form>
