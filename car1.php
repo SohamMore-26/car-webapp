@@ -90,7 +90,7 @@
 
 						<div class="car-wrap rounded ftco-animate">
 							<div class="img rounded d-flex align-items-end"
-								style="background-image: url(images/<?php echo $row['photo']; ?>);">
+								style="background-image: url(images/<?php echo $row['photo']; ?>);"> 
 							</div>
 							<div class="text">
 								<h2 class="mb-0">

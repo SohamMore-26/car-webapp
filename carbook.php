@@ -139,8 +139,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                         </div>
                         <div class="form-group">
                             <input name="book" type="submit" value="Rent A Car Now" class="btn btn-secondary py-3 px-4">
-                            <input name="book" type="button" value="Rent A Car Now" class="btn btn-secondary py-3 px-4" onclick="return check()">
-                        </div>
+                            </div>
             </form>
         </div>
         </div>
