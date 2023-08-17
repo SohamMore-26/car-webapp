@@ -87,26 +87,26 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
             <div class="breadup">
                 <h1 class="mb-3 bread">Rent Here</h1>
             </div>
-            <form class="request-form ftco-animate bg-primary" method="post" name="Booking"
-                onsubmit="return validate() || return validateDate()">
+            <form class="request-form  bg-primary" method="post" name="Booking"
+                onsubmit="return check()">
                 <div class="row">
                     <div class="col-md-6">
                         <h2>Your details</h2>
                         <div class="form-group">
                             <label for="" class="label">Name</label>
-                            <input type="text" class="form-control" placeholder="Name" name="c_name" required
-                            disabled=""     value="<?php echo $_SESSION['name'] ?>" >
+                            <input type="text" class="form-control" placeholder="Name" name="c_name"  disabled=""
+                                value="<?php echo $_SESSION['name'] ?>">
                         </div>
 
                         <div class="form-group">
                             <label for="" class="label"> Your Car</label><br>
-                            <input type="text" class="form-control" placeholder="Your Car" name="cars"  disabled=""
-                            value="<?php echo $row['car_name'] ?>" >
+                            <input type="text" class="form-control" placeholder="Your Car" name="cars" disabled=""
+                                value="<?php echo $row['car_name'] ?>">
                         </div>
                         <div class="form-group">
                             <label for="" class="label"> Car Number</label><br>
                             <input type="text" class="form-control" placeholder="Your Car" name="carno" disabled=""
-                            value="<?php echo $row['car_no'] ?>">
+                                value="<?php echo $row['car_no'] ?>">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -139,6 +139,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                         </div>
                         <div class="form-group">
                             <input name="book" type="submit" value="Rent A Car Now" class="btn btn-secondary py-3 px-4">
+                            <input name="book" type="button" value="Rent A Car Now" class="btn btn-secondary py-3 px-4" onclick="return check()">
                         </div>
             </form>
         </div>
@@ -191,8 +192,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
         tdate1 = "0" + tdate1;
     }
     var mindate1 = year1 + "-" + month1 + "-" + tdate1;
-    document.getElementById("drop_date").setAttribute("min", mindate1);
-</script>
+    document.getElementById("drop_date").setAttribute("min", mindate1); 
+</script> 
 
 </html>
 <?php

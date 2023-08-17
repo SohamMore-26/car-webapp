@@ -39,6 +39,7 @@ if (!isset($_SESSION['loggedin1']) || $_SESSION['loggedin1'] != true) {
 
 <body>
                     <?php
+                    include "config.php";
                     if (isset($_SESSION['id'])) {
                         $view = mysqli_query($con, "select * from book where id = '" . $_SESSION['id'] . "'") or die(mysqli_error($con));
                     }
