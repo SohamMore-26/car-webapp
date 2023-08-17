@@ -62,7 +62,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
 
-                    <li class="nav-item" style="padding-right: 10px"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item" style="padding-right: 10px"><a href="index.php" class="nav-link">Home</a></li>
                     <li class="nav-item active" style="padding-right: 10px"><a href="car1.php" class="nav-link">Cars</a>
                     </li>
                     <li class="nav-item" style="padding-right: 10px"><a href="contact.php" class="nav-link">Contact</a>
@@ -94,18 +94,18 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                         <h2>Your details</h2>
                         <div class="form-group">
                             <label for="" class="label">Name</label>
-                            <input type="text" class="form-control" placeholder="Name" name="c_name"  disabled=""
+                            <input type="text" class="form-control" placeholder="Name" name="c_name" readonly
                                 value="<?php echo $_SESSION['name'] ?>">
                         </div>
 
                         <div class="form-group">
                             <label for="" class="label"> Your Car</label><br>
-                            <input type="text" class="form-control" placeholder="Your Car" name="cars" disabled=""
+                            <input type="text" class="form-control" placeholder="Your Car" name="cars" readonly
                                 value="<?php echo $row['car_name'] ?>">
                         </div>
                         <div class="form-group">
                             <label for="" class="label"> Car Number</label><br>
-                            <input type="text" class="form-control" placeholder="Your Car" name="carno" disabled=""
+                            <input type="text" class="form-control" placeholder="Your Car" name="carno" readonly
                                 value="<?php echo $row['car_no'] ?>">
                         </div>
                     </div>
